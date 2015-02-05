@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8Md-ec-M1S">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="WUPHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8 mar 2014" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSy-tz-05f">
+                                <rect key="frame" x="20" y="220" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeE-NK-tQn">
+                                <rect key="frame" x="20" y="148" width="280" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="59"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_clock" translatesAutoresizingMaskIntoConstraints="NO" id="s8j-6m-jKq">
+                                <rect key="frame" x="139" y="273" width="43" height="21"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="home_logo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="X3p-AA-XRk">
+                                <rect key="frame" x="109" y="77" width="103" height="52"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkC-rQ-iFd">
+                                <rect key="frame" x="0.0" y="331" width="320" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="para você sair" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80R-aq-3TB">
+                                        <rect key="frame" x="180" y="32" width="120" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.67843137249999996" green="0.69803921570000005" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2h 04m 30s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ0-Hr-XHN">
+                                        <rect key="frame" x="180" y="15" width="125" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LODUCCA:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmB-Ra-oea">
+                                        <rect key="frame" x="25" y="17" width="116" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.67843137254901964" green="0.69803921568627447" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21176470588235294" green="0.26666666666666666" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32156862745098036" green="0.71372549019607845" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="KVt-B9-45f">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="dateLongLabel" destination="CSy-tz-05f" id="WdH-Pf-25g"/>
+                        <outlet property="nextAlarmContainerView" destination="gkC-rQ-iFd" id="Wad-D9-CSJ"/>
+                        <outlet property="nowLabel" destination="VeE-NK-tQn" id="qug-9K-uaj"/>
+                        <outlet property="timeToGoDescriptionLabel" destination="80R-aq-3TB" id="bPD-mW-iVI"/>
+                        <outlet property="timeToGoImage" destination="s8j-6m-jKq" id="JNj-rj-YhV"/>
+                        <outlet property="timeToGoLabel" destination="MJ0-Hr-XHN" id="yJk-2k-T2M"/>
+                        <outlet property="whereToGoLabel" destination="FmB-Ra-oea" id="ppC-Ko-jOn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="-996"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xAV-My-hjh">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="8Md-ec-M1S" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ojK-bh-hfU">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="Coc-u2-tAb"/>
+                        <segue destination="vDi-Nx-hjG" kind="relationship" relationship="viewControllers" id="M5L-pt-BGG"/>
+                        <segue destination="Ypw-m7-j2s" kind="relationship" relationship="viewControllers" id="jdP-V7-K29"/>
+                        <segue destination="aAT-h9-M9I" kind="relationship" relationship="viewControllers" id="PTZ-wf-JZn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qf5-W2-AZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="-120"/>
+        </scene>
+        <!--Alarmes-->
+        <scene sceneID="6wJ-Li-0km">
+            <objects>
+                <viewController id="bxX-a6-OIK" customClass="WUPListAlarmViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SF3-J3-Jqf"/>
+                        <viewControllerLayoutGuide type="bottom" id="OIN-wS-SEY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HkC-m0-TuA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="74" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hTt-Um-kEw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WUPListAlarmTableTableViewCell" id="hdx-7E-KMB" customClass="WUPListAlarmTableTableViewCell">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdx-7E-KMB" id="fgT-6u-ODH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6RT-5R-dPT">
+                                                    <rect key="frame" x="260" y="21" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="OnOffChangedValue:" destination="hdx-7E-KMB" eventType="valueChanged" id="vKk-Rg-D78"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="09:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciJ-HX-gng">
+                                                    <rect key="frame" x="16" y="7" width="135" height="48"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                                    <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="casa para o trabalho" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvb-7G-UZU">
+                                                    <rect key="frame" x="78" y="51" width="185" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destino:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMt-Ds-VpU">
+                                                    <rect key="frame" x="31" y="51" width="53" height="15"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="alarm_bluepin_icon" translatesAutoresizingMaskIntoConstraints="NO" id="FpY-SN-4Tc">
+                                                    <rect key="frame" x="20" y="54" width="6" height="9"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="destinationAndRepeatIntervalLabel" destination="kvb-7G-UZU" id="goU-us-3WH"/>
+                                            <outlet property="destinationDescriptionLabel" destination="WMt-Ds-VpU" id="0rz-5y-6FZ"/>
+                                            <outlet property="onOffSwitch" destination="6RT-5R-dPT" id="iH3-W5-8cf"/>
+                                            <outlet property="whenAlarmLabel" destination="ciJ-HX-gng" id="gst-eZ-9tg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bxX-a6-OIK" id="url-Z9-CWa"/>
+                                    <outlet property="delegate" destination="bxX-a6-OIK" id="cFa-Nm-Se9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Alarmes" id="z5D-rq-VHl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xhX-vB-Qhn">
+                            <connections>
+                                <action selector="addAlarm:" destination="bxX-a6-OIK" id="Py0-SX-5fu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="hTt-Um-kEw" id="PEZ-Wt-STP"/>
+                        <segue destination="Um3-8x-CxX" kind="modal" identifier="ListAlarmToAddEditSegue" id="qg2-Yi-ZoY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5j-nn-Yf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466" y="-333"/>
+        </scene>
+        <!--Add Alarme Container View Controller-->
+        <scene sceneID="u1M-QX-f78">
+            <objects>
+                <viewController id="gSA-x8-jk0" customClass="WUPAddAlarmeContainerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="frC-x5-qCn"/>
+                        <viewControllerLayoutGuide type="bottom" id="4NY-jH-Dmf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Klc-2i-4R6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cb4-ba-fxY">
+                                <rect key="frame" x="16" y="71" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Repetir"/>
+                                    <segment title="Calendário"/>
+                                </segments>
+                                <connections>
+                                    <action selector="transactionDidChange:" destination="gSA-x8-jk0" eventType="valueChanged" id="Wu0-6I-mwA"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfP-HI-vfy">
+                                <rect key="frame" x="0.0" y="107" width="320" height="461"/>
+                                <connections>
+                                    <segue destination="v9D-jA-iHZ" kind="embed" identifier="ContainerAlarmViewControllerSegueIdentifier" id="sKg-SI-bqd"/>
+                                </connections>
+                            </containerView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TR4-Z5-ROP">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Repetir" id="xRc-Aj-XT5">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="JAQ-Iv-G0g">
+                                            <connections>
+                                                <action selector="touchUpNavBack:" destination="gSA-x8-jk0" id="rcY-Pj-8Na"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="iER-BU-Q9Y">
+                                            <connections>
+                                                <action selector="touchUpNavSave:" destination="gSA-x8-jk0" id="Jkv-X7-NHt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YpR-Dj-4AQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="-1098"/>
+        </scene>
+        <!--Add Alarm View Controller-->
+        <scene sceneID="rl6-4E-CXo">
+            <objects>
+                <viewController id="Um3-8x-CxX" customClass="WUPAddAlarmViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mBE-au-ClY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pn1-5P-oj6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KKD-n1-SGg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="655"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8v-bF-wBv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAG-Ls-yvM">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Cadastro" id="klM-iP-IQN">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="N0i-gF-CYB">
+                                            <connections>
+                                                <action selector="touchUpNavBarCancelButton:" destination="Um3-8x-CxX" id="1mW-zc-YXh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="KP1-ex-2Se">
+                                            <connections>
+                                                <action selector="touchUpNavBarSaveButton:" destination="Um3-8x-CxX" id="UwC-wX-Ur9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bU-4d-4L4">
+                                <rect key="frame" x="0.0" y="64" width="320" height="591"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Uq-yJ-6OH">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="591"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LGT-k3-CZf">
+                                                <rect key="frame" x="0.0" y="136" width="320" height="162"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="425821748.71951699">
+                                                    <!--2014-06-30 11:49:08 +0000-->
+                                                </date>
+                                            </datePicker>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fSR-Ds-Dv2">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="home_clock" translatesAutoresizingMaskIntoConstraints="NO" id="gTQ-t7-uzz">
+                                                        <rect key="frame" x="151" y="30" width="19" height="19"/>
+                                                    </imageView>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Que horas você" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9I-az-Eem">
+                                                        <rect key="frame" x="100" y="57" width="121" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="deseja chegar no seu destino?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLK-Ob-FZo">
+                                                        <rect key="frame" x="25" y="75" width="270" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.21176470588235294" green="0.26666666666666666" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WQO-KF-eXh" userLabel="View - Label">
+                                                <rect key="frame" x="0.0" y="347" width="320" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Etiqueta:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ht1-nb-J7R">
+                                                        <rect key="frame" x="18" y="14" width="121" height="21"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkd-Sm-9Fj">
+                                                        <rect key="frame" x="149" y="14" width="140" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.92549019607843142" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_arrowwhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5Sh-L2-PHO">
+                                                        <rect key="frame" x="288" y="13" width="32" height="19"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="nEp-mL-7pR" appends="YES" id="izJ-Bo-A7V"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPW-F2-nA0" userLabel="Label - Separator">
+                                                <rect key="frame" x="0.0" y="395" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zkX-ys-sbS" userLabel="View - Sound">
+                                                <rect key="frame" x="0.0" y="494" width="320" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Som:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyB-NK-UOw">
+                                                        <rect key="frame" x="18" y="14" width="57" height="21"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Radiate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mba-ZE-Sfq">
+                                                        <rect key="frame" x="149" y="14" width="140" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_arrowwhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="2Of-NJ-240">
+                                                        <rect key="frame" x="288" y="13" width="32" height="19"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="chc-IZ-3Ny" appends="YES" id="CTh-aJ-uuj"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voe-92-zFh" userLabel="Label - Separator">
+                                                <rect key="frame" x="0.0" y="493" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYK-18-eiW" userLabel="Label - Separator">
+                                                <rect key="frame" x="0.0" y="542" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YW2-o3-dLF" userLabel="View - Destination">
+                                                <rect key="frame" x="0.0" y="396" width="320" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destino:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtR-cI-dD9">
+                                                        <rect key="frame" x="18" y="13" width="73" height="21"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWl-OB-w0w">
+                                                        <rect key="frame" x="88" y="13" width="200" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_arrowwhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="GsF-WF-rE9">
+                                                        <rect key="frame" x="288" y="14" width="32" height="19"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="uBq-7L-ygu" appends="YES" id="vh1-ZF-p1F"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvM-iS-hZF" userLabel="Label - Separator">
+                                                <rect key="frame" x="0.0" y="444" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-CI-PC1" userLabel="View - Repeats For">
+                                                <rect key="frame" x="0.0" y="445" width="320" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repetir:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Aw-2O-aM2">
+                                                        <rect key="frame" x="18" y="14" width="73" height="21"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dias de Semana" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn2-wa-qqq">
+                                                        <rect key="frame" x="88" y="14" width="200" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_arrowwhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="wcC-jE-OTh">
+                                                        <rect key="frame" x="288" y="13" width="32" height="19"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="KTe-sz-6sH" appends="YES" id="d9b-NQ-nAn"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sYx-nL-fFe" userLabel="View - Time To Leave">
+                                                <rect key="frame" x="0.0" y="543" width="320" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tempo para sair:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bY-g6-jkT">
+                                                        <rect key="frame" x="18" y="14" width="132" height="21"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_arrowwhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="hRp-vD-VOz">
+                                                        <rect key="frame" x="288" y="13" width="32" height="19"/>
+                                                    </imageView>
+                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15 min" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYb-1m-7aG">
+                                                        <rect key="frame" x="151" y="14" width="138" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="mhO-Z3-5KO" appends="YES" id="Emt-6u-oBL"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="591" id="Mbi-Hr-Ye9"/>
+                                            <constraint firstAttribute="width" constant="320" id="pmU-DH-alp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6Uq-yJ-6OH" firstAttribute="top" secondItem="2bU-4d-4L4" secondAttribute="top" id="HFi-cX-ToW"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Uq-yJ-6OH" secondAttribute="bottom" id="RXc-nQ-cP3"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Uq-yJ-6OH" secondAttribute="trailing" id="cqM-HX-SSH"/>
+                                    <constraint firstItem="6Uq-yJ-6OH" firstAttribute="leading" secondItem="2bU-4d-4L4" secondAttribute="leading" id="nV6-ce-BUh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eAG-Ls-yvM" firstAttribute="trailing" secondItem="Z8v-bF-wBv" secondAttribute="trailing" id="3ll-Vg-ayZ"/>
+                            <constraint firstItem="eAG-Ls-yvM" firstAttribute="trailing" secondItem="2bU-4d-4L4" secondAttribute="trailing" id="7hw-sX-EG4"/>
+                            <constraint firstItem="Pn1-5P-oj6" firstAttribute="top" secondItem="2bU-4d-4L4" secondAttribute="bottom" id="Cms-KQ-nS8"/>
+                            <constraint firstItem="eAG-Ls-yvM" firstAttribute="top" secondItem="mBE-au-ClY" secondAttribute="bottom" id="QVa-Dz-kzu"/>
+                            <constraint firstItem="Z8v-bF-wBv" firstAttribute="top" secondItem="KKD-n1-SGg" secondAttribute="top" id="YNB-dU-Tfn"/>
+                            <constraint firstItem="2bU-4d-4L4" firstAttribute="leading" secondItem="KKD-n1-SGg" secondAttribute="leading" id="Ydp-sI-pLU"/>
+                            <constraint firstAttribute="trailing" secondItem="2bU-4d-4L4" secondAttribute="trailing" id="aIl-hu-AcT"/>
+                            <constraint firstItem="2bU-4d-4L4" firstAttribute="top" secondItem="eAG-Ls-yvM" secondAttribute="bottom" id="aio-xO-LgV"/>
+                            <constraint firstItem="eAG-Ls-yvM" firstAttribute="leading" secondItem="Z8v-bF-wBv" secondAttribute="leading" id="mLy-MI-D9w"/>
+                            <constraint firstItem="eAG-Ls-yvM" firstAttribute="bottom" secondItem="Z8v-bF-wBv" secondAttribute="bottom" id="up7-iK-Je3"/>
+                            <constraint firstItem="eAG-Ls-yvM" firstAttribute="leading" secondItem="2bU-4d-4L4" secondAttribute="leading" id="wbs-8a-n9D"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="655"/>
+                    <connections>
+                        <outlet property="alarmDestinationContentLabel" destination="IWl-OB-w0w" id="cFL-39-GKg"/>
+                        <outlet property="alarmDestinationLabel" destination="AtR-cI-dD9" id="jj5-sE-GvF"/>
+                        <outlet property="alarmLabelContentLabel" destination="Jkd-Sm-9Fj" id="kpD-TQ-T1W"/>
+                        <outlet property="alarmLabelLabel" destination="Ht1-nb-J7R" id="Bb7-s0-akn"/>
+                        <outlet property="alarmRepeatsForContentLabel" destination="xn2-wa-qqq" id="eSZ-lS-jHa"/>
+                        <outlet property="alarmRepeatsForLabel" destination="0Aw-2O-aM2" id="L2A-Fc-Srj"/>
+                        <outlet property="alarmSoundContentLabel" destination="mba-ZE-Sfq" id="cDf-qE-TFz"/>
+                        <outlet property="alarmSoundLabel" destination="cyB-NK-UOw" id="eDC-sA-8n5"/>
+                        <outlet property="alarmTimeToLeaveContentLabel" destination="RYb-1m-7aG" id="aRM-VC-9dj"/>
+                        <outlet property="alarmTimeToLeaveLabel" destination="1bY-g6-jkT" id="ymo-fY-8P8"/>
+                        <outlet property="dataPicker" destination="LGT-k3-CZf" id="L2l-lH-wol"/>
+                        <outlet property="descriptiveFirstLineLabel" destination="g9I-az-Eem" id="cnA-uv-9LK"/>
+                        <outlet property="descriptiveSecondeLineLabel" destination="fLK-Ob-FZo" id="YUO-ZY-6BU"/>
+                        <outlet property="navigationBarTittle" destination="klM-iP-IQN" id="aQB-dM-OZP"/>
+                        <segue destination="K29-jG-ucz" kind="modal" identifier="AddEditSegueToPickSong" id="pXC-4Z-1BM"/>
+                        <segue destination="igh-nN-9D9" kind="modal" identifier="AddEditSegueToPickDestination" id="yhO-ay-35H"/>
+                        <segue destination="qlH-fQ-uD4" kind="modal" identifier="AddEditSegueToPickLabel" id="zcC-ME-WC2"/>
+                        <segue destination="694-fA-58U" kind="modal" identifier="AddEditSegueToTimeToLeave" id="Ale-Zj-PbX"/>
+                        <segue destination="gSA-x8-jk0" kind="modal" identifier="AddEditSegueToPickWeekdays" id="txI-R6-sUr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3d-TB-uiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uBq-7L-ygu">
+                    <connections>
+                        <action selector="touchUpChooseDestinationView:" destination="Um3-8x-CxX" id="pRZ-hn-zGp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="KTe-sz-6sH">
+                    <connections>
+                        <action selector="touchUpChooseWeekdays:" destination="Um3-8x-CxX" id="l20-TS-pLT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="chc-IZ-3Ny">
+                    <connections>
+                        <action selector="touchUpChooseSongView:" destination="Um3-8x-CxX" id="hdQ-nf-GTH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nEp-mL-7pR">
+                    <connections>
+                        <action selector="touchUpChooseLabelView:" destination="Um3-8x-CxX" id="dds-23-BiY"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="mhO-Z3-5KO">
+                    <connections>
+                        <action selector="touchUpTimeToLeaveView:" destination="Um3-8x-CxX" id="Ue9-bk-5Wl"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1959" y="-213.5"/>
+        </scene>
+        <!--Choose Day Calendar View Controller-->
+        <scene sceneID="BEN-n7-vKb">
+            <objects>
+                <viewController id="XJz-co-0cp" customClass="WUPChooseDayCalendarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1AX-FD-uBu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ecr-UX-yiF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v2o-Mk-8c6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTH-ws-a71" customClass="DSLCalendarView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="calendarView" destination="eTH-ws-a71" id="td6-Q4-yH1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1mq-Xh-7Tf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="-1863"/>
+        </scene>
+        <!--Chose Weekdays View Controller-->
+        <scene sceneID="KUd-Eh-ukT">
+            <objects>
+                <viewController id="IDt-ZD-l8j" customClass="WUPChoseWeekdaysViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EZz-Op-gHR"/>
+                        <viewControllerLayoutGuide type="bottom" id="N9Z-rB-0Bn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6gZ-f4-WUW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddw-Be-VKj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="L8U-DX-0Iy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WUPChoseWeekdaysTableViewCell" rowHeight="50" id="0ZK-08-3k5" customClass="WUPChoseWeekdaysTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ZK-08-3k5" id="A72-Qh-69G">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todo Domingo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8he-Ab-srQ">
+                                                    <rect key="frame" x="10" y="14" width="222" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8he-Ab-srQ" firstAttribute="centerY" secondItem="A72-Qh-69G" secondAttribute="centerY" id="4wR-Uc-oxa"/>
+                                                <constraint firstAttribute="trailing" secondItem="8he-Ab-srQ" secondAttribute="trailing" constant="88" id="Gqr-Fl-8rw"/>
+                                                <constraint firstItem="8he-Ab-srQ" firstAttribute="leading" secondItem="A72-Qh-69G" secondAttribute="leading" constant="10" id="mgy-Zw-i7p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayOfWeeekLabel" destination="8he-Ab-srQ" id="aDB-6T-0AP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IDt-ZD-l8j" id="glP-o7-Ldh"/>
+                                    <outlet property="delegate" destination="IDt-ZD-l8j" id="fvl-c1-Amu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KqK-GS-BrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="-1098"/>
+        </scene>
+        <!--List Destination View Controller-->
+        <scene sceneID="UGg-fq-Rxh">
+            <objects>
+                <viewController id="igh-nN-9D9" customClass="WUPListDestinationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IiB-Kh-sGr"/>
+                        <viewControllerLayoutGuide type="bottom" id="nZA-ff-yVO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NZf-nw-cHP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvQ-MN-xz3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kz-A9-WKj">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                        <items>
+                                            <navigationItem title="Destinos" id="EVb-Ad-nOp">
+                                                <barButtonItem key="leftBarButtonItem" title="Voltar" id="EDd-e0-Lsy">
+                                                    <connections>
+                                                        <action selector="touchUpNavBarCancelButton:" destination="igh-nN-9D9" id="dzx-bL-WNC"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" systemItem="add" id="hGY-c9-leo">
+                                                    <connections>
+                                                        <action selector="touchUpNavBarAddButton:" destination="igh-nN-9D9" id="v3L-hM-W0z"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xnX-RK-5Eg">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WUPListDestinationTableViewCell" rowHeight="48" id="TKt-2o-8WB" customClass="WUPListDestinationTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TKt-2o-8WB" id="pkx-0V-02U">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trabalho" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFC-o1-8vY">
+                                                    <rect key="frame" x="62" y="13" width="238" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="destination_marker" translatesAutoresizingMaskIntoConstraints="NO" id="x6o-Ae-G6Y">
+                                                    <rect key="frame" x="42" y="12" width="12" height="23"/>
+                                                </imageView>
+                                                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="check_marker" translatesAutoresizingMaskIntoConstraints="NO" id="eeE-Hu-nLi">
+                                                    <rect key="frame" x="15" y="18" width="14" height="11"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="checkMarkerImage" destination="eeE-Hu-nLi" id="yRn-Dr-Fig"/>
+                                            <outlet property="name" destination="xFC-o1-8vY" id="eRa-Ah-oci"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="igh-nN-9D9" id="emA-gK-Yhx"/>
+                                    <outlet property="delegate" destination="igh-nN-9D9" id="6a6-Ng-fZj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="xnX-RK-5Eg" id="F12-Gd-Dtj"/>
+                        <segue destination="jcs-tF-l0C" kind="modal" identifier="ListDestinationToSubscribeDestinationSegue" id="xYU-eR-WwI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4j-gv-zvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2555" y="-213"/>
+        </scene>
+        <!--Chose Alarm Label View Controller-->
+        <scene sceneID="aCf-FD-jGe">
+            <objects>
+                <viewController id="qlH-fQ-uD4" customClass="WUPChoseAlarmLabelViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XtC-rh-1cm"/>
+                        <viewControllerLayoutGuide type="bottom" id="MrI-14-aj9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ll0-ma-MOQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jea-Xh-MWQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7S-Sy-zBc">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                        <items>
+                                            <navigationItem title="Etiqueta" id="FQa-l9-Hdb">
+                                                <barButtonItem key="leftBarButtonItem" title="Voltar" id="NA2-sH-oDG">
+                                                    <connections>
+                                                        <action selector="touchUpNavBarCancelButton:" destination="qlH-fQ-uD4" id="pgM-aT-kmz"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Salvar" id="5D7-vh-5kR">
+                                                    <connections>
+                                                        <action selector="touchUpOkButton:" destination="qlH-fQ-uD4" id="qoI-hn-B8F"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ooF-4k-T5K">
+                                <rect key="frame" x="0.0" y="172" width="320" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="alarmLabelTextField" destination="ooF-4k-T5K" id="qdy-g0-VhH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qrx-Wt-z38" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2555" y="542"/>
+        </scene>
+        <!--Add Destination View Controller-->
+        <scene sceneID="PRS-1C-QPw">
+            <objects>
+                <viewController id="jcs-tF-l0C" customClass="WUPAddDestinationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iop-ZN-Bn4"/>
+                        <viewControllerLayoutGuide type="bottom" id="5RT-Ta-1HF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x5B-kU-1Ey">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="meC-zC-fQN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKd-gN-fi3">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2lC-Fz-qcV"/>
+                                    <constraint firstAttribute="width" constant="320" id="Llk-UO-h3c"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Cadastro" id="Si8-z9-O5n">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="hAC-S0-c9W">
+                                            <connections>
+                                                <action selector="touchUpNavBarCancelButton:" destination="jcs-tF-l0C" id="FdG-ej-hpn"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="svy-N6-BO1">
+                                            <connections>
+                                                <action selector="touchUpNavBarSaveButton:" destination="jcs-tF-l0C" id="Jqv-vq-MVq"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-U6-AzJ" userLabel="View - Container Fields">
+                                <rect key="frame" x="0.0" y="64" width="320" height="116"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex: Trabalho, Academia ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZ1-hS-ijX">
+                                        <rect key="frame" x="37" y="20" width="273" height="30"/>
+                                        <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="jcs-tF-l0C" id="an5-lw-JlK"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex: Rua, cidade, estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IN8-mu-lg7">
+                                        <rect key="frame" x="37" y="66" width="273" height="30"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="jcs-tF-l0C" id="E5B-l0-AKm"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="destination_marker" translatesAutoresizingMaskIntoConstraints="NO" id="Hbv-Cq-GGJ">
+                                        <rect key="frame" x="17" y="69" width="12" height="23"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="destination_marker" translatesAutoresizingMaskIntoConstraints="NO" id="DIb-oK-LbO">
+                                        <rect key="frame" x="17" y="23" width="12" height="23"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="0dV-em-x5v"/>
+                                    <constraint firstAttribute="width" constant="320" id="ng2-dJ-jaF"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bmx-4Y-k2r">
+                                <rect key="frame" x="0.0" y="172" width="320" height="396"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ATb-U6-AzJ" firstAttribute="top" secondItem="vKd-gN-fi3" secondAttribute="bottom" id="Gjw-Sd-Mmu"/>
+                            <constraint firstItem="ATb-U6-AzJ" firstAttribute="top" secondItem="vKd-gN-fi3" secondAttribute="bottom" id="H6u-86-nIh"/>
+                            <constraint firstItem="ATb-U6-AzJ" firstAttribute="leading" secondItem="x5B-kU-1Ey" secondAttribute="leading" id="M58-Lg-OGV"/>
+                            <constraint firstItem="vKd-gN-fi3" firstAttribute="leading" secondItem="x5B-kU-1Ey" secondAttribute="leading" id="RIo-NV-AVH"/>
+                            <constraint firstAttribute="trailing" secondItem="vKd-gN-fi3" secondAttribute="trailing" id="XCT-pL-pRh"/>
+                            <constraint firstAttribute="trailing" secondItem="ATb-U6-AzJ" secondAttribute="trailing" id="eVH-Zy-kKD"/>
+                            <constraint firstItem="vKd-gN-fi3" firstAttribute="top" secondItem="Iop-ZN-Bn4" secondAttribute="bottom" id="oHs-jW-aRS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressTextField" destination="IN8-mu-lg7" id="o6c-8I-hu2"/>
+                        <outlet property="mapView" destination="bmx-4Y-k2r" id="gv8-UR-LQO"/>
+                        <outlet property="nameTextField" destination="FZ1-hS-ijX" id="dCe-kO-4vP"/>
+                        <segue destination="QkT-3U-SBq" kind="modal" identifier="SubscribeDestinationToSearchEngineResultSegue" id="66g-Xg-Oav"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGF-ml-6SP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2975" y="-213"/>
+        </scene>
+        <!--List Search Engine Result View Controller-->
+        <scene sceneID="yNX-FE-axE">
+            <objects>
+                <viewController id="QkT-3U-SBq" customClass="WUPListSearchEngineResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vCU-Vd-KIU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q5e-fS-9UF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EXv-tJ-Jh9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Dx-ga-oUr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-YI-WgK">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Resultados" id="ZoD-6w-PVX">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="zkK-Kz-z7l">
+                                            <connections>
+                                                <action selector="touhUpNavBarCancelButton:" destination="QkT-3U-SBq" id="POt-CU-Jgh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HP2-ce-3nU">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WUPListSearchEngineResultTableViewCell" rowHeight="115" id="zKf-Tt-k4C" customClass="WUPListSearchEngineResultTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zKf-Tt-k4C" id="qxh-dV-arD">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shopping Villa Lobos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCu-HW-MLv">
+                                                    <rect key="frame" x="44" y="20" width="235" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av. das Nações Unidas, 4777 - Alto de Pinheiros, São Paulo - SP, Brasil" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMA-de-7dU">
+                                                    <rect key="frame" x="44" y="37" width="235" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="check_marker" translatesAutoresizingMaskIntoConstraints="NO" id="RTe-Fy-rkF">
+                                                    <rect key="frame" x="17" y="52" width="14" height="11"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJQ-w3-H8G">
+                                                    <rect key="frame" x="44" y="74" width="122" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="destination_marker" translatesAutoresizingMaskIntoConstraints="NO" id="znc-VE-DVs">
+                                                    <rect key="frame" x="287" y="45" width="19" height="24"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkMarkerImage" destination="RTe-Fy-rkF" id="eOH-TU-jOk"/>
+                                            <outlet property="placeAddressLabel" destination="FMA-de-7dU" id="uSX-vp-JNJ"/>
+                                            <outlet property="placeDistanceLabel" destination="lJQ-w3-H8G" id="0lC-8h-viZ"/>
+                                            <outlet property="placeNameLabel" destination="sCu-HW-MLv" id="Fv5-4N-gH7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="QkT-3U-SBq" id="u8a-gZ-K4y"/>
+                                    <outlet property="delegate" destination="QkT-3U-SBq" id="je9-oM-hl2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HP2-ce-3nU" secondAttribute="trailing" id="1G0-Gn-Znq"/>
+                            <constraint firstItem="Fc7-YI-WgK" firstAttribute="top" secondItem="vCU-Vd-KIU" secondAttribute="bottom" id="4sG-fn-JYm"/>
+                            <constraint firstAttribute="trailing" secondItem="Fc7-YI-WgK" secondAttribute="trailing" id="JJX-Gn-1cl"/>
+                            <constraint firstItem="HP2-ce-3nU" firstAttribute="top" secondItem="Fc7-YI-WgK" secondAttribute="bottom" id="Uoj-jL-lAT"/>
+                            <constraint firstItem="HP2-ce-3nU" firstAttribute="top" secondItem="Fc7-YI-WgK" secondAttribute="bottom" id="Us0-WA-DuW"/>
+                            <constraint firstItem="Q5e-fS-9UF" firstAttribute="top" secondItem="HP2-ce-3nU" secondAttribute="bottom" id="ck5-WJ-9OV"/>
+                            <constraint firstItem="Fc7-YI-WgK" firstAttribute="leading" secondItem="EXv-tJ-Jh9" secondAttribute="leading" id="f8A-MQ-9R4"/>
+                            <constraint firstItem="HP2-ce-3nU" firstAttribute="leading" secondItem="EXv-tJ-Jh9" secondAttribute="leading" id="fCP-Oe-9Fs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="HP2-ce-3nU" id="Y0L-xd-PrU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ikX-OY-Bl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3428" y="-213"/>
+        </scene>
+        <!--Chose Song View Controller-->
+        <scene sceneID="Aid-2u-Oz1">
+            <objects>
+                <viewController id="K29-jG-ucz" customClass="WUPChoseSongViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mPa-Lg-GeY"/>
+                        <viewControllerLayoutGuide type="bottom" id="5KJ-xo-wlv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sDj-c4-68X">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUk-dG-34t">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HOc-4F-coE">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Som" id="ceo-fC-sha">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="Zgr-9T-XVD">
+                                            <connections>
+                                                <action selector="touchUpNavBarCancelButton:" destination="K29-jG-ucz" id="uGE-hB-fgW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="tfF-r0-AF0">
+                                            <connections>
+                                                <action selector="touchUpNavBarOkButton:" destination="K29-jG-ucz" id="siL-HZ-ISJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xVJ-t2-d0U">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.80392156859999997" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WUPChoseSongTableViewCell" rowHeight="50" id="E0u-If-SMA" customClass="WUPChoseSongTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E0u-If-SMA" id="hf1-Dd-pga">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radiate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLi-UA-YLr">
+                                                    <rect key="frame" x="48" y="14" width="252" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="check_marker" translatesAutoresizingMaskIntoConstraints="NO" id="7ax-zh-x71">
+                                                    <rect key="frame" x="15" y="18" width="14" height="11"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HLi-UA-YLr" firstAttribute="leading" secondItem="hf1-Dd-pga" secondAttribute="leading" constant="48" id="P0a-MV-u1e"/>
+                                                <constraint firstItem="HLi-UA-YLr" firstAttribute="centerX" secondItem="hf1-Dd-pga" secondAttribute="centerX" constant="14" id="cOH-4t-l0h"/>
+                                                <constraint firstItem="HLi-UA-YLr" firstAttribute="centerY" secondItem="hf1-Dd-pga" secondAttribute="centerY" id="vQ9-wk-hqI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="48" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="checkMarkerImage" destination="7ax-zh-x71" id="tgP-wS-Dzd"/>
+                                            <outlet property="nameLabel" destination="HLi-UA-YLr" id="6qj-xj-6Hv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="K29-jG-ucz" id="Ujm-Df-O33"/>
+                                    <outlet property="delegate" destination="K29-jG-ucz" id="2JV-h1-pIx"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xVJ-t2-d0U" firstAttribute="top" secondItem="HOc-4F-coE" secondAttribute="bottom" id="BC3-LL-pc9"/>
+                            <constraint firstItem="HOc-4F-coE" firstAttribute="trailing" secondItem="xVJ-t2-d0U" secondAttribute="trailing" id="EGU-nd-U0u"/>
+                            <constraint firstItem="HOc-4F-coE" firstAttribute="leading" secondItem="AUk-dG-34t" secondAttribute="leading" id="MOJ-Fs-ZGx"/>
+                            <constraint firstItem="AUk-dG-34t" firstAttribute="top" secondItem="sDj-c4-68X" secondAttribute="top" id="PPs-Va-BHE"/>
+                            <constraint firstItem="HOc-4F-coE" firstAttribute="bottom" secondItem="AUk-dG-34t" secondAttribute="bottom" id="Ry7-gi-4jr"/>
+                            <constraint firstItem="xVJ-t2-d0U" firstAttribute="leading" secondItem="HOc-4F-coE" secondAttribute="leading" id="SCF-bt-hbc"/>
+                            <constraint firstItem="AUk-dG-34t" firstAttribute="leading" secondItem="sDj-c4-68X" secondAttribute="leading" id="XdD-iy-JkR"/>
+                            <constraint firstAttribute="trailing" secondItem="AUk-dG-34t" secondAttribute="trailing" id="dno-2H-1pe"/>
+                            <constraint firstAttribute="bottom" secondItem="xVJ-t2-d0U" secondAttribute="bottom" id="fSX-5a-exV"/>
+                            <constraint firstItem="HOc-4F-coE" firstAttribute="top" secondItem="mPa-Lg-GeY" secondAttribute="bottom" id="nfg-bG-zv1"/>
+                            <constraint firstItem="AUk-dG-34t" firstAttribute="trailing" secondItem="HOc-4F-coE" secondAttribute="trailing" id="qTJ-ZU-rFf"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhm-Pb-wkK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2855" y="-924"/>
+        </scene>
+        <!--Rota-->
+        <scene sceneID="iTz-Lk-Daw">
+            <objects>
+                <viewController id="aFR-57-P6Q" customClass="WUPRouteMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jat-AI-WU5"/>
+                        <viewControllerLayoutGuide type="bottom" id="opP-RN-jo0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b44-vI-1sQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mt-nV-csT" userLabel="View - Map Container">
+                                <rect key="frame" x="0.0" y="201" width="320" height="267"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você ainda não possui alarmes cadastrados." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="c1c-b4-mbj">
+                                <rect key="frame" x="0.0" y="229" width="320" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wy5-LJ-VUG">
+                                <rect key="frame" x="59" y="296" width="202" height="41"/>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.64313725489999995" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Adicionar Alarme">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchUpNoRouteFoundButton:" destination="aFR-57-P6Q" eventType="touchUpInside" id="lEk-q6-8bt"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxj-aM-M0A" userLabel="View - Container Travel Info">
+                                <rect key="frame" x="0.0" y="465" width="320" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trabalho:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud6-gM-fSh">
+                                        <rect key="frame" x="10" y="10" width="173" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tempo:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex7-Et-ft4">
+                                        <rect key="frame" x="191" y="10" width="51" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1h30min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJn-RB-FUv">
+                                        <rect key="frame" x="258" y="10" width="55" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuL-11-vpB">
+                                        <rect key="frame" x="258" y="28" width="55" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distância:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jr-5e-1hD">
+                                        <rect key="frame" x="191" y="28" width="60" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av Sumaré, 600" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4j-0a-q4j">
+                                        <rect key="frame" x="10" y="28" width="173" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.35686274509999999" green="0.64313725489999995" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="NUF-G4-7I0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Q6-ch-V0K" userLabel="View - Instructions">
+                                <rect key="frame" x="0.0" y="65" width="320" height="136"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rota do seu próximo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxt-c4-MTN">
+                                        <rect key="frame" x="80" y="66" width="161" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="alarme ativo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrt-Nu-9ol">
+                                        <rect key="frame" x="25" y="84" width="270" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_routewhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="n2t-WI-ibi">
+                                        <rect key="frame" x="141" y="33" width="39" height="25"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.35686274509803922" green="0.64313725490196072" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c1c-b4-mbj" firstAttribute="top" secondItem="jat-AI-WU5" secondAttribute="bottom" constant="165" id="ITh-GY-Tc8"/>
+                            <constraint firstAttribute="centerY" secondItem="c1c-b4-mbj" secondAttribute="centerY" constant="22" id="K9f-VJ-c7J"/>
+                            <constraint firstAttribute="trailing" secondItem="4mt-nV-csT" secondAttribute="trailing" id="Kui-yK-xPs"/>
+                            <constraint firstItem="opP-RN-jo0" firstAttribute="top" secondItem="4mt-nV-csT" secondAttribute="bottom" constant="51" id="QzN-1d-QKx"/>
+                            <constraint firstItem="c1c-b4-mbj" firstAttribute="leading" secondItem="nxj-aM-M0A" secondAttribute="leading" id="eny-QS-sDD"/>
+                            <constraint firstItem="opP-RN-jo0" firstAttribute="top" secondItem="nxj-aM-M0A" secondAttribute="bottom" id="iWB-v5-7I7"/>
+                            <constraint firstItem="c1c-b4-mbj" firstAttribute="trailing" secondItem="nxj-aM-M0A" secondAttribute="trailing" id="kb0-x1-Vqo"/>
+                            <constraint firstItem="nxj-aM-M0A" firstAttribute="leading" secondItem="b44-vI-1sQ" secondAttribute="leading" id="ogP-Ne-v6c"/>
+                            <constraint firstItem="4mt-nV-csT" firstAttribute="leading" secondItem="b44-vI-1sQ" secondAttribute="leading" id="qQj-hT-mcT"/>
+                            <constraint firstAttribute="trailing" secondItem="nxj-aM-M0A" secondAttribute="trailing" id="uk1-gp-Dza"/>
+                            <constraint firstItem="4mt-nV-csT" firstAttribute="top" secondItem="jat-AI-WU5" secondAttribute="bottom" constant="137" id="x0B-0M-s3D"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rota" id="gfi-qL-0BV">
+                        <barButtonItem key="rightBarButtonItem" title="Iniciar" id="k1t-Fr-CIt">
+                            <connections>
+                                <action selector="touchUpNavBarIniciarButton:" destination="aFR-57-P6Q" id="2zI-VS-asN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="containerTravelInfo" destination="nxj-aM-M0A" id="Ifz-lk-e7l"/>
+                        <outlet property="descriptiveFirstLineLabel" destination="Hxt-c4-MTN" id="fQK-FO-LYa"/>
+                        <outlet property="descriptiveSecondLineLabel" destination="hrt-Nu-9ol" id="GTc-x3-N1h"/>
+                        <outlet property="destinationAddressLabel" destination="d4j-0a-q4j" id="skS-Wp-KnL"/>
+                        <outlet property="destinationNameLabel" destination="ud6-gM-fSh" id="pje-rv-sdU"/>
+                        <outlet property="mapView" destination="4mt-nV-csT" id="GPT-2X-ABg"/>
+                        <outlet property="navBarIniciarButton" destination="k1t-Fr-CIt" id="AbG-rf-OGy"/>
+                        <outlet property="noRouteFoundButton" destination="Wy5-LJ-VUG" id="IKA-Pb-dGk"/>
+                        <outlet property="noRouteFoundLabel" destination="c1c-b4-mbj" id="i90-J8-teb"/>
+                        <outlet property="travelDistanceDescriptiveLabel" destination="9jr-5e-1hD" id="0R8-NX-8j7"/>
+                        <outlet property="travelDistanceLabel" destination="WuL-11-vpB" id="AgB-Hz-fzh"/>
+                        <outlet property="travelTimeDescriptiveLabel" destination="ex7-Et-ft4" id="zDq-m4-3QJ"/>
+                        <outlet property="travelTimeLabel" destination="iJn-RB-FUv" id="qY7-wW-lB6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd9-gZ-zNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1456" y="342"/>
+        </scene>
+        <!--Sobre o App-->
+        <scene sceneID="Tbn-Ax-J6A">
+            <objects>
+                <viewController id="dXO-gy-prX" customClass="WUPSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oOb-Vf-YVt"/>
+                        <viewControllerLayoutGuide type="bottom" id="REk-0N-WSg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s7U-PY-0sc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yQS-Jb-mF8" userLabel="View - Avaliar na AppStore">
+                                <rect key="frame" x="0.0" y="110" width="320" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Avaliar na App Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxT-p4-Cdm">
+                                        <rect key="frame" x="57" y="13" width="157" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_arrowwhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="WVq-Sr-edj">
+                                        <rect key="frame" x="291" y="10" width="21" height="27"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="general_heart" translatesAutoresizingMaskIntoConstraints="NO" id="6aC-Jl-xiZ">
+                                        <rect key="frame" x="4" y="8" width="45" height="32"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82352941176470584" green="0.45882352941176469" blue="0.49411764705882355" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WA7-ix-ndJ" appends="YES" id="dTc-QR-GgU"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJX-s4-khf" userLabel="Label - Separator">
+                                <rect key="frame" x="0.0" y="158" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.72156862745098038" green="0.40000000000000002" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dl-xh-0Uh" userLabel="Label - Separator">
+                                <rect key="frame" x="0.0" y="207" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.72156862749999995" green="0.40000000000000002" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="50S-f6-t8E" userLabel="View - Indicar amigos">
+                                <rect key="frame" x="0.0" y="159" width="320" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Indicar para amigos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx3-Ye-xA9">
+                                        <rect key="frame" x="57" y="13" width="152" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_arrowwhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="uQi-Mq-HgK">
+                                        <rect key="frame" x="290" y="10" width="21" height="27"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="general_chat" translatesAutoresizingMaskIntoConstraints="NO" id="zKQ-Vr-5KI">
+                                        <rect key="frame" x="4" y="8" width="45" height="32"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82352941180000006" green="0.45882352939999999" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="A6S-4u-kpz" appends="YES" id="81I-gO-ohA"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qch-bR-r4Q" userLabel="View - Instrucoes">
+                                <rect key="frame" x="0.0" y="208" width="320" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instruções" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KK7-Rf-g3I">
+                                        <rect key="frame" x="57" y="13" width="81" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="common_arrowwhite_icon" translatesAutoresizingMaskIntoConstraints="NO" id="qWV-kV-nvJ">
+                                        <rect key="frame" x="290" y="10" width="21" height="27"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="general_settings" translatesAutoresizingMaskIntoConstraints="NO" id="u5t-g6-vJb">
+                                        <rect key="frame" x="4" y="6" width="45" height="32"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82352941180000006" green="0.45882352939999999" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OOZ-P8-Rc2" appends="YES" id="EFa-4C-y87"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sobre o App" id="xdM-FJ-2fM"/>
+                    <connections>
+                        <outlet property="instructionsLabel" destination="KK7-Rf-g3I" id="Z7P-1n-tf0"/>
+                        <outlet property="rateUsLabel" destination="GxT-p4-Cdm" id="wKA-fI-AEz"/>
+                        <outlet property="recommendToFriendsLabel" destination="hx3-Ye-xA9" id="q86-yO-Rxo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTF-Xq-69n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="A6S-4u-kpz">
+                    <connections>
+                        <action selector="touchUpListRecommendToFriendsView:" destination="dXO-gy-prX" id="qvs-nW-32T"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="OOZ-P8-Rc2">
+                    <connections>
+                        <action selector="playMovie:" destination="dXO-gy-prX" id="1jG-2L-do4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="WA7-ix-ndJ">
+                    <connections>
+                        <action selector="touchUpRateAppleStore:" destination="dXO-gy-prX" id="pf8-XU-1Tx"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1456" y="1029"/>
+        </scene>
+        <!--Set Time To Leave View Controller-->
+        <scene sceneID="6iR-Kr-C20">
+            <objects>
+                <viewController id="694-fA-58U" customClass="WUPSetTimeToLeaveViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9kE-Ey-nJY"/>
+                        <viewControllerLayoutGuide type="bottom" id="734-TV-v8C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ku5-yR-nTU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZf-8O-Kfi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YiY-B7-3jg">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Tempo para sair" id="1hf-Jy-qmf">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="sss-qP-5RJ">
+                                            <connections>
+                                                <action selector="touchUpNavBarCancelButton:" destination="694-fA-58U" id="myY-Rq-f6e"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="NN4-pc-EbT">
+                                            <connections>
+                                                <action selector="touchUpNavBarOkButton:" destination="694-fA-58U" id="kWh-QG-UFA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Configure aqui o tempo que voce leva para sair depois de acordar:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="xag-Kn-FWG">
+                                <rect key="frame" x="20" y="72" width="280" height="63"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="-2" height="-2"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ba-vd-fSN">
+                                <rect key="frame" x="1" y="197" width="320" height="218"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6dq-Nc-UAk">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="426276188.38438302">
+                                            <!--2014-07-05 18:03:08 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="pt_BR"/>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jc-wN-PcR">
+                                <rect key="frame" x="0.0" y="64" width="320" height="135"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="home_clock" translatesAutoresizingMaskIntoConstraints="NO" id="HTP-45-o6S">
+                                        <rect key="frame" x="151" y="30" width="19" height="19"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ao acordar, quanto tempo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86l-Ii-aWH">
+                                        <rect key="frame" x="20" y="57" width="280" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="você leva para sair de casa?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrN-ed-jpf">
+                                        <rect key="frame" x="25" y="75" width="270" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.2666666667" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="datePicker" destination="6dq-Nc-UAk" id="EKj-Mw-ljZ"/>
+                        <outlet property="descriptiveFirstLineLabel" destination="86l-Ii-aWH" id="cwI-gb-dJD"/>
+                        <outlet property="descriptiveSecondeLineLabel" destination="QrN-ed-jpf" id="KlZ-G8-yp0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ew-Hl-jsR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959" y="571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6KA-6W-Ds2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vDi-Nx-hjG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="wVf-aP-Plc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="olk-qE-Njs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bxX-a6-OIK" kind="relationship" relationship="rootViewController" id="MES-gb-hkR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpm-zZ-8Cm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="-333"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZeH-Sy-qZN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aAT-h9-M9I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="qpU-df-boV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Xk-Y6-4M8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dXO-gy-prX" kind="relationship" relationship="rootViewController" id="fVO-vc-tjl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ksP-l7-xl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="1029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qxn-jj-yhz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ypw-m7-j2s" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="b7B-ye-oUH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5sg-rT-BwR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aFR-57-P6Q" kind="relationship" relationship="rootViewController" id="gjF-FO-Piu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wpB-d9-XPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="342"/>
+        </scene>
+        <!--Container Alarm View Controller-->
+        <scene sceneID="uSK-Rs-ZAw">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="v9D-jA-iHZ" customClass="WUPContainerAlarmViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sbc-y8-fa8"/>
+                        <viewControllerLayoutGuide type="bottom" id="ivZ-pq-hI0"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bPM-lb-rzN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="461"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="XJz-co-0cp" kind="custom" identifier="CalendarViewControllerSegueIdentifier" customClass="WUPEmptySegue" id="41k-tT-17W"/>
+                        <segue destination="IDt-ZD-l8j" kind="custom" identifier="ChooseDayWeekViewControllerSegueIdentifier" customClass="WUPEmptySegue" id="PA7-44-qgt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Noj-ZZ-3Om" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="-1779.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alarm_bluepin_icon" width="6" height="9"/>
+        <image name="check_marker" width="14" height="11"/>
+        <image name="common_arrowwhite_icon" width="8" height="13"/>
+        <image name="common_routewhite_icon" width="22" height="22"/>
+        <image name="destination_marker" width="11" height="15"/>
+        <image name="general_chat" width="21" height="18"/>
+        <image name="general_heart" width="22" height="20"/>
+        <image name="general_settings" width="26" height="25"/>
+        <image name="home_clock" width="19" height="19"/>
+        <image name="home_logo_icon" width="103" height="52"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

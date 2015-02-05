@@ -1,0 +1,1389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EBD0F531A6FDEA500ACAAAD /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBD0F521A6FDEA500ACAAAD /* libGoogleAnalyticsServices.a */; };
+		0EC243241A6FDC3D00CA6936 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC243231A6FDC3D00CA6936 /* AdSupport.framework */; };
+		0EC243251A6FDCD300CA6936 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4243524019CF3A42005F2C8A /* SystemConfiguration.framework */; };
+		421CF31119673A360077AEDC /* WUPBaseDatabaseLocalNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CF31019673A360077AEDC /* WUPBaseDatabaseLocalNotificationViewController.m */; };
+		421CF31519673FBC0077AEDC /* WUPNokiaTrafficConditionsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 421CF31419673FBC0077AEDC /* WUPNokiaTrafficConditionsService.m */; };
+		42302F921991BB3D00FF7BA7 /* WUPGooglePlacesAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 42302F911991BB3D00FF7BA7 /* WUPGooglePlacesAPIService.m */; };
+		42302F971991BBAD00FF7BA7 /* WUPGooglePlacesAPISearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 42302F961991BBAD00FF7BA7 /* WUPGooglePlacesAPISearchResult.m */; };
+		42302F9A1991BF8B00FF7BA7 /* NSString+NSString_Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 42302F991991BF8B00FF7BA7 /* NSString+NSString_Extended.m */; };
+		4239D3501969D28B00C9E40E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 4239D34F1969D28B00C9E40E /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4239D3571969D29A00C9E40E /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 4239D3521969D29A00C9E40E /* Place.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4239D3581969D29A00C9E40E /* PlaceMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 4239D3541969D29A00C9E40E /* PlaceMark.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4239D3591969D29A00C9E40E /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4239D3561969D29A00C9E40E /* MapView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4239D35C1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4239D35B1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.m */; };
+		4239D3611969E64B00C9E40E /* WUPUIWazeActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4239D3601969E64B00C9E40E /* WUPUIWazeActivity.m */; };
+		4239D3681969ED3A00C9E40E /* WUPUIGoogleMapsActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4239D3671969ED3A00C9E40E /* WUPUIGoogleMapsActivity.m */; };
+		4243524A19CF3D6F005F2C8A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4243523E19CF3A32005F2C8A /* libz.dylib */; };
+		4243524B19CF3F9C005F2C8A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4243524219CF3A4D005F2C8A /* libsqlite3.dylib */; };
+		4259953E1999B0E500196923 /* WUPChoseAlarmLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4259953D1999B0E500196923 /* WUPChoseAlarmLabelViewController.m */; };
+		425995411999B4DA00196923 /* UITextField+PaddingText.m in Sources */ = {isa = PBXBuildFile; fileRef = 425995401999B4DA00196923 /* UITextField+PaddingText.m */; };
+		42651D65199B08CB00FA27F7 /* Destination.m in Sources */ = {isa = PBXBuildFile; fileRef = 42651D64199B08CB00FA27F7 /* Destination.m */; };
+		42651D68199B08CB00FA27F7 /* Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = 42651D67199B08CB00FA27F7 /* Setting.m */; };
+		42660B4D19663A500083154E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42660B4C19663A500083154E /* AddressBook.framework */; };
+		426870761969A38B007A0DD7 /* WUPRouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 426870751969A38B007A0DD7 /* WUPRouteMapViewController.m */; };
+		426870791969B9E0007A0DD7 /* UILocalNotification+LastFireDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 426870781969B9E0007A0DD7 /* UILocalNotification+LastFireDate.m */; };
+		426A21E61963ABEB009EA09A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426A21E51963ABEB009EA09A /* MessageUI.framework */; };
+		426BA8951961077A00065BC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426BA8941961077A00065BC6 /* Foundation.framework */; };
+		426BA8971961077A00065BC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426BA8961961077A00065BC6 /* CoreGraphics.framework */; };
+		426BA8991961077A00065BC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426BA8981961077A00065BC6 /* UIKit.framework */; };
+		426BA89F1961077A00065BC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 426BA89D1961077A00065BC6 /* InfoPlist.strings */; };
+		426BA8A11961077A00065BC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 426BA8A01961077A00065BC6 /* main.m */; };
+		426BA8A51961077A00065BC6 /* WUPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 426BA8A41961077A00065BC6 /* WUPAppDelegate.m */; };
+		426BA8A81961077A00065BC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426BA8A61961077A00065BC6 /* Main.storyboard */; };
+		426BA8AD1961077A00065BC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426BA8AC1961077A00065BC6 /* Images.xcassets */; };
+		426BA8B41961077B00065BC6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426BA8B31961077B00065BC6 /* XCTest.framework */; };
+		426BA8B51961077B00065BC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426BA8941961077A00065BC6 /* Foundation.framework */; };
+		426BA8B61961077B00065BC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426BA8981961077A00065BC6 /* UIKit.framework */; };
+		426BA8BE1961077B00065BC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 426BA8BC1961077B00065BC6 /* InfoPlist.strings */; };
+		426BA8C01961077B00065BC6 /* wUpAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 426BA8BF1961077B00065BC6 /* wUpAppTests.m */; };
+		4277FC9419CE28E400C1410A /* WUPListSearchEngineResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4277FC9319CE28E400C1410A /* WUPListSearchEngineResultViewController.m */; };
+		4277FC9719CE296700C1410A /* WUPListSearchEngineResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4277FC9619CE296700C1410A /* WUPListSearchEngineResultTableViewCell.m */; };
+		4280098A19641EA900B0A5F0 /* Alarm+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 4280098919641EA900B0A5F0 /* Alarm+Database.m */; };
+		428E15621963871B004619F6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 428E15601963871B004619F6 /* Model.xcdatamodeld */; };
+		428E15641963872E004619F6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428E15631963872E004619F6 /* CoreData.framework */; };
+		428E156C196389A3004619F6 /* Destination+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 428E156B196389A3004619F6 /* Destination+Database.m */; };
+		428E156F19638C91004619F6 /* WUPAlertBuilderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 428E156E19638C91004619F6 /* WUPAlertBuilderUtils.m */; };
+		428E15721963977F004619F6 /* WUPBaseDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428E15711963977F004619F6 /* WUPBaseDatabaseViewController.m */; };
+		429719EF196862560009E500 /* UILocalNotification+NextFireDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 429719EE196862560009E500 /* UILocalNotification+NextFireDate.m */; };
+		429719F21968651F0009E500 /* WUPDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 429719F11968651F0009E500 /* WUPDateUtils.m */; };
+		42971A04196872B40009E500 /* WUPSetTimeToLeaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42971A03196872B40009E500 /* WUPSetTimeToLeaveViewController.m */; };
+		42971A0719687C200009E500 /* Setting+Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 42971A0619687C200009E500 /* Setting+Database.m */; };
+		429F7EAE1992F49F00F68B4E /* PlutoThin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 429F7EAD1992F49F00F68B4E /* PlutoThin.otf */; };
+		429F7EB01992F84600F68B4E /* ProximaNova-Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 429F7EAF1992F84600F68B4E /* ProximaNova-Reg.otf */; };
+		429F7EB21992FB6600F68B4E /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 429F7EB11992FB6600F68B4E /* ProximaNova-Light.otf */; };
+		429F7EB41992FD9C00F68B4E /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 429F7EB31992FD9C00F68B4E /* ProximaNova-Bold.otf */; };
+		42CD13EC19623E4B00DA06A3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CD13EB19623E4B00DA06A3 /* AudioToolbox.framework */; };
+		42CD13FD1962466000DA06A3 /* 3d_bird_tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13ED1962466000DA06A3 /* 3d_bird_tone.mp3 */; };
+		42CD13FE1962466000DA06A3 /* army_wake_up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13EE1962466000DA06A3 /* army_wake_up.mp3 */; };
+		42CD13FF1962466000DA06A3 /* blackberry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13EF1962466000DA06A3 /* blackberry.mp3 */; };
+		42CD14001962466000DA06A3 /* clock_alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13F01962466000DA06A3 /* clock_alarm.mp3 */; };
+		42CD14011962466000DA06A3 /* elegant_ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13F11962466000DA06A3 /* elegant_ringtone.mp3 */; };
+		42CD14031962466000DA06A3 /* htc_butterfly_2013.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13F31962466000DA06A3 /* htc_butterfly_2013.mp3 */; };
+		42CD14041962466000DA06A3 /* iphone_5s copy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13F41962466000DA06A3 /* iphone_5s copy.mp3 */; };
+		42CD14051962466000DA06A3 /* iphone_5s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13F51962466000DA06A3 /* iphone_5s.mp3 */; };
+		42CD14061962466000DA06A3 /* iphone_sms_message.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13F61962466000DA06A3 /* iphone_sms_message.mp3 */; };
+		42CD14081962466000DA06A3 /* nuclear_alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13F81962466000DA06A3 /* nuclear_alarm.mp3 */; };
+		42CD14091962466000DA06A3 /* sms.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13F91962466000DA06A3 /* sms.mp3 */; };
+		42CD140A1962466000DA06A3 /* tequila.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13FA1962466000DA06A3 /* tequila.mp3 */; };
+		42CD140B1962466000DA06A3 /* v_i_p_ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13FB1962466000DA06A3 /* v_i_p_ringtone.mp3 */; };
+		42CD140C1962466000DA06A3 /* wolf.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 42CD13FC1962466000DA06A3 /* wolf.mp3 */; };
+		42CD14101962CD0C00DA06A3 /* WUPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CD140F1962CD0C00DA06A3 /* WUPConstants.m */; };
+		42F3200419610C9400B64BC0 /* WUPListAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3200319610C9400B64BC0 /* WUPListAlarmViewController.m */; };
+		42F3200919610F3500B64BC0 /* WUPListAlarmTableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3200819610F3500B64BC0 /* WUPListAlarmTableTableViewCell.m */; };
+		42F3200D1961131600B64BC0 /* WUPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3200C1961131600B64BC0 /* WUPSettingsViewController.m */; };
+		42F3200F19611A8F00B64BC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F3200E19611A8F00B64BC0 /* MapKit.framework */; };
+		42F3201319617B3C00B64BC0 /* WUPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3201219617B3C00B64BC0 /* WUPHomeViewController.m */; };
+		42F3201819617C2F00B64BC0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F3201719617C2F00B64BC0 /* MediaPlayer.framework */; };
+		42F3201E1961828E00B64BC0 /* WUPAddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3201D1961828E00B64BC0 /* WUPAddAlarmViewController.m */; };
+		6F1542971A7FDDAA00F71223 /* WUPAddAlarmeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542961A7FDDAA00F71223 /* WUPAddAlarmeContainerViewController.m */; };
+		6F15429B1A7FE01D00F71223 /* WUPEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F15429A1A7FE01D00F71223 /* WUPEmptySegue.m */; };
+		6F15429E1A7FE20800F71223 /* WUPContainerAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F15429D1A7FE20800F71223 /* WUPContainerAlarmViewController.m */; };
+		6F1542A11A7FE32B00F71223 /* WUPChooseDayCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542A01A7FE32B00F71223 /* WUPChooseDayCalendarViewController.m */; };
+		6F1542C21A7FEFF300F71223 /* DSLCalendarDayCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542A41A7FEFF300F71223 /* DSLCalendarDayCalloutView.m */; };
+		6F1542C31A7FEFF300F71223 /* DSLCalendarDayCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542A51A7FEFF300F71223 /* DSLCalendarDayCalloutView.xib */; };
+		6F1542C41A7FEFF300F71223 /* DSLCalendarDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542A71A7FEFF300F71223 /* DSLCalendarDayView.m */; };
+		6F1542C51A7FEFF300F71223 /* DSLCalendarMonthSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542A91A7FEFF300F71223 /* DSLCalendarMonthSelectorView.m */; };
+		6F1542C61A7FEFF300F71223 /* DSLCalendarMonthSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542AA1A7FEFF300F71223 /* DSLCalendarMonthSelectorView.xib */; };
+		6F1542C71A7FEFF300F71223 /* DSLCalendarMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542AC1A7FEFF300F71223 /* DSLCalendarMonthView.m */; };
+		6F1542C81A7FEFF300F71223 /* DSLCalendarRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542AE1A7FEFF300F71223 /* DSLCalendarRange.m */; };
+		6F1542C91A7FEFF300F71223 /* DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542B01A7FEFF300F71223 /* DSLCalendarView.m */; };
+		6F1542CA1A7FEFF300F71223 /* DSLCalendar-nextMonth.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542B21A7FEFF300F71223 /* DSLCalendar-nextMonth.png */; };
+		6F1542CB1A7FEFF300F71223 /* DSLCalendar-nextMonth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542B31A7FEFF300F71223 /* DSLCalendar-nextMonth@2x.png */; };
+		6F1542CC1A7FEFF300F71223 /* DSLCalendar-previousMonth.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542B41A7FEFF300F71223 /* DSLCalendar-previousMonth.png */; };
+		6F1542CD1A7FEFF300F71223 /* DSLCalendar-previousMonth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542B51A7FEFF300F71223 /* DSLCalendar-previousMonth@2x.png */; };
+		6F1542CE1A7FEFF300F71223 /* DSLCalendarDayCallout.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542B61A7FEFF300F71223 /* DSLCalendarDayCallout.png */; };
+		6F1542CF1A7FEFF300F71223 /* DSLCalendarDayCallout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542B71A7FEFF300F71223 /* DSLCalendarDayCallout@2x.png */; };
+		6F1542D01A7FEFF300F71223 /* DSLCalendarDaySelection-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542B81A7FEFF300F71223 /* DSLCalendarDaySelection-left.png */; };
+		6F1542D11A7FEFF300F71223 /* DSLCalendarDaySelection-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542B91A7FEFF300F71223 /* DSLCalendarDaySelection-left@2x.png */; };
+		6F1542D21A7FEFF300F71223 /* DSLCalendarDaySelection-middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542BA1A7FEFF300F71223 /* DSLCalendarDaySelection-middle.png */; };
+		6F1542D31A7FEFF300F71223 /* DSLCalendarDaySelection-middle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542BB1A7FEFF300F71223 /* DSLCalendarDaySelection-middle@2x.png */; };
+		6F1542D41A7FEFF300F71223 /* DSLCalendarDaySelection-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542BC1A7FEFF300F71223 /* DSLCalendarDaySelection-right.png */; };
+		6F1542D51A7FEFF300F71223 /* DSLCalendarDaySelection-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542BD1A7FEFF300F71223 /* DSLCalendarDaySelection-right@2x.png */; };
+		6F1542D61A7FEFF300F71223 /* DSLCalendarDaySelection.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542BE1A7FEFF300F71223 /* DSLCalendarDaySelection.png */; };
+		6F1542D71A7FEFF300F71223 /* DSLCalendarDaySelection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542BF1A7FEFF300F71223 /* DSLCalendarDaySelection@2x.png */; };
+		6F1542D81A7FEFF300F71223 /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542C11A7FEFF300F71223 /* NSDate+DSLCalendarView.m */; };
+		6F1542DB1A81648800F71223 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542DA1A81648800F71223 /* Alarm.m */; };
+		6FCAF2A71A7A667200D35219 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FCAF2A91A7A667200D35219 /* Localizable.strings */; };
+		A63342851963152E0067ACFA /* WUPAddDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63342841963152E0067ACFA /* WUPAddDestinationViewController.m */; };
+		A647C2EC196219CB000013FF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A647C2EB196219CB000013FF /* AVFoundation.framework */; };
+		A647C2F219621AC9000013FF /* WUPSong.m in Sources */ = {isa = PBXBuildFile; fileRef = A647C2F119621AC9000013FF /* WUPSong.m */; };
+		A650111B19AD339C000DF70C /* wup_final.m4v in Resources */ = {isa = PBXBuildFile; fileRef = A650111A19AD339C000DF70C /* wup_final.m4v */; };
+		A6CD52731961C0BA008DC2CC /* WUPChoseWeekdaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CD52721961C0BA008DC2CC /* WUPChoseWeekdaysViewController.m */; };
+		A6CD52761961C39D008DC2CC /* WUPChoseWeekdaysTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CD52751961C39D008DC2CC /* WUPChoseWeekdaysTableViewCell.m */; };
+		A6CD52791961C4D9008DC2CC /* WUPChoseSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CD52781961C4D9008DC2CC /* WUPChoseSongViewController.m */; };
+		A6CD527C1961C595008DC2CC /* WUPChoseSongTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CD527B1961C595008DC2CC /* WUPChoseSongTableViewCell.m */; };
+		A6CD527F1961C80E008DC2CC /* WUPListDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CD527E1961C80E008DC2CC /* WUPListDestinationViewController.m */; };
+		A6CD52821961C86F008DC2CC /* WUPListDestinationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CD52811961C86F008DC2CC /* WUPListDestinationTableViewCell.m */; };
+		AE9040F721184A53BB27F689 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B94B124567EB493CADDFF410 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		426BA8B71961077B00065BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 426BA8891961077A00065BC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 426BA8901961077A00065BC6;
+			remoteInfo = wUpApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0EBD0F521A6FDEA500ACAAAD /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "GoogleAnalytics-iOS-SDK/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
+		0EBD0F541A6FDF7500ACAAAD /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		0EBD0F551A6FDF7500ACAAAD /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		0EBD0F561A6FDF7500ACAAAD /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		0EBD0F571A6FDF7500ACAAAD /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		0EBD0F581A6FDF7500ACAAAD /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		0EBD0F591A6FDF7500ACAAAD /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		0EBD0F5A1A6FDF7500ACAAAD /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		0EBD0F5B1A6FDF7500ACAAAD /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		0EBD0F5C1A6FDF7500ACAAAD /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		0EBD0F5D1A6FDF7500ACAAAD /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		0EC243211A6FDBBC00CA6936 /* libPods-GoogleAnalytics-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-GoogleAnalytics-iOS-SDK.a"; path = "Pods/build/Debug-iphoneos/libPods-GoogleAnalytics-iOS-SDK.a"; sourceTree = "<group>"; };
+		0EC243231A6FDC3D00CA6936 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		421CF30F19673A360077AEDC /* WUPBaseDatabaseLocalNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPBaseDatabaseLocalNotificationViewController.h; sourceTree = "<group>"; };
+		421CF31019673A360077AEDC /* WUPBaseDatabaseLocalNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPBaseDatabaseLocalNotificationViewController.m; sourceTree = "<group>"; };
+		421CF31319673FBC0077AEDC /* WUPNokiaTrafficConditionsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPNokiaTrafficConditionsService.h; sourceTree = "<group>"; };
+		421CF31419673FBC0077AEDC /* WUPNokiaTrafficConditionsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPNokiaTrafficConditionsService.m; sourceTree = "<group>"; };
+		42302F901991BB3D00FF7BA7 /* WUPGooglePlacesAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPGooglePlacesAPIService.h; sourceTree = "<group>"; };
+		42302F911991BB3D00FF7BA7 /* WUPGooglePlacesAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPGooglePlacesAPIService.m; sourceTree = "<group>"; };
+		42302F951991BBAD00FF7BA7 /* WUPGooglePlacesAPISearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPGooglePlacesAPISearchResult.h; sourceTree = "<group>"; };
+		42302F961991BBAD00FF7BA7 /* WUPGooglePlacesAPISearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPGooglePlacesAPISearchResult.m; sourceTree = "<group>"; };
+		42302F981991BF8B00FF7BA7 /* NSString+NSString_Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_Extended.h"; sourceTree = "<group>"; };
+		42302F991991BF8B00FF7BA7 /* NSString+NSString_Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSString_Extended.m"; sourceTree = "<group>"; };
+		4239D34E1969D28B00C9E40E /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		4239D34F1969D28B00C9E40E /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		4239D3511969D29A00C9E40E /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		4239D3521969D29A00C9E40E /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		4239D3531969D29A00C9E40E /* PlaceMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceMark.h; sourceTree = "<group>"; };
+		4239D3541969D29A00C9E40E /* PlaceMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceMark.m; sourceTree = "<group>"; };
+		4239D3551969D29A00C9E40E /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		4239D3561969D29A00C9E40E /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		4239D35A1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LoadingWithActivityIndicator.h"; sourceTree = "<group>"; };
+		4239D35B1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LoadingWithActivityIndicator.m"; sourceTree = "<group>"; };
+		4239D35F1969E64B00C9E40E /* WUPUIWazeActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPUIWazeActivity.h; sourceTree = "<group>"; };
+		4239D3601969E64B00C9E40E /* WUPUIWazeActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPUIWazeActivity.m; sourceTree = "<group>"; };
+		4239D3661969ED3A00C9E40E /* WUPUIGoogleMapsActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPUIGoogleMapsActivity.h; sourceTree = "<group>"; };
+		4239D3671969ED3A00C9E40E /* WUPUIGoogleMapsActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPUIGoogleMapsActivity.m; sourceTree = "<group>"; };
+		4243523E19CF3A32005F2C8A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4243524019CF3A42005F2C8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4243524219CF3A4D005F2C8A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		4243524419CF3AA2005F2C8A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		4243524719CF3CEE005F2C8A /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		4259953C1999B0E500196923 /* WUPChoseAlarmLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPChoseAlarmLabelViewController.h; sourceTree = "<group>"; };
+		4259953D1999B0E500196923 /* WUPChoseAlarmLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPChoseAlarmLabelViewController.m; sourceTree = "<group>"; };
+		4259953F1999B4DA00196923 /* UITextField+PaddingText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+PaddingText.h"; sourceTree = "<group>"; };
+		425995401999B4DA00196923 /* UITextField+PaddingText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+PaddingText.m"; sourceTree = "<group>"; };
+		42651D5F199B08CA00FA27F7 /* wUpApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wUpApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		42651D63199B08CB00FA27F7 /* Destination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Destination.h; sourceTree = "<group>"; };
+		42651D64199B08CB00FA27F7 /* Destination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Destination.m; sourceTree = "<group>"; };
+		42651D66199B08CB00FA27F7 /* Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Setting.h; sourceTree = "<group>"; };
+		42651D67199B08CB00FA27F7 /* Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Setting.m; sourceTree = "<group>"; };
+		42660B4C19663A500083154E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		426870741969A38B007A0DD7 /* WUPRouteMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPRouteMapViewController.h; sourceTree = "<group>"; };
+		426870751969A38B007A0DD7 /* WUPRouteMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPRouteMapViewController.m; sourceTree = "<group>"; };
+		426870771969B9E0007A0DD7 /* UILocalNotification+LastFireDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILocalNotification+LastFireDate.h"; sourceTree = "<group>"; };
+		426870781969B9E0007A0DD7 /* UILocalNotification+LastFireDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILocalNotification+LastFireDate.m"; sourceTree = "<group>"; };
+		426A21E51963ABEB009EA09A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		426BA8911961077A00065BC6 /* wUpApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wUpApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		426BA8941961077A00065BC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		426BA8961961077A00065BC6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		426BA8981961077A00065BC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		426BA89C1961077A00065BC6 /* wUpApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wUpApp-Info.plist"; sourceTree = "<group>"; };
+		426BA89E1961077A00065BC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		426BA8A01961077A00065BC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		426BA8A21961077A00065BC6 /* wUpApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wUpApp-Prefix.pch"; sourceTree = "<group>"; };
+		426BA8A31961077A00065BC6 /* WUPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WUPAppDelegate.h; sourceTree = "<group>"; };
+		426BA8A41961077A00065BC6 /* WUPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WUPAppDelegate.m; sourceTree = "<group>"; };
+		426BA8A71961077A00065BC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		426BA8AC1961077A00065BC6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		426BA8B21961077B00065BC6 /* wUpAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wUpAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		426BA8B31961077B00065BC6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		426BA8BB1961077B00065BC6 /* wUpAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wUpAppTests-Info.plist"; sourceTree = "<group>"; };
+		426BA8BD1961077B00065BC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		426BA8BF1961077B00065BC6 /* wUpAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wUpAppTests.m; sourceTree = "<group>"; };
+		4277FC9219CE28E400C1410A /* WUPListSearchEngineResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPListSearchEngineResultViewController.h; sourceTree = "<group>"; };
+		4277FC9319CE28E400C1410A /* WUPListSearchEngineResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPListSearchEngineResultViewController.m; sourceTree = "<group>"; };
+		4277FC9519CE296700C1410A /* WUPListSearchEngineResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPListSearchEngineResultTableViewCell.h; sourceTree = "<group>"; };
+		4277FC9619CE296700C1410A /* WUPListSearchEngineResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPListSearchEngineResultTableViewCell.m; sourceTree = "<group>"; };
+		4280098819641EA900B0A5F0 /* Alarm+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Alarm+Database.h"; sourceTree = "<group>"; };
+		4280098919641EA900B0A5F0 /* Alarm+Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Alarm+Database.m"; sourceTree = "<group>"; };
+		428E15611963871B004619F6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		428E15631963872E004619F6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		428E156A196389A3004619F6 /* Destination+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Destination+Database.h"; sourceTree = "<group>"; };
+		428E156B196389A3004619F6 /* Destination+Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Destination+Database.m"; sourceTree = "<group>"; };
+		428E156D19638C91004619F6 /* WUPAlertBuilderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPAlertBuilderUtils.h; sourceTree = "<group>"; };
+		428E156E19638C91004619F6 /* WUPAlertBuilderUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPAlertBuilderUtils.m; sourceTree = "<group>"; };
+		428E15701963977F004619F6 /* WUPBaseDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPBaseDatabaseViewController.h; sourceTree = "<group>"; };
+		428E15711963977F004619F6 /* WUPBaseDatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPBaseDatabaseViewController.m; sourceTree = "<group>"; };
+		429719ED196862560009E500 /* UILocalNotification+NextFireDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILocalNotification+NextFireDate.h"; sourceTree = "<group>"; };
+		429719EE196862560009E500 /* UILocalNotification+NextFireDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILocalNotification+NextFireDate.m"; sourceTree = "<group>"; };
+		429719F01968651F0009E500 /* WUPDateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPDateUtils.h; sourceTree = "<group>"; };
+		429719F11968651F0009E500 /* WUPDateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPDateUtils.m; sourceTree = "<group>"; };
+		42971A02196872B40009E500 /* WUPSetTimeToLeaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPSetTimeToLeaveViewController.h; sourceTree = "<group>"; };
+		42971A03196872B40009E500 /* WUPSetTimeToLeaveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPSetTimeToLeaveViewController.m; sourceTree = "<group>"; };
+		42971A0519687C200009E500 /* Setting+Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Setting+Database.h"; sourceTree = "<group>"; };
+		42971A0619687C200009E500 /* Setting+Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Setting+Database.m"; sourceTree = "<group>"; };
+		429F7EAD1992F49F00F68B4E /* PlutoThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlutoThin.otf; sourceTree = "<group>"; };
+		429F7EAF1992F84600F68B4E /* ProximaNova-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Reg.otf"; sourceTree = "<group>"; };
+		429F7EB11992FB6600F68B4E /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		429F7EB31992FD9C00F68B4E /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		42CD13EB19623E4B00DA06A3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		42CD13ED1962466000DA06A3 /* 3d_bird_tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3d_bird_tone.mp3; sourceTree = "<group>"; };
+		42CD13EE1962466000DA06A3 /* army_wake_up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = army_wake_up.mp3; sourceTree = "<group>"; };
+		42CD13EF1962466000DA06A3 /* blackberry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blackberry.mp3; sourceTree = "<group>"; };
+		42CD13F01962466000DA06A3 /* clock_alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clock_alarm.mp3; sourceTree = "<group>"; };
+		42CD13F11962466000DA06A3 /* elegant_ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elegant_ringtone.mp3; sourceTree = "<group>"; };
+		42CD13F31962466000DA06A3 /* htc_butterfly_2013.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = htc_butterfly_2013.mp3; sourceTree = "<group>"; };
+		42CD13F41962466000DA06A3 /* iphone_5s copy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "iphone_5s copy.mp3"; sourceTree = "<group>"; };
+		42CD13F51962466000DA06A3 /* iphone_5s.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone_5s.mp3; sourceTree = "<group>"; };
+		42CD13F61962466000DA06A3 /* iphone_sms_message.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iphone_sms_message.mp3; sourceTree = "<group>"; };
+		42CD13F81962466000DA06A3 /* nuclear_alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nuclear_alarm.mp3; sourceTree = "<group>"; };
+		42CD13F91962466000DA06A3 /* sms.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sms.mp3; sourceTree = "<group>"; };
+		42CD13FA1962466000DA06A3 /* tequila.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tequila.mp3; sourceTree = "<group>"; };
+		42CD13FB1962466000DA06A3 /* v_i_p_ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = v_i_p_ringtone.mp3; sourceTree = "<group>"; };
+		42CD13FC1962466000DA06A3 /* wolf.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wolf.mp3; sourceTree = "<group>"; };
+		42CD140E1962CD0C00DA06A3 /* WUPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPConstants.h; sourceTree = "<group>"; };
+		42CD140F1962CD0C00DA06A3 /* WUPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPConstants.m; sourceTree = "<group>"; };
+		42F3200219610C9400B64BC0 /* WUPListAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPListAlarmViewController.h; sourceTree = "<group>"; };
+		42F3200319610C9400B64BC0 /* WUPListAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPListAlarmViewController.m; sourceTree = "<group>"; };
+		42F3200719610F3500B64BC0 /* WUPListAlarmTableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPListAlarmTableTableViewCell.h; sourceTree = "<group>"; };
+		42F3200819610F3500B64BC0 /* WUPListAlarmTableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPListAlarmTableTableViewCell.m; sourceTree = "<group>"; };
+		42F3200B1961131600B64BC0 /* WUPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPSettingsViewController.h; sourceTree = "<group>"; };
+		42F3200C1961131600B64BC0 /* WUPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPSettingsViewController.m; sourceTree = "<group>"; };
+		42F3200E19611A8F00B64BC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		42F3201119617B3C00B64BC0 /* WUPHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPHomeViewController.h; sourceTree = "<group>"; };
+		42F3201219617B3C00B64BC0 /* WUPHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPHomeViewController.m; sourceTree = "<group>"; };
+		42F3201719617C2F00B64BC0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		42F3201C1961828E00B64BC0 /* WUPAddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPAddAlarmViewController.h; sourceTree = "<group>"; };
+		42F3201D1961828E00B64BC0 /* WUPAddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPAddAlarmViewController.m; sourceTree = "<group>"; };
+		528DEC5ECFA9918099E92CC9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6F1542951A7FDDAA00F71223 /* WUPAddAlarmeContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUPAddAlarmeContainerViewController.h; path = wupapp/WUPAddAlarmeContainerViewController.h; sourceTree = SOURCE_ROOT; };
+		6F1542961A7FDDAA00F71223 /* WUPAddAlarmeContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUPAddAlarmeContainerViewController.m; path = wupapp/WUPAddAlarmeContainerViewController.m; sourceTree = SOURCE_ROOT; };
+		6F1542991A7FE01D00F71223 /* WUPEmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUPEmptySegue.h; path = wupapp/WUPEmptySegue.h; sourceTree = SOURCE_ROOT; };
+		6F15429A1A7FE01D00F71223 /* WUPEmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUPEmptySegue.m; path = wupapp/WUPEmptySegue.m; sourceTree = SOURCE_ROOT; };
+		6F15429C1A7FE20800F71223 /* WUPContainerAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUPContainerAlarmViewController.h; path = wupapp/WUPContainerAlarmViewController.h; sourceTree = SOURCE_ROOT; };
+		6F15429D1A7FE20800F71223 /* WUPContainerAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUPContainerAlarmViewController.m; path = wupapp/WUPContainerAlarmViewController.m; sourceTree = SOURCE_ROOT; };
+		6F15429F1A7FE32B00F71223 /* WUPAddAlarmCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUPAddAlarmCalendarViewController.h; path = wupapp/WUPAddAlarmCalendarViewController.h; sourceTree = SOURCE_ROOT; };
+		6F1542A01A7FE32B00F71223 /* WUPChooseDayCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUPChooseDayCalendarViewController.m; path = wupapp/WUPChooseDayCalendarViewController.m; sourceTree = SOURCE_ROOT; };
+		6F1542A31A7FEFF300F71223 /* DSLCalendarDayCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayCalloutView.h; sourceTree = "<group>"; };
+		6F1542A41A7FEFF300F71223 /* DSLCalendarDayCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarDayCalloutView.m; sourceTree = "<group>"; };
+		6F1542A51A7FEFF300F71223 /* DSLCalendarDayCalloutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSLCalendarDayCalloutView.xib; sourceTree = "<group>"; };
+		6F1542A61A7FEFF300F71223 /* DSLCalendarDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarDayView.h; sourceTree = "<group>"; };
+		6F1542A71A7FEFF300F71223 /* DSLCalendarDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarDayView.m; sourceTree = "<group>"; };
+		6F1542A81A7FEFF300F71223 /* DSLCalendarMonthSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarMonthSelectorView.h; sourceTree = "<group>"; };
+		6F1542A91A7FEFF300F71223 /* DSLCalendarMonthSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarMonthSelectorView.m; sourceTree = "<group>"; };
+		6F1542AA1A7FEFF300F71223 /* DSLCalendarMonthSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSLCalendarMonthSelectorView.xib; sourceTree = "<group>"; };
+		6F1542AB1A7FEFF300F71223 /* DSLCalendarMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarMonthView.h; sourceTree = "<group>"; };
+		6F1542AC1A7FEFF300F71223 /* DSLCalendarMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarMonthView.m; sourceTree = "<group>"; };
+		6F1542AD1A7FEFF300F71223 /* DSLCalendarRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarRange.h; sourceTree = "<group>"; };
+		6F1542AE1A7FEFF300F71223 /* DSLCalendarRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarRange.m; sourceTree = "<group>"; };
+		6F1542AF1A7FEFF300F71223 /* DSLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLCalendarView.h; sourceTree = "<group>"; };
+		6F1542B01A7FEFF300F71223 /* DSLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLCalendarView.m; sourceTree = "<group>"; };
+		6F1542B21A7FEFF300F71223 /* DSLCalendar-nextMonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendar-nextMonth.png"; sourceTree = "<group>"; };
+		6F1542B31A7FEFF300F71223 /* DSLCalendar-nextMonth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendar-nextMonth@2x.png"; sourceTree = "<group>"; };
+		6F1542B41A7FEFF300F71223 /* DSLCalendar-previousMonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendar-previousMonth.png"; sourceTree = "<group>"; };
+		6F1542B51A7FEFF300F71223 /* DSLCalendar-previousMonth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendar-previousMonth@2x.png"; sourceTree = "<group>"; };
+		6F1542B61A7FEFF300F71223 /* DSLCalendarDayCallout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSLCalendarDayCallout.png; sourceTree = "<group>"; };
+		6F1542B71A7FEFF300F71223 /* DSLCalendarDayCallout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDayCallout@2x.png"; sourceTree = "<group>"; };
+		6F1542B81A7FEFF300F71223 /* DSLCalendarDaySelection-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-left.png"; sourceTree = "<group>"; };
+		6F1542B91A7FEFF300F71223 /* DSLCalendarDaySelection-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-left@2x.png"; sourceTree = "<group>"; };
+		6F1542BA1A7FEFF300F71223 /* DSLCalendarDaySelection-middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-middle.png"; sourceTree = "<group>"; };
+		6F1542BB1A7FEFF300F71223 /* DSLCalendarDaySelection-middle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-middle@2x.png"; sourceTree = "<group>"; };
+		6F1542BC1A7FEFF300F71223 /* DSLCalendarDaySelection-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-right.png"; sourceTree = "<group>"; };
+		6F1542BD1A7FEFF300F71223 /* DSLCalendarDaySelection-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection-right@2x.png"; sourceTree = "<group>"; };
+		6F1542BE1A7FEFF300F71223 /* DSLCalendarDaySelection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DSLCalendarDaySelection.png; sourceTree = "<group>"; };
+		6F1542BF1A7FEFF300F71223 /* DSLCalendarDaySelection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection@2x.png"; sourceTree = "<group>"; };
+		6F1542C01A7FEFF300F71223 /* NSDate+DSLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DSLCalendarView.h"; sourceTree = "<group>"; };
+		6F1542C11A7FEFF300F71223 /* NSDate+DSLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DSLCalendarView.m"; sourceTree = "<group>"; };
+		6F1542D91A81648800F71223 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm.h; path = wupapp/Alarm.h; sourceTree = SOURCE_ROOT; };
+		6F1542DA1A81648800F71223 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm.m; path = wupapp/Alarm.m; sourceTree = SOURCE_ROOT; };
+		6F3BA4A81A83A2FF00599596 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
+		6FCAF2A41A7A664800D35219 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		6FCAF2A51A7A664800D35219 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6FCAF2A61A7A664800D35219 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6FCAF2A81A7A667200D35219 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6FCAF2AA1A7A669F00D35219 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6FCAF2AB1A7A66A200D35219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6FCAF2AD1A7AB75A00D35219 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		6FCAF2AE1A7ABE3E00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
+		6FCAF2AF1A7ABE3E00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6FCAF2B01A7ABE3E00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6FCAF2B11A7ABE3F00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A63342831963152E0067ACFA /* WUPAddDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPAddDestinationViewController.h; sourceTree = "<group>"; };
+		A63342841963152E0067ACFA /* WUPAddDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPAddDestinationViewController.m; sourceTree = "<group>"; };
+		A647C2EB196219CB000013FF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A647C2F019621AC9000013FF /* WUPSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPSong.h; sourceTree = "<group>"; };
+		A647C2F119621AC9000013FF /* WUPSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPSong.m; sourceTree = "<group>"; };
+		A650111A19AD339C000DF70C /* wup_final.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = wup_final.m4v; sourceTree = "<group>"; };
+		A6CD52711961C0BA008DC2CC /* WUPChoseWeekdaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPChoseWeekdaysViewController.h; sourceTree = "<group>"; };
+		A6CD52721961C0BA008DC2CC /* WUPChoseWeekdaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPChoseWeekdaysViewController.m; sourceTree = "<group>"; };
+		A6CD52741961C39D008DC2CC /* WUPChoseWeekdaysTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPChoseWeekdaysTableViewCell.h; sourceTree = "<group>"; };
+		A6CD52751961C39D008DC2CC /* WUPChoseWeekdaysTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPChoseWeekdaysTableViewCell.m; sourceTree = "<group>"; };
+		A6CD52771961C4D9008DC2CC /* WUPChoseSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPChoseSongViewController.h; sourceTree = "<group>"; };
+		A6CD52781961C4D9008DC2CC /* WUPChoseSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPChoseSongViewController.m; sourceTree = "<group>"; };
+		A6CD527A1961C595008DC2CC /* WUPChoseSongTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPChoseSongTableViewCell.h; sourceTree = "<group>"; };
+		A6CD527B1961C595008DC2CC /* WUPChoseSongTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPChoseSongTableViewCell.m; sourceTree = "<group>"; };
+		A6CD527D1961C80E008DC2CC /* WUPListDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPListDestinationViewController.h; sourceTree = "<group>"; };
+		A6CD527E1961C80E008DC2CC /* WUPListDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPListDestinationViewController.m; sourceTree = "<group>"; };
+		A6CD52801961C86F008DC2CC /* WUPListDestinationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPListDestinationTableViewCell.h; sourceTree = "<group>"; };
+		A6CD52811961C86F008DC2CC /* WUPListDestinationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPListDestinationTableViewCell.m; sourceTree = "<group>"; };
+		B94B124567EB493CADDFF410 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E21414DBF84DAFF5865FBA90 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		426BA88E1961077A00065BC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EBD0F531A6FDEA500ACAAAD /* libGoogleAnalyticsServices.a in Frameworks */,
+				0EC243251A6FDCD300CA6936 /* SystemConfiguration.framework in Frameworks */,
+				0EC243241A6FDC3D00CA6936 /* AdSupport.framework in Frameworks */,
+				4243524B19CF3F9C005F2C8A /* libsqlite3.dylib in Frameworks */,
+				4243524A19CF3D6F005F2C8A /* libz.dylib in Frameworks */,
+				42660B4D19663A500083154E /* AddressBook.framework in Frameworks */,
+				426A21E61963ABEB009EA09A /* MessageUI.framework in Frameworks */,
+				428E15641963872E004619F6 /* CoreData.framework in Frameworks */,
+				42CD13EC19623E4B00DA06A3 /* AudioToolbox.framework in Frameworks */,
+				A647C2EC196219CB000013FF /* AVFoundation.framework in Frameworks */,
+				42F3201819617C2F00B64BC0 /* MediaPlayer.framework in Frameworks */,
+				42F3200F19611A8F00B64BC0 /* MapKit.framework in Frameworks */,
+				426BA8971961077A00065BC6 /* CoreGraphics.framework in Frameworks */,
+				426BA8991961077A00065BC6 /* UIKit.framework in Frameworks */,
+				426BA8951961077A00065BC6 /* Foundation.framework in Frameworks */,
+				AE9040F721184A53BB27F689 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		426BA8AF1961077B00065BC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				426BA8B41961077B00065BC6 /* XCTest.framework in Frameworks */,
+				426BA8B61961077B00065BC6 /* UIKit.framework in Frameworks */,
+				426BA8B51961077B00065BC6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0EBD0F5E1A6FDFB800ACAAAD /* GoogleAnalytics-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				0EBD0F541A6FDF7500ACAAAD /* GAI.h */,
+				0EBD0F551A6FDF7500ACAAAD /* GAIDictionaryBuilder.h */,
+				0EBD0F561A6FDF7500ACAAAD /* GAIEcommerceFields.h */,
+				0EBD0F571A6FDF7500ACAAAD /* GAIEcommerceProduct.h */,
+				0EBD0F581A6FDF7500ACAAAD /* GAIEcommerceProductAction.h */,
+				0EBD0F591A6FDF7500ACAAAD /* GAIEcommercePromotion.h */,
+				0EBD0F5A1A6FDF7500ACAAAD /* GAIFields.h */,
+				0EBD0F5B1A6FDF7500ACAAAD /* GAILogger.h */,
+				0EBD0F5C1A6FDF7500ACAAAD /* GAITrackedViewController.h */,
+				0EBD0F5D1A6FDF7500ACAAAD /* GAITracker.h */,
+			);
+			name = "GoogleAnalytics-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		421CF31219673F8D0077AEDC /* services */ = {
+			isa = PBXGroup;
+			children = (
+				4243524619CF3CD8005F2C8A /* googleanalytics */,
+				42302F8F1991BB2000FF7BA7 /* placesapi */,
+				42302F8E1991BB1700FF7BA7 /* traffic */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		42302F8E1991BB1700FF7BA7 /* traffic */ = {
+			isa = PBXGroup;
+			children = (
+				421CF31319673FBC0077AEDC /* WUPNokiaTrafficConditionsService.h */,
+				421CF31419673FBC0077AEDC /* WUPNokiaTrafficConditionsService.m */,
+			);
+			name = traffic;
+			sourceTree = "<group>";
+		};
+		42302F8F1991BB2000FF7BA7 /* placesapi */ = {
+			isa = PBXGroup;
+			children = (
+				42302F941991BB7700FF7BA7 /* bean */,
+				42302F931991BB6500FF7BA7 /* request */,
+			);
+			name = placesapi;
+			sourceTree = "<group>";
+		};
+		42302F931991BB6500FF7BA7 /* request */ = {
+			isa = PBXGroup;
+			children = (
+				42302F901991BB3D00FF7BA7 /* WUPGooglePlacesAPIService.h */,
+				42302F911991BB3D00FF7BA7 /* WUPGooglePlacesAPIService.m */,
+			);
+			name = request;
+			sourceTree = "<group>";
+		};
+		42302F941991BB7700FF7BA7 /* bean */ = {
+			isa = PBXGroup;
+			children = (
+				42302F951991BBAD00FF7BA7 /* WUPGooglePlacesAPISearchResult.h */,
+				42302F961991BBAD00FF7BA7 /* WUPGooglePlacesAPISearchResult.m */,
+			);
+			name = bean;
+			sourceTree = "<group>";
+		};
+		4239D35D1969E61700C9E40E /* maproute */ = {
+			isa = PBXGroup;
+			children = (
+				4239D3511969D29A00C9E40E /* Place.h */,
+				4239D3521969D29A00C9E40E /* Place.m */,
+				4239D3531969D29A00C9E40E /* PlaceMark.h */,
+				4239D3541969D29A00C9E40E /* PlaceMark.m */,
+				4239D3551969D29A00C9E40E /* MapView.h */,
+				4239D3561969D29A00C9E40E /* MapView.m */,
+				4239D34E1969D28B00C9E40E /* RegexKitLite.h */,
+				4239D34F1969D28B00C9E40E /* RegexKitLite.m */,
+			);
+			name = maproute;
+			sourceTree = "<group>";
+		};
+		4239D35E1969E62100C9E40E /* uiactivity */ = {
+			isa = PBXGroup;
+			children = (
+				4239D35F1969E64B00C9E40E /* WUPUIWazeActivity.h */,
+				4239D3601969E64B00C9E40E /* WUPUIWazeActivity.m */,
+				4239D3661969ED3A00C9E40E /* WUPUIGoogleMapsActivity.h */,
+				4239D3671969ED3A00C9E40E /* WUPUIGoogleMapsActivity.m */,
+			);
+			name = uiactivity;
+			sourceTree = "<group>";
+		};
+		4243524619CF3CD8005F2C8A /* googleanalytics */ = {
+			isa = PBXGroup;
+			children = (
+				4243524719CF3CEE005F2C8A /* libGoogleAnalyticsServices.a */,
+			);
+			name = googleanalytics;
+			sourceTree = "<group>";
+		};
+		426870731969A36F007A0DD7 /* route */ = {
+			isa = PBXGroup;
+			children = (
+				4239D35E1969E62100C9E40E /* uiactivity */,
+				4239D35D1969E61700C9E40E /* maproute */,
+				426870741969A38B007A0DD7 /* WUPRouteMapViewController.h */,
+				426870751969A38B007A0DD7 /* WUPRouteMapViewController.m */,
+			);
+			name = route;
+			sourceTree = "<group>";
+		};
+		426BA8881961077A00065BC6 = {
+			isa = PBXGroup;
+			children = (
+				6F1542A21A7FEFF300F71223 /* DSLCalendarView */,
+				0EBD0F5E1A6FDFB800ACAAAD /* GoogleAnalytics-iOS-SDK */,
+				426BA89A1961077A00065BC6 /* wUpApp */,
+				426BA8B91961077B00065BC6 /* wUpAppTests */,
+				426BA8931961077A00065BC6 /* Frameworks */,
+				426BA8921961077A00065BC6 /* Products */,
+				C0A88D201F87312D159B372A /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		426BA8921961077A00065BC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				426BA8911961077A00065BC6 /* wUpApp.app */,
+				426BA8B21961077B00065BC6 /* wUpAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		426BA8931961077A00065BC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EBD0F521A6FDEA500ACAAAD /* libGoogleAnalyticsServices.a */,
+				0EC243231A6FDC3D00CA6936 /* AdSupport.framework */,
+				0EC243211A6FDBBC00CA6936 /* libPods-GoogleAnalytics-iOS-SDK.a */,
+				4243524419CF3AA2005F2C8A /* libsqlite3.0.dylib */,
+				4243524219CF3A4D005F2C8A /* libsqlite3.dylib */,
+				4243524019CF3A42005F2C8A /* SystemConfiguration.framework */,
+				4243523E19CF3A32005F2C8A /* libz.dylib */,
+				42660B4C19663A500083154E /* AddressBook.framework */,
+				426A21E51963ABEB009EA09A /* MessageUI.framework */,
+				428E15631963872E004619F6 /* CoreData.framework */,
+				42CD13EB19623E4B00DA06A3 /* AudioToolbox.framework */,
+				A647C2EB196219CB000013FF /* AVFoundation.framework */,
+				42F3201719617C2F00B64BC0 /* MediaPlayer.framework */,
+				42F3200E19611A8F00B64BC0 /* MapKit.framework */,
+				426BA8941961077A00065BC6 /* Foundation.framework */,
+				426BA8961961077A00065BC6 /* CoreGraphics.framework */,
+				426BA8981961077A00065BC6 /* UIKit.framework */,
+				426BA8B31961077B00065BC6 /* XCTest.framework */,
+				B94B124567EB493CADDFF410 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		426BA89A1961077A00065BC6 /* wUpApp */ = {
+			isa = PBXGroup;
+			children = (
+				6F1542981A7FE00500F71223 /* Segue */,
+				428E156819638811004619F6 /* coredata */,
+				42F3201B19617E3A00B64BC0 /* resources */,
+				421CF31219673F8D0077AEDC /* services */,
+				42F3201019617B2E00B64BC0 /* home */,
+				426870731969A36F007A0DD7 /* route */,
+				42F3200119610C6E00B64BC0 /* delegates */,
+				42F3200519610EB400B64BC0 /* alarm */,
+				42F3200A196112F800B64BC0 /* settings */,
+				42CD140D1962CCE900DA06A3 /* util */,
+				426BA8A61961077A00065BC6 /* Main.storyboard */,
+				426BA8AC1961077A00065BC6 /* Images.xcassets */,
+				426BA89B1961077A00065BC6 /* Supporting Files */,
+			);
+			path = wUpApp;
+			sourceTree = "<group>";
+		};
+		426BA89B1961077A00065BC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				426BA89C1961077A00065BC6 /* wUpApp-Info.plist */,
+				426BA89D1961077A00065BC6 /* InfoPlist.strings */,
+				426BA8A01961077A00065BC6 /* main.m */,
+				426BA8A21961077A00065BC6 /* wUpApp-Prefix.pch */,
+				6FCAF2A91A7A667200D35219 /* Localizable.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		426BA8B91961077B00065BC6 /* wUpAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				426BA8BF1961077B00065BC6 /* wUpAppTests.m */,
+				426BA8BA1961077B00065BC6 /* Supporting Files */,
+			);
+			path = wUpAppTests;
+			sourceTree = "<group>";
+		};
+		426BA8BA1961077B00065BC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				426BA8BB1961077B00065BC6 /* wUpAppTests-Info.plist */,
+				426BA8BC1961077B00065BC6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		428E156819638811004619F6 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				428E15601963871B004619F6 /* Model.xcdatamodeld */,
+				42651D66199B08CB00FA27F7 /* Setting.h */,
+				42651D67199B08CB00FA27F7 /* Setting.m */,
+				42651D63199B08CB00FA27F7 /* Destination.h */,
+				42651D64199B08CB00FA27F7 /* Destination.m */,
+				428E156A196389A3004619F6 /* Destination+Database.h */,
+				428E156B196389A3004619F6 /* Destination+Database.m */,
+				4280098819641EA900B0A5F0 /* Alarm+Database.h */,
+				4280098919641EA900B0A5F0 /* Alarm+Database.m */,
+				42971A0519687C200009E500 /* Setting+Database.h */,
+				42971A0619687C200009E500 /* Setting+Database.m */,
+				42651D5F199B08CA00FA27F7 /* wUpApp-Bridging-Header.h */,
+				6F1542D91A81648800F71223 /* Alarm.h */,
+				6F1542DA1A81648800F71223 /* Alarm.m */,
+			);
+			name = coredata;
+			sourceTree = "<group>";
+		};
+		429F7EAB1992F48E00F68B4E /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				42CD13ED1962466000DA06A3 /* 3d_bird_tone.mp3 */,
+				42CD13EE1962466000DA06A3 /* army_wake_up.mp3 */,
+				42CD13EF1962466000DA06A3 /* blackberry.mp3 */,
+				42CD13F01962466000DA06A3 /* clock_alarm.mp3 */,
+				42CD13F11962466000DA06A3 /* elegant_ringtone.mp3 */,
+				42CD13F31962466000DA06A3 /* htc_butterfly_2013.mp3 */,
+				42CD13F41962466000DA06A3 /* iphone_5s copy.mp3 */,
+				42CD13F51962466000DA06A3 /* iphone_5s.mp3 */,
+				42CD13F61962466000DA06A3 /* iphone_sms_message.mp3 */,
+				42CD13F81962466000DA06A3 /* nuclear_alarm.mp3 */,
+				42CD13F91962466000DA06A3 /* sms.mp3 */,
+				42CD13FA1962466000DA06A3 /* tequila.mp3 */,
+				42CD13FB1962466000DA06A3 /* v_i_p_ringtone.mp3 */,
+				42CD13FC1962466000DA06A3 /* wolf.mp3 */,
+				A650111A19AD339C000DF70C /* wup_final.m4v */,
+			);
+			name = audio;
+			sourceTree = "<group>";
+		};
+		429F7EAC1992F49600F68B4E /* font */ = {
+			isa = PBXGroup;
+			children = (
+				429F7EB31992FD9C00F68B4E /* ProximaNova-Bold.otf */,
+				429F7EB11992FB6600F68B4E /* ProximaNova-Light.otf */,
+				429F7EAF1992F84600F68B4E /* ProximaNova-Reg.otf */,
+				429F7EAD1992F49F00F68B4E /* PlutoThin.otf */,
+			);
+			name = font;
+			sourceTree = "<group>";
+		};
+		429F7EB5199314E600F68B4E /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				429719ED196862560009E500 /* UILocalNotification+NextFireDate.h */,
+				429719EE196862560009E500 /* UILocalNotification+NextFireDate.m */,
+				426870771969B9E0007A0DD7 /* UILocalNotification+LastFireDate.h */,
+				426870781969B9E0007A0DD7 /* UILocalNotification+LastFireDate.m */,
+				42302F981991BF8B00FF7BA7 /* NSString+NSString_Extended.h */,
+				42302F991991BF8B00FF7BA7 /* NSString+NSString_Extended.m */,
+				4259953F1999B4DA00196923 /* UITextField+PaddingText.h */,
+				425995401999B4DA00196923 /* UITextField+PaddingText.m */,
+			);
+			name = categories;
+			sourceTree = "<group>";
+		};
+		42CD140D1962CCE900DA06A3 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				429F7EB5199314E600F68B4E /* categories */,
+				42CD140E1962CD0C00DA06A3 /* WUPConstants.h */,
+				42CD140F1962CD0C00DA06A3 /* WUPConstants.m */,
+				428E156D19638C91004619F6 /* WUPAlertBuilderUtils.h */,
+				428E156E19638C91004619F6 /* WUPAlertBuilderUtils.m */,
+				428E15701963977F004619F6 /* WUPBaseDatabaseViewController.h */,
+				428E15711963977F004619F6 /* WUPBaseDatabaseViewController.m */,
+				421CF30F19673A360077AEDC /* WUPBaseDatabaseLocalNotificationViewController.h */,
+				421CF31019673A360077AEDC /* WUPBaseDatabaseLocalNotificationViewController.m */,
+				429719F01968651F0009E500 /* WUPDateUtils.h */,
+				429719F11968651F0009E500 /* WUPDateUtils.m */,
+				4239D35A1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.h */,
+				4239D35B1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		42F3200119610C6E00B64BC0 /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+				426BA8A31961077A00065BC6 /* WUPAppDelegate.h */,
+				426BA8A41961077A00065BC6 /* WUPAppDelegate.m */,
+			);
+			name = delegates;
+			sourceTree = "<group>";
+		};
+		42F3200519610EB400B64BC0 /* alarm */ = {
+			isa = PBXGroup;
+			children = (
+				A647C2EF19621AB4000013FF /* model */,
+				A647C2ED19621A95000013FF /* controller */,
+				A647C2EE19621AA4000013FF /* tablecell */,
+			);
+			name = alarm;
+			sourceTree = "<group>";
+		};
+		42F3200A196112F800B64BC0 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				42F3200B1961131600B64BC0 /* WUPSettingsViewController.h */,
+				42F3200C1961131600B64BC0 /* WUPSettingsViewController.m */,
+				42971A02196872B40009E500 /* WUPSetTimeToLeaveViewController.h */,
+				42971A03196872B40009E500 /* WUPSetTimeToLeaveViewController.m */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		42F3201019617B2E00B64BC0 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				42F3201119617B3C00B64BC0 /* WUPHomeViewController.h */,
+				42F3201219617B3C00B64BC0 /* WUPHomeViewController.m */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
+		42F3201B19617E3A00B64BC0 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				429F7EAC1992F49600F68B4E /* font */,
+				429F7EAB1992F48E00F68B4E /* audio */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		6F1542981A7FE00500F71223 /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				6F1542991A7FE01D00F71223 /* WUPEmptySegue.h */,
+				6F15429A1A7FE01D00F71223 /* WUPEmptySegue.m */,
+			);
+			name = Segue;
+			sourceTree = "<group>";
+		};
+		6F1542A21A7FEFF300F71223 /* DSLCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				6F1542A31A7FEFF300F71223 /* DSLCalendarDayCalloutView.h */,
+				6F1542A41A7FEFF300F71223 /* DSLCalendarDayCalloutView.m */,
+				6F1542A51A7FEFF300F71223 /* DSLCalendarDayCalloutView.xib */,
+				6F1542A61A7FEFF300F71223 /* DSLCalendarDayView.h */,
+				6F1542A71A7FEFF300F71223 /* DSLCalendarDayView.m */,
+				6F1542A81A7FEFF300F71223 /* DSLCalendarMonthSelectorView.h */,
+				6F1542A91A7FEFF300F71223 /* DSLCalendarMonthSelectorView.m */,
+				6F1542AA1A7FEFF300F71223 /* DSLCalendarMonthSelectorView.xib */,
+				6F1542AB1A7FEFF300F71223 /* DSLCalendarMonthView.h */,
+				6F1542AC1A7FEFF300F71223 /* DSLCalendarMonthView.m */,
+				6F1542AD1A7FEFF300F71223 /* DSLCalendarRange.h */,
+				6F1542AE1A7FEFF300F71223 /* DSLCalendarRange.m */,
+				6F1542AF1A7FEFF300F71223 /* DSLCalendarView.h */,
+				6F1542B01A7FEFF300F71223 /* DSLCalendarView.m */,
+				6F1542B11A7FEFF300F71223 /* Images */,
+				6F1542C01A7FEFF300F71223 /* NSDate+DSLCalendarView.h */,
+				6F1542C11A7FEFF300F71223 /* NSDate+DSLCalendarView.m */,
+			);
+			path = DSLCalendarView;
+			sourceTree = "<group>";
+		};
+		6F1542B11A7FEFF300F71223 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6F1542B21A7FEFF300F71223 /* DSLCalendar-nextMonth.png */,
+				6F1542B31A7FEFF300F71223 /* DSLCalendar-nextMonth@2x.png */,
+				6F1542B41A7FEFF300F71223 /* DSLCalendar-previousMonth.png */,
+				6F1542B51A7FEFF300F71223 /* DSLCalendar-previousMonth@2x.png */,
+				6F1542B61A7FEFF300F71223 /* DSLCalendarDayCallout.png */,
+				6F1542B71A7FEFF300F71223 /* DSLCalendarDayCallout@2x.png */,
+				6F1542B81A7FEFF300F71223 /* DSLCalendarDaySelection-left.png */,
+				6F1542B91A7FEFF300F71223 /* DSLCalendarDaySelection-left@2x.png */,
+				6F1542BA1A7FEFF300F71223 /* DSLCalendarDaySelection-middle.png */,
+				6F1542BB1A7FEFF300F71223 /* DSLCalendarDaySelection-middle@2x.png */,
+				6F1542BC1A7FEFF300F71223 /* DSLCalendarDaySelection-right.png */,
+				6F1542BD1A7FEFF300F71223 /* DSLCalendarDaySelection-right@2x.png */,
+				6F1542BE1A7FEFF300F71223 /* DSLCalendarDaySelection.png */,
+				6F1542BF1A7FEFF300F71223 /* DSLCalendarDaySelection@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A647C2ED19621A95000013FF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				42F3200219610C9400B64BC0 /* WUPListAlarmViewController.h */,
+				42F3200319610C9400B64BC0 /* WUPListAlarmViewController.m */,
+				42F3201C1961828E00B64BC0 /* WUPAddAlarmViewController.h */,
+				42F3201D1961828E00B64BC0 /* WUPAddAlarmViewController.m */,
+				A6CD52711961C0BA008DC2CC /* WUPChoseWeekdaysViewController.h */,
+				A6CD52721961C0BA008DC2CC /* WUPChoseWeekdaysViewController.m */,
+				A6CD52771961C4D9008DC2CC /* WUPChoseSongViewController.h */,
+				A6CD52781961C4D9008DC2CC /* WUPChoseSongViewController.m */,
+				A6CD527D1961C80E008DC2CC /* WUPListDestinationViewController.h */,
+				A6CD527E1961C80E008DC2CC /* WUPListDestinationViewController.m */,
+				4259953C1999B0E500196923 /* WUPChoseAlarmLabelViewController.h */,
+				4259953D1999B0E500196923 /* WUPChoseAlarmLabelViewController.m */,
+				A63342831963152E0067ACFA /* WUPAddDestinationViewController.h */,
+				A63342841963152E0067ACFA /* WUPAddDestinationViewController.m */,
+				4277FC9219CE28E400C1410A /* WUPListSearchEngineResultViewController.h */,
+				4277FC9319CE28E400C1410A /* WUPListSearchEngineResultViewController.m */,
+				6F1542951A7FDDAA00F71223 /* WUPAddAlarmeContainerViewController.h */,
+				6F1542961A7FDDAA00F71223 /* WUPAddAlarmeContainerViewController.m */,
+				6F15429C1A7FE20800F71223 /* WUPContainerAlarmViewController.h */,
+				6F15429D1A7FE20800F71223 /* WUPContainerAlarmViewController.m */,
+				6F15429F1A7FE32B00F71223 /* WUPAddAlarmCalendarViewController.h */,
+				6F1542A01A7FE32B00F71223 /* WUPChooseDayCalendarViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A647C2EE19621AA4000013FF /* tablecell */ = {
+			isa = PBXGroup;
+			children = (
+				42F3200719610F3500B64BC0 /* WUPListAlarmTableTableViewCell.h */,
+				42F3200819610F3500B64BC0 /* WUPListAlarmTableTableViewCell.m */,
+				A6CD52741961C39D008DC2CC /* WUPChoseWeekdaysTableViewCell.h */,
+				A6CD52751961C39D008DC2CC /* WUPChoseWeekdaysTableViewCell.m */,
+				A6CD527A1961C595008DC2CC /* WUPChoseSongTableViewCell.h */,
+				A6CD527B1961C595008DC2CC /* WUPChoseSongTableViewCell.m */,
+				A6CD52801961C86F008DC2CC /* WUPListDestinationTableViewCell.h */,
+				A6CD52811961C86F008DC2CC /* WUPListDestinationTableViewCell.m */,
+				4277FC9519CE296700C1410A /* WUPListSearchEngineResultTableViewCell.h */,
+				4277FC9619CE296700C1410A /* WUPListSearchEngineResultTableViewCell.m */,
+			);
+			name = tablecell;
+			sourceTree = "<group>";
+		};
+		A647C2EF19621AB4000013FF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A647C2F019621AC9000013FF /* WUPSong.h */,
+				A647C2F119621AC9000013FF /* WUPSong.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		C0A88D201F87312D159B372A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				528DEC5ECFA9918099E92CC9 /* Pods.debug.xcconfig */,
+				E21414DBF84DAFF5865FBA90 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		426BA8901961077A00065BC6 /* wUpApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 426BA8C31961077B00065BC6 /* Build configuration list for PBXNativeTarget "wUpApp" */;
+			buildPhases = (
+				38E9B89E1279419AB63C9530 /* Check Pods Manifest.lock */,
+				426BA88D1961077A00065BC6 /* Sources */,
+				426BA88E1961077A00065BC6 /* Frameworks */,
+				426BA88F1961077A00065BC6 /* Resources */,
+				B15F7344FE3A420097EFEF9B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wUpApp;
+			productName = wUpApp;
+			productReference = 426BA8911961077A00065BC6 /* wUpApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		426BA8B11961077B00065BC6 /* wUpAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 426BA8C61961077B00065BC6 /* Build configuration list for PBXNativeTarget "wUpAppTests" */;
+			buildPhases = (
+				426BA8AE1961077B00065BC6 /* Sources */,
+				426BA8AF1961077B00065BC6 /* Frameworks */,
+				426BA8B01961077B00065BC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				426BA8B81961077B00065BC6 /* PBXTargetDependency */,
+			);
+			name = wUpAppTests;
+			productName = wUpAppTests;
+			productReference = 426BA8B21961077B00065BC6 /* wUpAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		426BA8891961077A00065BC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WUP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Paulo Miguel Almeida";
+				TargetAttributes = {
+					426BA8901961077A00065BC6 = {
+						DevelopmentTeam = LG4AZ5BY77;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					426BA8B11961077B00065BC6 = {
+						TestTargetID = 426BA8901961077A00065BC6;
+					};
+				};
+			};
+			buildConfigurationList = 426BA88C1961077A00065BC6 /* Build configuration list for PBXProject "wUpApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"pt-BR",
+				pt,
+			);
+			mainGroup = 426BA8881961077A00065BC6;
+			productRefGroup = 426BA8921961077A00065BC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				426BA8901961077A00065BC6 /* wUpApp */,
+				426BA8B11961077B00065BC6 /* wUpAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		426BA88F1961077A00065BC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F1542CD1A7FEFF300F71223 /* DSLCalendar-previousMonth@2x.png in Resources */,
+				426BA8AD1961077A00065BC6 /* Images.xcassets in Resources */,
+				42CD140B1962466000DA06A3 /* v_i_p_ringtone.mp3 in Resources */,
+				6FCAF2A71A7A667200D35219 /* Localizable.strings in Resources */,
+				6F1542D41A7FEFF300F71223 /* DSLCalendarDaySelection-right.png in Resources */,
+				42CD14061962466000DA06A3 /* iphone_sms_message.mp3 in Resources */,
+				42CD13FD1962466000DA06A3 /* 3d_bird_tone.mp3 in Resources */,
+				42CD14051962466000DA06A3 /* iphone_5s.mp3 in Resources */,
+				42CD14031962466000DA06A3 /* htc_butterfly_2013.mp3 in Resources */,
+				6F1542CA1A7FEFF300F71223 /* DSLCalendar-nextMonth.png in Resources */,
+				42CD140C1962466000DA06A3 /* wolf.mp3 in Resources */,
+				42CD14081962466000DA06A3 /* nuclear_alarm.mp3 in Resources */,
+				42CD14091962466000DA06A3 /* sms.mp3 in Resources */,
+				6F1542D61A7FEFF300F71223 /* DSLCalendarDaySelection.png in Resources */,
+				429F7EAE1992F49F00F68B4E /* PlutoThin.otf in Resources */,
+				42CD13FE1962466000DA06A3 /* army_wake_up.mp3 in Resources */,
+				6F1542D11A7FEFF300F71223 /* DSLCalendarDaySelection-left@2x.png in Resources */,
+				426BA89F1961077A00065BC6 /* InfoPlist.strings in Resources */,
+				426BA8A81961077A00065BC6 /* Main.storyboard in Resources */,
+				429F7EB01992F84600F68B4E /* ProximaNova-Reg.otf in Resources */,
+				6F1542C61A7FEFF300F71223 /* DSLCalendarMonthSelectorView.xib in Resources */,
+				6F1542CF1A7FEFF300F71223 /* DSLCalendarDayCallout@2x.png in Resources */,
+				6F1542CC1A7FEFF300F71223 /* DSLCalendar-previousMonth.png in Resources */,
+				42CD14011962466000DA06A3 /* elegant_ringtone.mp3 in Resources */,
+				6F1542D31A7FEFF300F71223 /* DSLCalendarDaySelection-middle@2x.png in Resources */,
+				6F1542C31A7FEFF300F71223 /* DSLCalendarDayCalloutView.xib in Resources */,
+				6F1542CE1A7FEFF300F71223 /* DSLCalendarDayCallout.png in Resources */,
+				42CD14001962466000DA06A3 /* clock_alarm.mp3 in Resources */,
+				6F1542D01A7FEFF300F71223 /* DSLCalendarDaySelection-left.png in Resources */,
+				42CD14041962466000DA06A3 /* iphone_5s copy.mp3 in Resources */,
+				A650111B19AD339C000DF70C /* wup_final.m4v in Resources */,
+				6F1542D51A7FEFF300F71223 /* DSLCalendarDaySelection-right@2x.png in Resources */,
+				6F1542D71A7FEFF300F71223 /* DSLCalendarDaySelection@2x.png in Resources */,
+				429F7EB21992FB6600F68B4E /* ProximaNova-Light.otf in Resources */,
+				6F1542CB1A7FEFF300F71223 /* DSLCalendar-nextMonth@2x.png in Resources */,
+				429F7EB41992FD9C00F68B4E /* ProximaNova-Bold.otf in Resources */,
+				42CD140A1962466000DA06A3 /* tequila.mp3 in Resources */,
+				6F1542D21A7FEFF300F71223 /* DSLCalendarDaySelection-middle.png in Resources */,
+				42CD13FF1962466000DA06A3 /* blackberry.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		426BA8B01961077B00065BC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				426BA8BE1961077B00065BC6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38E9B89E1279419AB63C9530 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B15F7344FE3A420097EFEF9B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		426BA88D1961077A00065BC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				421CF31119673A360077AEDC /* WUPBaseDatabaseLocalNotificationViewController.m in Sources */,
+				A6CD527C1961C595008DC2CC /* WUPChoseSongTableViewCell.m in Sources */,
+				426870791969B9E0007A0DD7 /* UILocalNotification+LastFireDate.m in Sources */,
+				429719F21968651F0009E500 /* WUPDateUtils.m in Sources */,
+				426BA8A11961077A00065BC6 /* main.m in Sources */,
+				42F3200D1961131600B64BC0 /* WUPSettingsViewController.m in Sources */,
+				426870761969A38B007A0DD7 /* WUPRouteMapViewController.m in Sources */,
+				42F3201319617B3C00B64BC0 /* WUPHomeViewController.m in Sources */,
+				4239D3591969D29A00C9E40E /* MapView.m in Sources */,
+				A6CD52761961C39D008DC2CC /* WUPChoseWeekdaysTableViewCell.m in Sources */,
+				42302F9A1991BF8B00FF7BA7 /* NSString+NSString_Extended.m in Sources */,
+				4239D35C1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.m in Sources */,
+				428E15721963977F004619F6 /* WUPBaseDatabaseViewController.m in Sources */,
+				6F1542C41A7FEFF300F71223 /* DSLCalendarDayView.m in Sources */,
+				425995411999B4DA00196923 /* UITextField+PaddingText.m in Sources */,
+				4280098A19641EA900B0A5F0 /* Alarm+Database.m in Sources */,
+				4277FC9719CE296700C1410A /* WUPListSearchEngineResultTableViewCell.m in Sources */,
+				6F1542C21A7FEFF300F71223 /* DSLCalendarDayCalloutView.m in Sources */,
+				42971A0719687C200009E500 /* Setting+Database.m in Sources */,
+				42F3201E1961828E00B64BC0 /* WUPAddAlarmViewController.m in Sources */,
+				42651D68199B08CB00FA27F7 /* Setting.m in Sources */,
+				4239D3571969D29A00C9E40E /* Place.m in Sources */,
+				A647C2F219621AC9000013FF /* WUPSong.m in Sources */,
+				42302F921991BB3D00FF7BA7 /* WUPGooglePlacesAPIService.m in Sources */,
+				6F1542C71A7FEFF300F71223 /* DSLCalendarMonthView.m in Sources */,
+				4277FC9419CE28E400C1410A /* WUPListSearchEngineResultViewController.m in Sources */,
+				6F1542C81A7FEFF300F71223 /* DSLCalendarRange.m in Sources */,
+				4259953E1999B0E500196923 /* WUPChoseAlarmLabelViewController.m in Sources */,
+				A63342851963152E0067ACFA /* WUPAddDestinationViewController.m in Sources */,
+				426BA8A51961077A00065BC6 /* WUPAppDelegate.m in Sources */,
+				A6CD527F1961C80E008DC2CC /* WUPListDestinationViewController.m in Sources */,
+				A6CD52791961C4D9008DC2CC /* WUPChoseSongViewController.m in Sources */,
+				4239D3681969ED3A00C9E40E /* WUPUIGoogleMapsActivity.m in Sources */,
+				6F15429B1A7FE01D00F71223 /* WUPEmptySegue.m in Sources */,
+				428E156C196389A3004619F6 /* Destination+Database.m in Sources */,
+				4239D3581969D29A00C9E40E /* PlaceMark.m in Sources */,
+				42651D65199B08CB00FA27F7 /* Destination.m in Sources */,
+				6F1542971A7FDDAA00F71223 /* WUPAddAlarmeContainerViewController.m in Sources */,
+				6F15429E1A7FE20800F71223 /* WUPContainerAlarmViewController.m in Sources */,
+				42971A04196872B40009E500 /* WUPSetTimeToLeaveViewController.m in Sources */,
+				428E156F19638C91004619F6 /* WUPAlertBuilderUtils.m in Sources */,
+				429719EF196862560009E500 /* UILocalNotification+NextFireDate.m in Sources */,
+				6F1542DB1A81648800F71223 /* Alarm.m in Sources */,
+				42F3200919610F3500B64BC0 /* WUPListAlarmTableTableViewCell.m in Sources */,
+				6F1542C51A7FEFF300F71223 /* DSLCalendarMonthSelectorView.m in Sources */,
+				A6CD52821961C86F008DC2CC /* WUPListDestinationTableViewCell.m in Sources */,
+				6F1542D81A7FEFF300F71223 /* NSDate+DSLCalendarView.m in Sources */,
+				4239D3501969D28B00C9E40E /* RegexKitLite.m in Sources */,
+				A6CD52731961C0BA008DC2CC /* WUPChoseWeekdaysViewController.m in Sources */,
+				42F3200419610C9400B64BC0 /* WUPListAlarmViewController.m in Sources */,
+				42302F971991BBAD00FF7BA7 /* WUPGooglePlacesAPISearchResult.m in Sources */,
+				6F1542A11A7FE32B00F71223 /* WUPChooseDayCalendarViewController.m in Sources */,
+				421CF31519673FBC0077AEDC /* WUPNokiaTrafficConditionsService.m in Sources */,
+				6F1542C91A7FEFF300F71223 /* DSLCalendarView.m in Sources */,
+				4239D3611969E64B00C9E40E /* WUPUIWazeActivity.m in Sources */,
+				428E15621963871B004619F6 /* Model.xcdatamodeld in Sources */,
+				42CD14101962CD0C00DA06A3 /* WUPConstants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		426BA8AE1961077B00065BC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				426BA8C01961077B00065BC6 /* wUpAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		426BA8B81961077B00065BC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 426BA8901961077A00065BC6 /* wUpApp */;
+			targetProxy = 426BA8B71961077B00065BC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		426BA89D1961077A00065BC6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				426BA89E1961077A00065BC6 /* en */,
+				6FCAF2A51A7A664800D35219 /* pt-BR */,
+				6FCAF2AF1A7ABE3E00D35219 /* pt */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		426BA8A61961077A00065BC6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				426BA8A71961077A00065BC6 /* Base */,
+				6FCAF2A41A7A664800D35219 /* pt-BR */,
+				6FCAF2AD1A7AB75A00D35219 /* en */,
+				6FCAF2AE1A7ABE3E00D35219 /* pt */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		426BA8BC1961077B00065BC6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				426BA8BD1961077B00065BC6 /* en */,
+				6FCAF2A61A7A664800D35219 /* pt-BR */,
+				6FCAF2B11A7ABE3F00D35219 /* pt */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6FCAF2A91A7A667200D35219 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FCAF2A81A7A667200D35219 /* pt-BR */,
+				6FCAF2AA1A7A669F00D35219 /* en */,
+				6FCAF2AB1A7A66A200D35219 /* Base */,
+				6FCAF2B01A7ABE3E00D35219 /* pt */,
+			);
+			name = Localizable.strings;
+			path = wupapp;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		426BA8C11961077B00065BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "4c5f8ad2-01cb-4c1a-b09b-06c8d513adb3";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		426BA8C21961077B00065BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "4c5f8ad2-01cb-4c1a-b09b-06c8d513adb3";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		426BA8C41961077B00065BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 528DEC5ECFA9918099E92CC9 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
+				INFOPLIST_FILE = "wUpApp/wUpApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/wUpApp",
+					"$(PROJECT_DIR)/GoogleAnalytics-iOS-SDK",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-licucore",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4c5f8ad2-01cb-4c1a-b09b-06c8d513adb3";
+				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		426BA8C51961077B00065BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E21414DBF84DAFF5865FBA90 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
+				INFOPLIST_FILE = "wUpApp/wUpApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/wUpApp",
+					"$(PROJECT_DIR)/GoogleAnalytics-iOS-SDK",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					CoreGraphics,
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					Security,
+					"-framework",
+					SystemConfiguration,
+					"-licucore",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4c5f8ad2-01cb-4c1a-b09b-06c8d513adb3";
+				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		426BA8C71961077B00065BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/wUpApp.app/wUpApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "wUpAppTests/wUpAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		426BA8C81961077B00065BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/wUpApp.app/wUpApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
+				INFOPLIST_FILE = "wUpAppTests/wUpAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		426BA88C1961077A00065BC6 /* Build configuration list for PBXProject "wUpApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				426BA8C11961077B00065BC6 /* Debug */,
+				426BA8C21961077B00065BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		426BA8C31961077B00065BC6 /* Build configuration list for PBXNativeTarget "wUpApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				426BA8C41961077B00065BC6 /* Debug */,
+				426BA8C51961077B00065BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		426BA8C61961077B00065BC6 /* Build configuration list for PBXNativeTarget "wUpAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				426BA8C71961077B00065BC6 /* Debug */,
+				426BA8C81961077B00065BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		428E15601963871B004619F6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6F3BA4A81A83A2FF00599596 /* Model 2.xcdatamodel */,
+				428E15611963871B004619F6 /* Model.xcdatamodel */,
+			);
+			currentVersion = 6F3BA4A81A83A2FF00599596 /* Model 2.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 426BA8891961077A00065BC6 /* Project object */;
+}

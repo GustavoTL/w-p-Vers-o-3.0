@@ -1,0 +1,204 @@
+
+/* Class = "IBUILabel"; text = "Repetir:"; ObjectID = "0Aw-2O-aM2"; */
+"0Aw-2O-aM2.text" = "Repetir:";
+
+/* Class = "IBUILabel"; text = "Tempo para sair:"; ObjectID = "1bY-g6-jkT"; */
+"1bY-g6-jkT.text" = "Tempo para sair:";
+
+/* Class = "IBUINavigationItem"; title = "Tempo para sair"; ObjectID = "1hf-Jy-qmf"; */
+"1hf-Jy-qmf.title" = "Tempo para sair";
+
+/* Class = "IBUINavigationItem"; title = "Repetir"; ObjectID = "4VB-yq-NWj"; */
+"4VB-yq-NWj.title" = "Repetir";
+
+/* Class = "IBUIBarButtonItem"; title = "Salvar"; ObjectID = "5D7-vh-5kR"; */
+"5D7-vh-5kR.title" = "Salvar";
+
+/* Class = "IBUILabel"; text = "para você sair"; ObjectID = "80R-aq-3TB"; */
+"80R-aq-3TB.text" = "para você sair";
+
+/* Class = "IBUILabel"; text = "Ao acordar, quanto tempo"; ObjectID = "86l-Ii-aWH"; */
+"86l-Ii-aWH.text" = "Ao acordar, quanto tempo";
+
+/* Class = "IBUILabel"; text = "Todo Domingo"; ObjectID = "8he-Ab-srQ"; */
+"8he-Ab-srQ.text" = "Todo Domingo";
+
+/* Class = "IBUILabel"; text = "Distância:"; ObjectID = "9jr-5e-1hD"; */
+"9jr-5e-1hD.text" = "Distância:";
+
+/* Class = "IBUILabel"; text = "Destino:"; ObjectID = "AtR-cI-dD9"; */
+"AtR-cI-dD9.text" = "Destino:";
+
+/* Class = "IBUILabel"; text = "8 mar 2014"; ObjectID = "CSy-tz-05f"; */
+"CSy-tz-05f.text" = "8 mar 2014";
+
+/* Class = "IBUIBarButtonItem"; title = "Voltar"; ObjectID = "ClC-pk-9s7"; */
+"ClC-pk-9s7.title" = "Voltar";
+
+/* Class = "IBUIBarButtonItem"; title = "Voltar"; ObjectID = "EDd-e0-Lsy"; */
+"EDd-e0-Lsy.title" = "Voltar";
+
+/* Class = "IBUINavigationItem"; title = "Destinos"; ObjectID = "EVb-Ad-nOp"; */
+"EVb-Ad-nOp.title" = "Destinos";
+
+/* Class = "IBUILabel"; text = "Av. das Nações Unidas, 4777 - Alto de Pinheiros, São Paulo - SP, Brasil"; ObjectID = "FMA-de-7dU"; */
+"FMA-de-7dU.text" = "Av. das Nações Unidas, 4777 - Alto de Pinheiros, São Paulo - SP, Brasil";
+
+/* Class = "IBUINavigationItem"; title = "Etiqueta"; ObjectID = "FQa-l9-Hdb"; */
+"FQa-l9-Hdb.title" = "Etiqueta";
+
+/* Class = "IBUITextField"; placeholder = "Ex: Trabalho, Academia ..."; ObjectID = "FZ1-hS-ijX"; */
+"FZ1-hS-ijX.placeholder" = "Ex: Trabalho, Academia ...";
+
+/* Class = "IBUILabel"; text = "LODUCCA:"; ObjectID = "FmB-Ra-oea"; */
+"FmB-Ra-oea.text" = "LODUCCA:";
+
+/* Class = "IBUILabel"; text = "Avaliar na App Store"; ObjectID = "GxT-p4-Cdm"; */
+"GxT-p4-Cdm.text" = "Avaliar na App Store";
+
+/* Class = "IBUILabel"; text = "Radiate"; ObjectID = "HLi-UA-YLr"; */
+"HLi-UA-YLr.text" = "Radiate";
+
+/* Class = "IBUILabel"; text = "Etiqueta:"; ObjectID = "Ht1-nb-J7R"; */
+"Ht1-nb-J7R.text" = "Etiqueta:";
+
+/* Class = "IBUILabel"; text = "Rota do seu próximo"; ObjectID = "Hxt-c4-MTN"; */
+"Hxt-c4-MTN.text" = "Rota do seu próximo";
+
+/* Class = "IBUITextField"; placeholder = "Ex: Rua, cidade, estado"; ObjectID = "IN8-mu-lg7"; */
+"IN8-mu-lg7.placeholder" = "Ex: Rua, cidade, estado";
+
+/* Class = "IBUILabel"; text = "Instruções"; ObjectID = "KK7-Rf-g3I"; */
+"KK7-Rf-g3I.text" = "Instruções";
+
+/* Class = "IBUIBarButtonItem"; title = "Salvar"; ObjectID = "KP1-ex-2Se"; */
+"KP1-ex-2Se.title" = "Salvar";
+
+/* Class = "IBUILabel"; text = "2h 04m 30s"; ObjectID = "MJ0-Hr-XHN"; */
+"MJ0-Hr-XHN.text" = "2h 04m 30s";
+
+/* Class = "IBUIBarButtonItem"; title = "Cancelar"; ObjectID = "N0i-gF-CYB"; */
+"N0i-gF-CYB.title" = "Cancelar";
+
+/* Class = "IBUIBarButtonItem"; title = "Voltar"; ObjectID = "NA2-sH-oDG"; */
+"NA2-sH-oDG.title" = "Voltar";
+
+/* Class = "IBUIBarButtonItem"; title = "Salvar"; ObjectID = "NN4-pc-EbT"; */
+"NN4-pc-EbT.title" = "Salvar";
+
+/* Class = "IBUILabel"; text = "você leva para sair de casa?"; ObjectID = "QrN-ed-jpf"; */
+"QrN-ed-jpf.text" = "você leva para sair de casa?";
+
+/* Class = "IBUILabel"; text = "15 min"; ObjectID = "RYb-1m-7aG"; */
+"RYb-1m-7aG.text" = "15 min";
+
+/* Class = "IBUINavigationItem"; title = "Cadastro"; ObjectID = "Si8-z9-O5n"; */
+"Si8-z9-O5n.title" = "Cadastro";
+
+/* Class = "IBUILabel"; text = "21:00"; ObjectID = "VeE-NK-tQn"; */
+"VeE-NK-tQn.text" = "21:00";
+
+/* Class = "IBUILabel"; text = "Destino:"; ObjectID = "WMt-Ds-VpU"; */
+"WMt-Ds-VpU.text" = "Destino:";
+
+/* Class = "IBUILabel"; text = "15km"; ObjectID = "WuL-11-vpB"; */
+"WuL-11-vpB.text" = "15km";
+
+/* Class = "IBUIButton"; normalTitle = "Adicionar Alarme"; ObjectID = "Wy5-LJ-VUG"; */
+"Wy5-LJ-VUG.normalTitle" = "Adicionar Alarme";
+
+/* Class = "IBUIBarButtonItem"; title = "Voltar"; ObjectID = "Zgr-9T-XVD"; */
+"Zgr-9T-XVD.title" = "Voltar";
+
+/* Class = "IBUINavigationItem"; title = "Resultados"; ObjectID = "ZoD-6w-PVX"; */
+"ZoD-6w-PVX.title" = "Resultados";
+
+/* Class = "IBUILabel"; text = "Você ainda não possui alarmes cadastrados."; ObjectID = "c1c-b4-mbj"; */
+"c1c-b4-mbj.text" = "Você ainda não possui alarmes cadastrados.";
+
+/* Class = "IBUINavigationItem"; title = "Som"; ObjectID = "ceo-fC-sha"; */
+"ceo-fC-sha.title" = "Som";
+
+/* Class = "IBUILabel"; text = "09:00"; ObjectID = "ciJ-HX-gng"; */
+"ciJ-HX-gng.text" = "09:00";
+
+/* Class = "IBUILabel"; text = "Som:"; ObjectID = "cyB-NK-UOw"; */
+"cyB-NK-UOw.text" = "Som:";
+
+/* Class = "IBUILabel"; text = "Av Sumaré, 600"; ObjectID = "d4j-0a-q4j"; */
+"d4j-0a-q4j.text" = "Av Sumaré, 600";
+
+/* Class = "IBUILabel"; text = "Tempo:"; ObjectID = "ex7-Et-ft4"; */
+"ex7-Et-ft4.text" = "Tempo:";
+
+/* Class = "IBUILabel"; text = "deseja chegar no seu destino?"; ObjectID = "fLK-Ob-FZo"; */
+"fLK-Ob-FZo.text" = "deseja chegar no seu destino?";
+
+/* Class = "IBUILabel"; text = "Que horas você"; ObjectID = "g9I-az-Eem"; */
+"g9I-az-Eem.text" = "Que horas você";
+
+/* Class = "IBUINavigationItem"; title = "Rota"; ObjectID = "gfi-qL-0BV"; */
+"gfi-qL-0BV.title" = "Rota";
+
+/* Class = "IBUIBarButtonItem"; title = "Voltar"; ObjectID = "hAC-S0-c9W"; */
+"hAC-S0-c9W.title" = "Voltar";
+
+/* Class = "IBUILabel"; text = "alarme ativo"; ObjectID = "hrt-Nu-9ol"; */
+"hrt-Nu-9ol.text" = "alarme ativo";
+
+/* Class = "IBUILabel"; text = "Indicar para amigos"; ObjectID = "hx3-Ye-xA9"; */
+"hx3-Ye-xA9.text" = "Indicar para amigos";
+
+/* Class = "IBUILabel"; text = "1h30min"; ObjectID = "iJn-RB-FUv"; */
+"iJn-RB-FUv.text" = "1h30min";
+
+/* Class = "IBUIBarButtonItem"; title = "Iniciar"; ObjectID = "k1t-Fr-CIt"; */
+"k1t-Fr-CIt.title" = "Iniciar";
+
+/* Class = "IBUINavigationItem"; title = "Cadastro"; ObjectID = "klM-iP-IQN"; */
+"klM-iP-IQN.title" = "Cadastro";
+
+/* Class = "IBUILabel"; text = "casa para o trabalho"; ObjectID = "kvb-7G-UZU"; */
+"kvb-7G-UZU.text" = "casa para o trabalho";
+
+/* Class = "IBUILabel"; text = "10 km"; ObjectID = "lJQ-w3-H8G"; */
+"lJQ-w3-H8G.text" = "10 km";
+
+/* Class = "IBUILabel"; text = "Radiate"; ObjectID = "mba-ZE-Sfq"; */
+"mba-ZE-Sfq.text" = "Radiate";
+
+/* Class = "IBUIBarButtonItem"; title = "Salvar"; ObjectID = "rV0-as-Jiw"; */
+"rV0-as-Jiw.title" = "Salvar";
+
+/* Class = "IBUILabel"; text = "Shopping Villa Lobos"; ObjectID = "sCu-HW-MLv"; */
+"sCu-HW-MLv.text" = "Shopping Villa Lobos";
+
+/* Class = "IBUIBarButtonItem"; title = "Voltar"; ObjectID = "sss-qP-5RJ"; */
+"sss-qP-5RJ.title" = "Voltar";
+
+/* Class = "IBUIBarButtonItem"; title = "Salvar"; ObjectID = "svy-N6-BO1"; */
+"svy-N6-BO1.title" = "Salvar";
+
+/* Class = "IBUIBarButtonItem"; title = "Salvar"; ObjectID = "tfF-r0-AF0"; */
+"tfF-r0-AF0.title" = "Salvar";
+
+/* Class = "IBUILabel"; text = "Trabalho:"; ObjectID = "ud6-gM-fSh"; */
+"ud6-gM-fSh.text" = "Trabalho:";
+
+/* Class = "IBUILabel"; text = "Trabalho"; ObjectID = "xFC-o1-8vY"; */
+"xFC-o1-8vY.text" = "Trabalho";
+
+/* Class = "IBUILabel"; text = "Configure aqui o tempo que voce leva para sair depois de acordar:"; ObjectID = "xag-Kn-FWG"; */
+"xag-Kn-FWG.text" = "Configure aqui o tempo que voce leva para sair depois de acordar:";
+
+/* Class = "IBUINavigationItem"; title = "Sobre o App"; ObjectID = "xdM-FJ-2fM"; */
+"xdM-FJ-2fM.title" = "Sobre o App";
+
+/* Class = "IBUILabel"; text = "Dias de Semana"; ObjectID = "xn2-wa-qqq"; */
+"xn2-wa-qqq.text" = "Dias de Semana";
+
+/* Class = "IBUINavigationItem"; title = "Alarmes"; ObjectID = "z5D-rq-VHl"; */
+"z5D-rq-VHl.title" = "Alarmes";
+
+/* Class = "IBUIBarButtonItem"; title = "Voltar"; ObjectID = "zkK-Kz-z7l"; */
+"zkK-Kz-z7l.title" = "Voltar";
