@@ -120,8 +120,16 @@
     NSLog(@"%s - Start",__PRETTY_FUNCTION__);
 #endif
     NSDate* originalDate = date;
-    for(int i=0; i < [WUPConstants NUMBER_REPEAT_ALARMS];i++)
-    {
+    
+    int totlaNotification = [WUPConstants NUMBER_REPEAT_ALARMS];
+    
+    if(timeToLeave == 0) {
+        
+        totlaNotification = 1;
+    }
+    
+    
+    for(int i=0; i < totlaNotification;i++) {
      
         NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] init];
         [userInfo setObject:objectID.URIRepresentation.absoluteString forKey:[WUPConstants OBJECT_ABSOLUTEURL_LOCALNOTIFICATION]];
@@ -130,20 +138,25 @@
         NSString* message;
         NSDate* dateToFire;
         
-        message = [NSString stringWithFormat:@"[%@] - É hora de acordar!",label];
+        //message = [NSString stringWithFormat:@"[%@] - É hora de acordar!",label];
+        message = [NSString stringWithFormat:NSLocalizedString(@"alert_sair", nil), ((int)timeToLeave / 60)];
+        
         dateToFire = date;
         
-        if(i == 0)
-        {
+        if(i == 0 && timeToLeave > 0) {
+            
             [userInfo setObject:[WUPConstants OBJECT_MASTER_LOCALNOTIFICATION] forKey:[WUPConstants OBJECT_MASTER_LOCALNOTIFICATION]];
-        }else if (i == [WUPConstants NUMBER_REPEAT_ALARMS] - 1)
-        {
+        
+        } else if (i == totlaNotification - 1) {
+            
             [userInfo setObject:[WUPConstants OBJECT_TIMETOLEAVE_LOCALNOTIFICATION] forKey:[WUPConstants OBJECT_TIMETOLEAVE_LOCALNOTIFICATION]];
-            message = [NSString stringWithFormat:@"[%@] - É hora de sair!",label];
+            message = [NSString stringWithFormat:NSLocalizedString(@"alert_hora_sair", nil),label];
             
             dateToFire = [originalDate dateByAddingTimeInterval:timeToLeave];
+            
+            
         }
-        
+                
         UILocalNotification* ln = [[UILocalNotification alloc] init];
         ln.soundName = soundName;
         ln.timeZone = [NSTimeZone defaultTimeZone];
@@ -272,15 +285,15 @@
     return arrayFoundNotifications;
 }
 
--(NSArray*) scheduledTimeToLeaveLocalNotifications
-{
+-(NSArray*) scheduledTimeToLeaveLocalNotifications {
+    
 #ifdef  DEBUG
     NSLog(@"%s - Start",__PRETTY_FUNCTION__);
 #endif
     NSArray* arrayNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
     NSMutableArray* arrayFoundNotifications = [[NSMutableArray alloc] init];
     
-    for(int i = 0; i < [arrayNotifications count]; i++){
+    for(int i = 0; i < [arrayNotifications count]; i++) {
         UILocalNotification *local = [arrayNotifications objectAtIndex:i];
 #ifdef  __DEBUG_FINEST__
         NSLog(@"%s fireDate:%@ soundName:%@ repeatInterval:%lu",__PRETTY_FUNCTION__,local.fireDate, local.soundName, (long)local.repeatInterval);

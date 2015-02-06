@@ -9,3 +9,5 @@
 "estou_aqui" = "I'm here";
 "repetir" = "Repeat";
 "dia" = "Day:";
+"alert_sair" = "Get ready to go on:% d minutes";
+"alert_hora_sair" = "[%@] - It's time to leave";

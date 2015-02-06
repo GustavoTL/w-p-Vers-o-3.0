@@ -13,10 +13,9 @@
 
 @implementation WUPGooglePlacesAPIService
 
--(void) searchLocationsWithName:(NSString*) name AndLocation:(CLLocationCoordinate2D) myLocation success:(void (^)(NSArray* arrayLocationsFound)) success failure:(void (^)()) failure
-{
+-(void) searchLocationsWithName:(NSString*) name AndLocation:(CLLocationCoordinate2D) myLocation success:(void (^)(NSArray* arrayLocationsFound)) success failure:(void (^)()) failure {
     
-    NSString* urlLocation = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/textsearch/json?query=%@&location=%f,%f&radius=%d&key=%@",[name urlencode],myLocation.latitude,myLocation.longitude,GOOGLEAPIS_PLACESAPI_DEFAULT_RADIUS, GOOGLEAPIS_SERVERKEY];
+    NSString *urlLocation = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/textsearch/json?query=%@&location=%f,%f&radius=%d&key=%@",[name urlencode],myLocation.latitude,myLocation.longitude,GOOGLEAPIS_PLACESAPI_DEFAULT_RADIUS, GOOGLEAPIS_SERVERKEY];
     
     NSLog(@"%s: %@",__PRETTY_FUNCTION__,urlLocation);
    
@@ -46,8 +45,8 @@
             }
 
             success(foundLocationsArray);
-        }
-        @catch (NSException *exception) {
+        
+        } @catch (NSException *exception) {
             failure();
         }
         

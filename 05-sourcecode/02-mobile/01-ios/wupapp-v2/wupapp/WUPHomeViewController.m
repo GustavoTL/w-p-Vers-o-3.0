@@ -226,10 +226,10 @@
     }
 }
 
--(void) updateTrafficToNextLocationNotification
-{
-    if(self.nextLocationNotification)
-    {
+-(void) updateTrafficToNextLocationNotification {
+    
+    if(self.nextLocationNotification) {
+        
         NSDictionary* userInfoDict = self.nextLocationNotification.userInfo;
         Alarm  *alarm = [self alarmFromNotificationUserInfo:userInfoDict];
         

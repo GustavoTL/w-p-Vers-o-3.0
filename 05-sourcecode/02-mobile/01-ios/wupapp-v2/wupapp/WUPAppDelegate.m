@@ -96,13 +96,22 @@
     NSString* timeToLeave = [userInfo objectForKey:[WUPConstants OBJECT_TIMETOLEAVE_LOCALNOTIFICATION]];
     
     if (state == UIApplicationStateActive) {
-        if(master){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarme"
-                                                            message:notification.alertBody
-                                                           delegate:self cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-        }
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarme"
+                                                        message:notification.alertBody
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+//        if(master){
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarme"
+//                                                            message:notification.alertBody
+//                                                           delegate:self
+//                                                  cancelButtonTitle:@"OK"
+//                                                  otherButtonTitles:nil];
+//            [alert show];
+//        }
 //        else if(timeToLeave){
 //            UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
 //            [tab setSelectedIndex:2];
@@ -115,7 +124,7 @@
     }
     
     application.applicationIconBadgeNumber = 0;
-    [[UIApplication sharedApplication]cancelAllLocalNotifications];
+    //[[UIApplication sharedApplication]cancelAllLocalNotifications];
 }
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
