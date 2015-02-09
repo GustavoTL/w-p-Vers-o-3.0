@@ -511,8 +511,8 @@
     [self commonOnCalculateTrafficTimeWithDate:date AndAlarm:alarm];
 }
 
--(void) failureOnCalculateTrafficTimeWithAlarm:(Alarm*) alarm
-{
+-(void) failureOnCalculateTrafficTimeWithAlarm:(Alarm*) alarm {
+    
     [self commonOnCalculateTrafficTimeWithDate:self.dataPicker.date AndAlarm:alarm];
 }
 
@@ -524,8 +524,14 @@
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     });
+    
     //Inserting new LocalNotification
-    [self insertNewWeeklyScheduledLocalNotificationWithDate:date AndRepeatInterval:alarm.repeatsFor AndSound:[NSString stringWithFormat:@"%@.%@",alarm.soundFilename,alarm.soundExtension] AndLabel:alarm.label AndTimeToLeave:[alarm.timeToLeave intValue] AndObjectID:alarm.objectID];
+    [self insertNewWeeklyScheduledLocalNotificationWithDate:date
+                                          AndRepeatInterval:alarm.repeatsFor
+                                                   AndSound:[NSString stringWithFormat:@"%@.%@",alarm.soundFilename,alarm.soundExtension]
+                                                   AndLabel:alarm.label
+                                             AndTimeToLeave:[alarm.timeToLeave intValue]
+                                                AndObjectID:alarm.objectID];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

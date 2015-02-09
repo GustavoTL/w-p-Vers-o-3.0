@@ -15,7 +15,6 @@
 @implementation WUPBaseDatabaseLocalNotificationViewController
 
 #pragma mark - Local Notifications handling
-
 -(void) listScheduledMasterLocalNotifications
 {
 #ifdef  DEBUG
@@ -128,8 +127,7 @@
         totlaNotification = 1;
     }
     
-    
-    for(int i=0; i < totlaNotification;i++) {
+    for(int i = 0; i < totlaNotification; i++) {
      
         NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] init];
         [userInfo setObject:objectID.URIRepresentation.absoluteString forKey:[WUPConstants OBJECT_ABSOLUTEURL_LOCALNOTIFICATION]];
@@ -154,8 +152,9 @@
             
             dateToFire = [originalDate dateByAddingTimeInterval:timeToLeave];
             
-            
         }
+        
+        NSLog(@"repeatInteval %lu", repeatInteval);
                 
         UILocalNotification* ln = [[UILocalNotification alloc] init];
         ln.soundName = soundName;
@@ -172,7 +171,7 @@
         NSLog(@"%s scheduling:i:%d fireDate:%@ soundName:%@ repeatInterval:%lu",__PRETTY_FUNCTION__,i,ln.fireDate, ln.soundName, (long)ln.repeatInterval);
 #endif
         
-        date = [date dateByAddingTimeInterval:40]; //Adding 40 seconds interval from on local notification to another
+        //date = [date dateByAddingTimeInterval:40]; //Adding 40 seconds interval from on local notification to another
         
     }
 #ifdef  __DEBUG_FINEST__
@@ -180,8 +179,7 @@
 #endif
 }
 
--(void) insertNewWeeklyScheduledLocalNotificationWithDate:(NSDate*) date AndRepeatInterval:(NSString*)repeatInteval AndSound:(NSString*) soundName AndLabel:(NSString*) label AndTimeToLeave:(NSTimeInterval)timeToLeave AndObjectID:(NSManagedObjectID*) objectID
-{
+-(void) insertNewWeeklyScheduledLocalNotificationWithDate:(NSDate*) date AndRepeatInterval:(NSString*)repeatInteval AndSound:(NSString*) soundName AndLabel:(NSString*) label AndTimeToLeave:(NSTimeInterval)timeToLeave AndObjectID:(NSManagedObjectID*) objectID {
 
     NSLocale *ptLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"];
     NSDateFormatter* dateformatter = [[NSDateFormatter alloc] init];
@@ -190,12 +188,12 @@
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
-    
     if(![repeatInteval isEqualToString:@""]) {
         
         NSArray* repeatDays = [repeatInteval componentsSeparatedByString:@", "];
     
-        NSDateComponents *comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit fromDate:date];
+        NSDateComponents *comps = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit
+                                              fromDate:date];
         
         for(NSString* weekday in repeatDays) {
             
@@ -249,7 +247,6 @@
                                            AndTimeToLeave:timeToLeave
                                               AndObjectID:objectID];
     }
-
 }
 
 -(void) cleanIconBadgeNumber{

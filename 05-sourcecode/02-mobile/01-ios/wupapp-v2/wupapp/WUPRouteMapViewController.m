@@ -305,14 +305,14 @@
 
 #pragma mark - CLLocationManagerDelegate methods
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.location = [locations lastObject];
     [self.locationManager stopUpdatingLocation];
     [self updateRouteOnMap];
 }
 
--(Alarm*) parseLocalNotification:(UILocalNotification*) localNotification
-{
+-(Alarm*) parseLocalNotification:(UILocalNotification*) localNotification {
+    
     //Getting Alarm from LocalNotification
     NSDictionary* userInfoDict = localNotification.userInfo;
     NSURL *reconstructedClassURL = [NSURL URLWithString:[userInfoDict objectForKey:[WUPConstants OBJECT_ABSOLUTEURL_LOCALNOTIFICATION]]];

@@ -22,4 +22,6 @@
 
 -(void) searchLocationsWithName:(NSString*) name AndLocation:(CLLocationCoordinate2D) myLocation success:(void (^)(NSArray* arrayLocationsFound)) success failure:(void (^)()) failure;
 
++ (double) distanceBetweenLat1:(double)lat1 lon1:(double)lon1
+                          lat2:(double)lat2 lon2:(double)lon2;
 @end

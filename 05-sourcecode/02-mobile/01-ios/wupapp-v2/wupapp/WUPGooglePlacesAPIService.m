@@ -39,7 +39,7 @@
                 googlePlaceAPIResult.name = [resultJSONObject objectForKey:@"name"];
                 googlePlaceAPIResult.formattedAddress = [resultJSONObject objectForKey:@"formatted_address"];
                 googlePlaceAPIResult.location = CLLocationCoordinate2DMake([[locationJSONObject objectForKey:@"lat"] doubleValue], [[locationJSONObject objectForKey:@"lng"] doubleValue]);
-                googlePlaceAPIResult.distanceFromHere = [self distanceBetweenLat1:myLocation.latitude lon1:myLocation.longitude lat2:googlePlaceAPIResult.location.latitude lon2:googlePlaceAPIResult.location.longitude];
+                googlePlaceAPIResult.distanceFromHere = [WUPGooglePlacesAPIService distanceBetweenLat1:myLocation.latitude lon1:myLocation.longitude lat2:googlePlaceAPIResult.location.latitude lon2:googlePlaceAPIResult.location.longitude];
                 
                 [foundLocationsArray addObject:googlePlaceAPIResult];
             }
@@ -58,7 +58,7 @@
     }];
 }
 
-- (double) distanceBetweenLat1:(double)lat1 lon1:(double)lon1
++ (double) distanceBetweenLat1:(double)lat1 lon1:(double)lon1
                           lat2:(double)lat2 lon2:(double)lon2 {
     //degrees to radians
     double lat1rad = lat1 * M_PI/180;

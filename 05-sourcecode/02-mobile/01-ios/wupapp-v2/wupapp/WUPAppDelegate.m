@@ -9,6 +9,12 @@
 #import "WUPAppDelegate.h"
 #import "WUPHomeViewController.h"
 
+@interface WUPAppDelegate () <CLLocationManagerDelegate>
+
+@property (strong,nonatomic) CLLocationManager *locationManager;
+
+@end
+
 @implementation WUPAppDelegate
 
 //Persistent properties
@@ -32,6 +38,34 @@
     [GAI sharedInstance].dispatchInterval = 20;
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelError];
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-55004640-1"];
+    
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    SEL requestSelector = NSSelectorFromString(@"requestWhenInUseAuthorization");
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
+        [self.locationManager respondsToSelector:requestSelector]) {
+        
+        ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
+        
+        if(IS_OS_8_OR_LATER) {
+            [self.locationManager requestAlwaysAuthorization];
+        }
+        
+        [self.locationManager startUpdatingLocation];
+        
+    } else {
+        
+        if(IS_OS_8_OR_LATER) {
+            [self.locationManager requestAlwaysAuthorization];
+        }
+        
+        [self.locationManager startUpdatingLocation];
+        
+    }
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
     // The following line must only run under iOS 8. This runtime check prevents
@@ -85,8 +119,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
-{
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
     NSLog(@"%s",__PRETTY_FUNCTION__);
     UIApplicationState state = [application applicationState];
     NSDictionary* userInfo = notification.userInfo;
@@ -104,20 +138,35 @@
                                               otherButtonTitles:nil];
         [alert show];
         
-//        if(master){
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarme"
-//                                                            message:notification.alertBody
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"OK"
-//                                                  otherButtonTitles:nil];
-//            [alert show];
-//        }
-//        else if(timeToLeave){
-//            UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
-//            [tab setSelectedIndex:2];
-//        }
+        if(master) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarme"
+                                                            message:notification.alertBody
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        
+        } else if(timeToLeave){
+            UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
+            [tab setSelectedIndex:2];
+        }
+   
     } else if(state == UIApplicationStateInactive){
+        
+        NSLog(@"master %@", master);
+        NSLog(@"timeToLeave %@", timeToLeave);
+        
+        if(master){
+            
+            UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
+            WUPHomeViewController *home = [tab.viewControllers objectAtIndex:0];
+            
+            [home listScheduledMasterLocalNotifications];
+            [home updateNextLocalNotification];
+        }
+        
         if(timeToLeave){
+        
             UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
             [tab setSelectedIndex:2];
         }
@@ -128,8 +177,6 @@
 }
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    
-    
     
     NSArray* arrayNotifications = [application scheduledLocalNotifications];
     
@@ -330,6 +377,18 @@
 
 - (NSString *)applicationDocumentsDirectory {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+#pragma mark - CLLocationManagerDelegate methods
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    NSLog(@"AppDelegate %@", locations);
+    
+    if(self.delegate != NULL) {
+    
+        [self.delegate willUpdateLocation:[locations lastObject]];
+    }
+    
 }
 
 @end

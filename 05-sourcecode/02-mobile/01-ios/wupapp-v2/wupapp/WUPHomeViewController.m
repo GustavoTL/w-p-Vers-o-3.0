@@ -7,6 +7,7 @@
 //
 
 #import "WUPHomeViewController.h"
+#import "WUPGooglePlacesAPIService.h"
 
 @interface WUPHomeViewController ()
 
@@ -74,13 +75,14 @@
 
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
+-(void)viewWillAppear:(BOOL)animated {
+    
     [super viewWillAppear:animated];
+    
     //Changing TabBar Appearance
     UITabBar *tabBar = self.tabBarController.tabBar;
-    if ([tabBar respondsToSelector:@selector(setBackgroundImage:)])
-    {
+    if ([tabBar respondsToSelector:@selector(setBackgroundImage:)]) {
+        
         // set it just for this instance
         [tabBar setBackgroundImage:[UIImage imageNamed:@"navbar_home_image"]];
     }
@@ -95,21 +97,38 @@
     self.timerNowClock = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateNowClock) userInfo:nil repeats:YES];
     self.timerTimeToGoClock = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimeToGoUI) userInfo:nil repeats:YES];
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    SEL requestSelector = NSSelectorFromString(@"requestWhenInUseAuthorization");
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
-        [self.locationManager respondsToSelector:requestSelector]) {
-        ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
-        [self.locationManager startUpdatingLocation];
-    } else {
-        [self.locationManager startUpdatingLocation];
-    }
-    
-    [self.locationManager startUpdatingLocation];
+//    self.locationManager = [[CLLocationManager alloc] init];
+//    self.locationManager.delegate = self;
+//    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    
+//    SEL requestSelector = NSSelectorFromString(@"requestWhenInUseAuthorization");
+//    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
+//        [self.locationManager respondsToSelector:requestSelector]) {
+//        
+//        ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
+//    
+//        if(IS_OS_8_OR_LATER) {
+//            [self.locationManager requestAlwaysAuthorization];
+//        }
+//        
+//        [self.locationManager startUpdatingLocation];
+//    
+//    } else {
+//    
+//        if(IS_OS_8_OR_LATER) {
+//            [self.locationManager requestAlwaysAuthorization];
+//        }
+//        
+//        [self.locationManager startUpdatingLocation];
+//    
+//    }
+//    
+//    if(IS_OS_8_OR_LATER) {
+//        [self.locationManager requestAlwaysAuthorization];
+//    }
+//    
+//    [self.locationManager startUpdatingLocation];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -126,8 +145,8 @@
     }
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
+-(void)viewWillDisappear:(BOOL)animated {
+    
     [super viewWillDisappear:animated];
     [self.timerNowClock invalidate];
     [self.timerTimeToGoClock invalidate];
@@ -136,8 +155,8 @@
 
 #pragma mark - Actions methods
 
--(void) updateNowClock
-{
+-(void) updateNowClock {
+    
     NSDate* date = [NSDate date];
     self.nowLabel.text = [self.dateFormatterNowClock stringFromDate:date];
     self.dateLongLabel.text = [NSString stringWithFormat:@"%@ - %@",[self.dateFormatterNowLongFormatClock stringFromDate:date],[[self.dateFormatterNowWeekdayFormatClock stringFromDate:date] capitalizedString]];
@@ -149,8 +168,8 @@
     
     [self updateNextLocalNotification];
     
-    if(self.nextLocationNotification)
-    {
+    if(self.nextLocationNotification) {
+        
         self.timeToGoImage.hidden = NO;
         self.timeToGoLabel.hidden = NO;
         self.timeToGoDescriptionLabel.hidden = NO;
@@ -235,7 +254,10 @@
         
         WUPNokiaTrafficConditionsService* trafficService = [[WUPNokiaTrafficConditionsService alloc]init];
         
-        [trafficService calculateRouteTravelTimeUsing:self.location.coordinate AndDestination:CLLocationCoordinate2DMake([alarm.destination.latitude doubleValue],[alarm.destination.longitude doubleValue]) success:^(int ETATime,int distancewwww) {
+        [trafficService calculateRouteTravelTimeUsing:self.location.coordinate
+                                       AndDestination:CLLocationCoordinate2DMake([alarm.destination.latitude doubleValue],[alarm.destination.longitude doubleValue])
+                                              success:^(int ETATime,int distancewwww) {
+                                                  
             [self successOnCalculateTrafficTimeWithAlarm:alarm AndETATime:ETATime];
         } failure:^{
             [self failureOnCalculateTrafficTimeWithAlarm:alarm];
@@ -285,19 +307,72 @@
     // Only try to replace alarm if this alarm isn't set for never repeating
     if(![alarm.repeatsFor isEqualToString:@""]){
     
-        [self removeScheduledLocalNotificationsWithId:alarm.objectID];
+        [self removeScheduledLocalNotificationsWithId:alarm.objectID]; 
 
         //Inserting new LocalNotification
-        [self insertNewWeeklyScheduledLocalNotificationWithDate:date AndRepeatInterval:alarm.repeatsFor AndSound:[NSString stringWithFormat:@"%@.%@",alarm.soundFilename,alarm.soundExtension] AndLabel:alarm.label AndTimeToLeave:[alarm.timeToLeave intValue] AndObjectID:alarm.objectID];
+        [self insertNewWeeklyScheduledLocalNotificationWithDate:date
+                                              AndRepeatInterval:alarm.repeatsFor
+                                                       AndSound:[NSString stringWithFormat:@"%@.%@",alarm.soundFilename,alarm.soundExtension]
+                                                       AndLabel:alarm.label
+                                                 AndTimeToLeave:[alarm.timeToLeave intValue]
+                                                    AndObjectID:alarm.objectID];
     }
+}
+
+-(void)updateLocation:(CLLocation *)location {
+
+    if(self.location != NULL) {
+        
+        CLLocationCoordinate2D oldLocation = self.location.coordinate;
+        CLLocationCoordinate2D newLocation = location.coordinate;
+        
+        double raio = [WUPGooglePlacesAPIService distanceBetweenLat1:oldLocation.latitude
+                                                                lon1:oldLocation.longitude
+                                                                lat2:newLocation.latitude
+                                                                lon2:newLocation.longitude];
+        
+        NSLog(@"raio HOME %f", raio);
+        
+        if(raio < 1000) {
+            
+            return;
+        }
+    }
+    
+    self.location = location;
+    
+    //[self.locationManager stopUpdatingLocation];
+    
+    [self updateTrafficToNextLocationNotification];
 }
 
 #pragma mark - CLLocationManagerDelegate methods
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    self.location = [locations lastObject];
-    [self.locationManager stopUpdatingLocation];
-    [self updateTrafficToNextLocationNotification];
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+//    if(self.location != NULL) {
+//        
+//        CLLocation *location = [locations lastObject];
+//    
+//        CLLocationCoordinate2D oldLocation = self.location.coordinate;
+//        CLLocationCoordinate2D newLocation = location.coordinate;
+//        
+//        double raio = [WUPGooglePlacesAPIService distanceBetweenLat1:oldLocation.latitude
+//                                                                lon1:oldLocation.longitude
+//                                                                lat2:newLocation.latitude
+//                                                                lon2:newLocation.longitude];
+//        
+//        if(raio < 1000) {
+//        
+//            return;
+//        }
+//    }
+//    
+//    self.location = [locations lastObject];
+//    
+//    //[self.locationManager stopUpdatingLocation];
+//    
+//    [self updateTrafficToNextLocationNotification];
 }
 
 #pragma mark - MediaPlayer callback methods

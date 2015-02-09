@@ -33,4 +33,6 @@
 
 @interface WUPHomeViewController : WUPBaseDatabaseLocalNotificationViewController<CLLocationManagerDelegate>
 
+-(void) updateNextLocalNotification;
+
 @end

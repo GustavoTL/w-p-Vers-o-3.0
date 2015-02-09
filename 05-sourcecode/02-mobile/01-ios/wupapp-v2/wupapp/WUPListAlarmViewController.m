@@ -88,7 +88,7 @@ Alarm* selectedAlarm;
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.locationManager stopUpdatingLocation];
+    //[self.locationManager stopUpdatingLocation];
 }
 
 -(void) viewDidAppear:(BOOL)animated

@@ -8,11 +8,19 @@
 
 #import "WUPBaseDatabaseViewController.h"
 
-@interface WUPBaseDatabaseViewController ()
+@interface WUPBaseDatabaseViewController () <WUPAppDelegateLocationDelegate>
 
 @end
 
 @implementation WUPBaseDatabaseViewController
+
+-(void)viewWillAppear:(BOOL)animated {
+
+    [super viewDidAppear:animated];
+    
+    WUPAppDelegate *delegate = (WUPAppDelegate*)[[UIApplication sharedApplication]delegate];
+    delegate.delegate = self;
+}
 
 -(void) setupDatabaseConnection
 {
@@ -23,6 +31,7 @@
 -(Alarm*) alarmFromNotificationUserInfo:(NSDictionary*) userInfoDict
 {
     @try {
+        
         NSURL *reconstructedClassURL = [NSURL URLWithString:[userInfoDict objectForKey:[WUPConstants OBJECT_ABSOLUTEURL_LOCALNOTIFICATION]]];
         NSURL *reconstructedInstanceURL = [reconstructedClassURL URLByAppendingPathComponent:[userInfoDict objectForKey:[WUPConstants OBJECT_LASTPATH_LOCALNOTIFICATION]]];
         NSManagedObjectID *objectID = [self.managedObjectContext.persistentStoreCoordinator managedObjectIDForURIRepresentation:reconstructedInstanceURL];
@@ -34,6 +43,18 @@
         return nil;
     }
 
+}
+
+- (void)updateLocation:(CLLocation *)location {
+
+}
+
+#pragma mark WUPAppDelegateLocationDelegate
+- (void) willUpdateLocation:(CLLocation*)location {
+
+    NSLog(@"updateLocation %f", location.altitude);
+    
+    [self updateLocation:location];
 }
 
 @end

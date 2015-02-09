@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WUPAppDelegate.h"
 
+
 //Models
 #import "Alarm.h"
 #import "Alarm+Database.h"
@@ -16,6 +17,8 @@
 @interface WUPBaseDatabaseViewController : UIViewController
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+
+- (void) updateLocation:(CLLocation*)location;
 
 -(void) setupDatabaseConnection;
 -(Alarm*) alarmFromNotificationUserInfo:(NSDictionary*) userInfoDict;

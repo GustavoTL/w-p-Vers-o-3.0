@@ -12,7 +12,7 @@
 
 @implementation Alarm
 
-//@dynamic actived;
+@dynamic actived;
 @dynamic label;
 @dynamic repeatsFor;
 @dynamic soundExtension;

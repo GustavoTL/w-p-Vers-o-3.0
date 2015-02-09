@@ -13,7 +13,7 @@
 
 @interface Alarm : NSManagedObject
 
-//@property (nonatomic, retain) NSNumber * actived;
+@property (nonatomic, retain) NSNumber * actived;
 @property (nonatomic, retain) NSString * label;
 @property (nonatomic, retain) NSString * repeatsFor;
 @property (nonatomic, retain) NSString * soundExtension;
