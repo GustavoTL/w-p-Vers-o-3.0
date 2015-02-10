@@ -94,6 +94,7 @@
     [self updateNextLocalNotification];
     [self updateNowClock];
     [self updateTimeToGoUI];
+    [self getCurentAlarm];
     self.timerNowClock = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateNowClock) userInfo:nil repeats:YES];
     self.timerTimeToGoClock = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimeToGoUI) userInfo:nil repeats:YES];
     
@@ -218,8 +219,19 @@
     }
 }
 
--(void) updateNextLocalNotification
-{
+- (void) getCurentAlarm {
+    
+    if(self.nextLocationNotification) {
+    
+        Alarm  *alarm = [self alarmFromNotificationUserInfo:self.nextLocationNotification.userInfo];
+        WUPAppDelegate *appDelegate = (WUPAppDelegate*)[[UIApplication sharedApplication] delegate];
+        [appDelegate currentAlarm:alarm];
+    }
+
+}
+
+- (void) updateNextLocalNotification {
+    
     NSDate* date = [NSDate date];
 //    NSLog(@"%s dateUTC: %@",__PRETTY_FUNCTION__,[WUPDateUtils convertDateInUTCString:date]);
     
@@ -247,6 +259,8 @@
 
 -(void) updateTrafficToNextLocationNotification {
     
+    NSLog(@"updateTrafficToNextLocationNotification %@", self.nextLocationNotification);
+    
     if(self.nextLocationNotification) {
         
         NSDictionary* userInfoDict = self.nextLocationNotification.userInfo;
@@ -256,17 +270,21 @@
         
         [trafficService calculateRouteTravelTimeUsing:self.location.coordinate
                                        AndDestination:CLLocationCoordinate2DMake([alarm.destination.latitude doubleValue],[alarm.destination.longitude doubleValue])
-                                              success:^(int ETATime,int distancewwww) {
+                                              success:^(int ETATime, int distancewwww) {
+                                                  
+                                                  alarm.etaTime = [NSNumber numberWithInt:ETATime];
+                                                  [self.managedObjectContext save:nil];
                                                   
             [self successOnCalculateTrafficTimeWithAlarm:alarm AndETATime:ETATime];
-        } failure:^{
+        
+                                              } failure:^{
             [self failureOnCalculateTrafficTimeWithAlarm:alarm];
         }];
     }
 }
 
--(void)playMovie
-{
+-(void)playMovie {
+    
     NSURL * url = [[NSBundle mainBundle] URLForResource:@"wup_final" withExtension:@"m4v"];
     _moviePlayer =  [[MPMoviePlayerController alloc]
                      initWithContentURL:url];
@@ -320,7 +338,7 @@
 }
 
 -(void)updateLocation:(CLLocation *)location {
-
+    
     if(self.location != NULL) {
         
         CLLocationCoordinate2D oldLocation = self.location.coordinate;
@@ -330,8 +348,6 @@
                                                                 lon1:oldLocation.longitude
                                                                 lat2:newLocation.latitude
                                                                 lon2:newLocation.longitude];
-        
-        NSLog(@"raio HOME %f", raio);
         
         if(raio < 1000) {
             

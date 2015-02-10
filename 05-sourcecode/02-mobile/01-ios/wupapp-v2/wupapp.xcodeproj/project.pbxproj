@@ -111,8 +111,8 @@
 		6F1542D61A7FEFF300F71223 /* DSLCalendarDaySelection.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542BE1A7FEFF300F71223 /* DSLCalendarDaySelection.png */; };
 		6F1542D71A7FEFF300F71223 /* DSLCalendarDaySelection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F1542BF1A7FEFF300F71223 /* DSLCalendarDaySelection@2x.png */; };
 		6F1542D81A7FEFF300F71223 /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542C11A7FEFF300F71223 /* NSDate+DSLCalendarView.m */; };
-		6F1542DB1A81648800F71223 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542DA1A81648800F71223 /* Alarm.m */; };
 		6FCAF2A71A7A667200D35219 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FCAF2A91A7A667200D35219 /* Localizable.strings */; };
+		6FDBA0171A8A491700043804 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDBA0161A8A491700043804 /* Alarm.m */; };
 		A63342851963152E0067ACFA /* WUPAddDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63342841963152E0067ACFA /* WUPAddDestinationViewController.m */; };
 		A647C2EC196219CB000013FF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A647C2EB196219CB000013FF /* AVFoundation.framework */; };
 		A647C2F219621AC9000013FF /* WUPSong.m in Sources */ = {isa = PBXBuildFile; fileRef = A647C2F119621AC9000013FF /* WUPSong.m */; };
@@ -305,8 +305,6 @@
 		6F1542BF1A7FEFF300F71223 /* DSLCalendarDaySelection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DSLCalendarDaySelection@2x.png"; sourceTree = "<group>"; };
 		6F1542C01A7FEFF300F71223 /* NSDate+DSLCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DSLCalendarView.h"; sourceTree = "<group>"; };
 		6F1542C11A7FEFF300F71223 /* NSDate+DSLCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DSLCalendarView.m"; sourceTree = "<group>"; };
-		6F1542D91A81648800F71223 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm.h; path = wupapp/Alarm.h; sourceTree = SOURCE_ROOT; };
-		6F1542DA1A81648800F71223 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm.m; path = wupapp/Alarm.m; sourceTree = SOURCE_ROOT; };
 		6F3BA4A81A83A2FF00599596 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		6FCAF2A41A7A664800D35219 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		6FCAF2A51A7A664800D35219 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -319,6 +317,8 @@
 		6FCAF2AF1A7ABE3E00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6FCAF2B01A7ABE3E00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6FCAF2B11A7ABE3F00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6FDBA0151A8A491700043804 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm.h; path = wupapp/Alarm.h; sourceTree = SOURCE_ROOT; };
+		6FDBA0161A8A491700043804 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm.m; path = wupapp/Alarm.m; sourceTree = SOURCE_ROOT; };
 		A63342831963152E0067ACFA /* WUPAddDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPAddDestinationViewController.h; sourceTree = "<group>"; };
 		A63342841963152E0067ACFA /* WUPAddDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPAddDestinationViewController.m; sourceTree = "<group>"; };
 		A647C2EB196219CB000013FF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -599,8 +599,8 @@
 				42971A0519687C200009E500 /* Setting+Database.h */,
 				42971A0619687C200009E500 /* Setting+Database.m */,
 				42651D5F199B08CA00FA27F7 /* wUpApp-Bridging-Header.h */,
-				6F1542D91A81648800F71223 /* Alarm.h */,
-				6F1542DA1A81648800F71223 /* Alarm.m */,
+				6FDBA0151A8A491700043804 /* Alarm.h */,
+				6FDBA0161A8A491700043804 /* Alarm.m */,
 			);
 			name = coredata;
 			sourceTree = "<group>";
@@ -1064,7 +1064,7 @@
 				42971A04196872B40009E500 /* WUPSetTimeToLeaveViewController.m in Sources */,
 				428E156F19638C91004619F6 /* WUPAlertBuilderUtils.m in Sources */,
 				429719EF196862560009E500 /* UILocalNotification+NextFireDate.m in Sources */,
-				6F1542DB1A81648800F71223 /* Alarm.m in Sources */,
+				6FDBA0171A8A491700043804 /* Alarm.m in Sources */,
 				42F3200919610F3500B64BC0 /* WUPListAlarmTableTableViewCell.m in Sources */,
 				6F1542C51A7FEFF300F71223 /* DSLCalendarMonthSelectorView.m in Sources */,
 				A6CD52821961C86F008DC2CC /* WUPListDestinationTableViewCell.m in Sources */,

@@ -426,6 +426,9 @@
                                                                                  [alarm.destination.longitude doubleValue])
                                               success:^(int ETATime,int distance) {
                                                   
+                                                  WUPAppDelegate *appDelegate = (WUPAppDelegate*)[[UIApplication sharedApplication] delegate];
+                                                  [appDelegate currentAlarm:alarm];
+                                                  
             [self successOnCalculateTrafficTimeWithAlarm:alarm AndETATime:ETATime];
         
                                               } failure:^{
@@ -537,8 +540,8 @@
 }
 
 #pragma mark - CLLocationManagerDelegate methods
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
     self.location = [locations lastObject];
 }
 

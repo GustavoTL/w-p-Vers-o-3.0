@@ -93,6 +93,7 @@
 }
 
 -(void) centerMap {
+    
 	MKCoordinateRegion region;
 
 	CLLocationDegrees maxLat = -90;
@@ -148,9 +149,6 @@
             
             CLLocation* current = [self.routes objectAtIndex:i];
             coords[i] = current.coordinate;
-            
-            NSLog(@"updateRouteView %f", current.coordinate.latitude);
-            
         }
         
         MKPolyline *objPolyline = [MKPolyline polylineWithCoordinates:coords count:numPoints];
@@ -162,8 +160,6 @@
 }
 
 -(void) updateRouteView {
-    
-    NSLog(@"updateRouteView");
     
 	CGContextRef context = 	CGBitmapContextCreate(nil, 
 												  routeView.frame.size.width, 

@@ -45,8 +45,9 @@
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    SEL requestSelector = NSSelectorFromString(@"requestWhenInUseAuthorization");
+    SEL requestSelector = NSSelectorFromString(@"requestAlwaysAuthorization");
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
+        
         [self.locationManager respondsToSelector:requestSelector]) {
         
         ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
@@ -108,8 +109,8 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
 }
@@ -156,19 +157,20 @@
         NSLog(@"master %@", master);
         NSLog(@"timeToLeave %@", timeToLeave);
         
-        if(master){
-            
-            UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
-            WUPHomeViewController *home = [tab.viewControllers objectAtIndex:0];
-            
-            [home listScheduledMasterLocalNotifications];
-            [home updateNextLocalNotification];
-        }
+        UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
+        WUPHomeViewController *home = [tab.viewControllers objectAtIndex:0];
+        
+        [home updateTrafficToNextLocationNotification];
         
         if(timeToLeave){
         
             UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
             [tab setSelectedIndex:2];
+        
+        } else {
+        
+            [self recoverCurrentNotification:self.mCurentAlarm.objectID];
+        
         }
     }
     
@@ -179,8 +181,6 @@
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
     NSArray* arrayNotifications = [application scheduledLocalNotifications];
-    
-    NSLog(@"AQUI %@" , arrayNotifications);
     
     for(int i = 0; i < [arrayNotifications count]; i++){
         UILocalNotification *local = [arrayNotifications objectAtIndex:i];
@@ -194,7 +194,6 @@
         if(master){
             NSLog(@"%s fireDate:%@ soundName:%@ repeatInterval:%lu",__PRETTY_FUNCTION__,local.fireDate, local.soundName, (long)local.repeatInterval);
         }
-        
     }
     
     
@@ -252,63 +251,6 @@
     }];
     
     [[NSOperationQueue mainQueue] addOperation:op];
-    
-    
-//    UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
-//    WUPHomeViewController *homeController = [tab.viewControllers objectAtIndex:0];
-//    
-//    [homeController updateTrafficLocationNotification:^(UIBackgroundFetchResult result) {
-//        
-//        NSLog(@"AQUI");
-//        
-//        NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
-//        NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
-//        
-//        // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-//        [formatter3 setTimeStyle:NSDateFormatterShortStyle];
-//        [formatter3 setDateStyle:NSDateFormatterShortStyle];
-//        
-//        NSString *detailstext = [formatter3 stringFromDate:newDate];
-//        NSDate *othernewdate = [formatter3 dateFromString:detailstext];
-//        
-//        NSString *message = [@"15 minutes until " stringByAppendingString:detailstext];
-//        
-//        UILocalNotification *notification = [[UILocalNotification alloc] init];
-//        notification.timeZone = [NSTimeZone systemTimeZone];
-//        notification.fireDate = othernewdate;
-//        notification.alertBody = message;
-//        notification.soundName = UILocalNotificationDefaultSoundName;
-//        notification.hasAction = YES;
-//        notification.alertAction = NSLocalizedString(@"View", @"View notification button");
-//        
-//        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-//        
-//    }];
-    
-//    NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
-//    NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
-//    
-//    // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-//    [formatter3 setTimeStyle:NSDateFormatterShortStyle];
-//    [formatter3 setDateStyle:NSDateFormatterShortStyle];
-//    
-//    NSString *detailstext = [formatter3 stringFromDate:newDate];
-//    NSDate *othernewdate = [formatter3 dateFromString:detailstext];
-//    
-//    NSString *message = [@"15 minutes until " stringByAppendingString:detailstext];
-//    
-//    UILocalNotification *notification = [[UILocalNotification alloc] init];
-//    notification.timeZone = [NSTimeZone systemTimeZone];
-//    notification.fireDate = othernewdate;
-//    notification.alertBody = message;
-//    notification.soundName = UILocalNotificationDefaultSoundName;
-//    notification.hasAction = YES;
-//    notification.alertAction = NSLocalizedString(@"View", @"View notification button");
-//    
-//    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    
-    //completionHandler(UIBackgroundFetchResultNewData);
-
 }
 
 -(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler {
@@ -376,19 +318,48 @@
 }
 
 - (NSString *)applicationDocumentsDirectory {
+    
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
 #pragma mark - CLLocationManagerDelegate methods
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
-    NSLog(@"AppDelegate %@", locations);
+    self.location = [locations lastObject];
     
     if(self.delegate != NULL) {
     
         [self.delegate willUpdateLocation:[locations lastObject]];
     }
+}
+
+#pragma mark - methods
+- (void) recoverCurrentNotification:(NSManagedObjectID*) objectID {
     
+    NSArray* arrayNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    
+    for(int i = 0; i < [arrayNotifications count]; i++) {
+        
+        UILocalNotification *local = [arrayNotifications objectAtIndex:i];
+        NSDictionary* userInfo = local.userInfo;
+        
+        if([[userInfo objectForKey:[WUPConstants OBJECT_ABSOLUTEURL_LOCALNOTIFICATION]] isEqualToString:objectID.URIRepresentation.absoluteString] &&
+           [[userInfo objectForKey:[WUPConstants OBJECT_LASTPATH_LOCALNOTIFICATION]] isEqualToString:objectID.URIRepresentation.lastPathComponent]){
+            
+            NSString* master = [userInfo objectForKey:[WUPConstants OBJECT_MASTER_LOCALNOTIFICATION]];
+            NSString* timeToLeave = [userInfo objectForKey:[WUPConstants OBJECT_TIMETOLEAVE_LOCALNOTIFICATION]];
+            
+            if(!timeToLeave && !master) {
+                
+                [[UIApplication sharedApplication] cancelLocalNotification:local];
+            }
+        }
+    }
+}
+
+- (void) currentAlarm:(Alarm*) alarm {
+
+    self.mCurentAlarm = alarm;
 }
 
 @end

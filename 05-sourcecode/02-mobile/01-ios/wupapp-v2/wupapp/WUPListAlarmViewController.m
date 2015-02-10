@@ -221,7 +221,8 @@ Alarm* selectedAlarm;
 
 #pragma mark - WUPListAlarmTableTableViewCellDelegate methods
 
--(void)saveAlarmChanges:(Alarm *)alarm{
+-(void)saveAlarmChanges:(Alarm *)alarm {
+    
     [self.managedObjectContext save:nil];
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -232,7 +233,15 @@ Alarm* selectedAlarm;
         WUPNokiaTrafficConditionsService* trafficService = [[WUPNokiaTrafficConditionsService alloc]init];
         
         [trafficService calculateRouteTravelTimeUsing:self.location.coordinate AndDestination:CLLocationCoordinate2DMake([alarm.destination.latitude doubleValue],[alarm.destination.longitude doubleValue]) success:^(int ETATime,int distance) {
+        
+            alarm.etaTime = [NSNumber numberWithInt:ETATime];
+            [self.managedObjectContext save:nil];
+            
+            WUPAppDelegate *appDelegate = (WUPAppDelegate*)[[UIApplication sharedApplication] delegate];
+            [appDelegate currentAlarm:alarm];
+            
             [self successOnCalculateTrafficTimeWithAlarm:alarm AndETATime:ETATime];
+        
         } failure:^{
             [self failureOnCalculateTrafficTimeWithAlarm:alarm];
         }];

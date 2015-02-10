@@ -10,8 +10,8 @@
 
 @implementation WUPListAlarmTableTableViewCell
 
--(void)awakeFromNib
-{
+-(void)awakeFromNib {
+    
     //Applying Fonts
     self.whenAlarmLabel.font = [UIFont fontWithName:kPlutoFontNameThin size:40.0f];
     self.destinationDescriptionLabel.font = [UIFont fontWithName:kProximaNovaFontNameBold size:11.5f];
@@ -22,16 +22,16 @@
     self.alarm.actived = [NSNumber numberWithBool:self.onOffSwitch.on];
     
     //Changing Color based on Alarm actived property
-    if([self.alarm.actived boolValue])
-    {
+    if([self.alarm.actived boolValue]) {
+        
         self.contentView.backgroundColor = [UIColor colorWithRed:0.212 green:0.267 blue:0.31 alpha:1.0];
         
         self.whenAlarmLabel.textColor = [UIColor colorWithRed:0.925 green:0.933 blue:0.937 alpha:1.0];
         self.destinationDescriptionLabel.textColor = [UIColor colorWithRed:0.925 green:0.933 blue:0.937 alpha:1.0];
         self.destinationAndRepeatIntervalLabel.textColor = [UIColor whiteColor];
-    }
-    else
-    {
+    
+    } else {
+        
         self.contentView.backgroundColor = [UIColor colorWithRed:0.925 green:0.933 blue:0.937 alpha:1.0];
         
         self.whenAlarmLabel.textColor = [UIColor colorWithRed:0.647 green:0.647 blue:0.647 alpha:1.0];

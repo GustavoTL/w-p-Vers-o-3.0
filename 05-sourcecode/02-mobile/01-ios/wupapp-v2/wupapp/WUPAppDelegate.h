@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Alarm.h"
 
 @protocol WUPAppDelegateLocationDelegate <NSObject>
 
@@ -24,6 +25,11 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator ;
 
+@property (nonatomic, strong) CLLocation *location;
+@property (nonatomic, strong) Alarm * mCurentAlarm;
+
 @property (nonatomic, strong) id <WUPAppDelegateLocationDelegate> delegate;
+
+- (void) currentAlarm:(Alarm*) alarm;
 
 @end

@@ -113,8 +113,8 @@
     
 }
 
--(void) insertNewScheduledLocalNotificationWithDate:(NSDate*) date AndRepeatInterval:(NSCalendarUnit)repeatInteval AndSound:(NSString*) soundName AndLabel:(NSString*) label AndTimeToLeave:(NSTimeInterval)timeToLeave AndObjectID:(NSManagedObjectID*) objectID
-{
+-(void) insertNewScheduledLocalNotificationWithDate:(NSDate*) date AndRepeatInterval:(NSCalendarUnit)repeatInteval AndSound:(NSString*) soundName AndLabel:(NSString*) label AndTimeToLeave:(NSTimeInterval)timeToLeave AndObjectID:(NSManagedObjectID*) objectID {
+    
 #ifdef  __DEBUG_FINEST__
     NSLog(@"%s - Start",__PRETTY_FUNCTION__);
 #endif
@@ -153,9 +153,7 @@
             dateToFire = [originalDate dateByAddingTimeInterval:timeToLeave];
             
         }
-        
-        NSLog(@"repeatInteval %lu", repeatInteval);
-                
+                        
         UILocalNotification* ln = [[UILocalNotification alloc] init];
         ln.soundName = soundName;
         ln.timeZone = [NSTimeZone defaultTimeZone];
@@ -171,7 +169,7 @@
         NSLog(@"%s scheduling:i:%d fireDate:%@ soundName:%@ repeatInterval:%lu",__PRETTY_FUNCTION__,i,ln.fireDate, ln.soundName, (long)ln.repeatInterval);
 #endif
         
-        //date = [date dateByAddingTimeInterval:40]; //Adding 40 seconds interval from on local notification to another
+        date = [date dateByAddingTimeInterval:40]; //Adding 40 seconds interval from on local notification to another
         
     }
 #ifdef  __DEBUG_FINEST__

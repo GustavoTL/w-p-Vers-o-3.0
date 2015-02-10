@@ -7,6 +7,7 @@
 //
 
 #import "WUPRouteMapViewController.h"
+#import "WUPGooglePlacesAPIService.h"
 
 @interface WUPRouteMapViewController ()
 
@@ -31,6 +32,9 @@
 @property (strong,nonatomic) NSObject *lastLocalNotification;
 @property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
+
+@property (nonatomic, assign) BOOL isLoadMap;
+
 @end
 
 @implementation WUPRouteMapViewController
@@ -49,8 +53,8 @@
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
--(void) setupUI
-{
+-(void) setupUI {
+    
     self.descriptiveFirstLineLabel.font = [UIFont fontWithName:kProximaNovaFontNameRegular size:16.0f];
     self.descriptiveSecondLineLabel.font = [UIFont fontWithName:kProximaNovaFontNameRegular size:16.0f];
     
@@ -67,56 +71,68 @@
     
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
+-(void)viewWillAppear:(BOOL)animated {
+    
     [super viewWillAppear:animated];
     //Changing TabBar Appearance
     UITabBar *tabBar = self.tabBarController.tabBar;
-    if ([tabBar respondsToSelector:@selector(setBackgroundImage:)])
-    {
+    if ([tabBar respondsToSelector:@selector(setBackgroundImage:)]) {
+        
         // set it just for this instance
         [tabBar setBackgroundImage:[UIImage imageNamed:@"navbar_route_image"]];
     }
+    
+    self.isLoadMap = FALSE;
     
     [self cleanIconBadgeNumber];
     
     [self updateLastLocalNotification];
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    self.locationManager = [[CLLocationManager alloc] init];
+//    self.locationManager.delegate = self;
+//    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    
+//    SEL requestSelector = NSSelectorFromString(@"requestWhenInUseAuthorization");
+//    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
+//        [self.locationManager respondsToSelector:requestSelector]) {
+//        ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
+//        [self.locationManager startUpdatingLocation];
+//    } else {
+//        [self.locationManager startUpdatingLocation];
+//    }
+//    
+//    [self.locationManager startUpdatingLocation];
     
-    SEL requestSelector = NSSelectorFromString(@"requestWhenInUseAuthorization");
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
-        [self.locationManager respondsToSelector:requestSelector]) {
-        ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
-        [self.locationManager startUpdatingLocation];
-    } else {
-        [self.locationManager startUpdatingLocation];
-    }
+    if(self.lastLocalNotification) {
     
-    [self.locationManager startUpdatingLocation];
-    
-    if(self.lastLocalNotification){
         self.containerTravelInfo.hidden = NO;
         [self.containerTravelInfo startLoadingAnimation];
-    }else{
+        
+        if(self.location != NULL) {
+        
+            [self updateRouteOnMap];
+        }
+    
+    } else {
+        
         self.containerTravelInfo.hidden = YES;
     }
-    
 }
 
 #pragma mark - Actions methods
 - (IBAction)touchUpNavBarIniciarButton:(id)sender {
+    
     Alarm  *alarm ;
     
-    if([self.lastLocalNotification isKindOfClass:[UILocalNotification class]]){
+    if([self.lastLocalNotification isKindOfClass:[UILocalNotification class]]) {
+    
         alarm = [self parseLocalNotification:(UILocalNotification*)self.lastLocalNotification];
-    }else{
+    
+    } else{
+        
         alarm = (Alarm*)self.lastLocalNotification;
     }
-    
     
     WUPUIWazeActivity *ca = [[WUPUIWazeActivity alloc]init];
     ca.latitude = [alarm.destination.latitude doubleValue];
@@ -284,8 +300,8 @@
     }
 }
 
-- (CLLocationCoordinate2D)coordinateWithLocation:(NSDictionary*)location
-{
+- (CLLocationCoordinate2D)coordinateWithLocation:(NSDictionary*)location {
+    
     double latitude = [[location objectForKey:@"lat"] doubleValue];
     double longitude = [[location objectForKey:@"lng"] doubleValue];
     
@@ -294,8 +310,8 @@
 
 #pragma mark - MapView methods
 
--(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
-{
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+    
     MKPolylineRenderer *polylineView = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
     polylineView.strokeColor = [UIColor colorWithRed:204/255. green:45/255. blue:70/255. alpha:1.0];
     polylineView.lineWidth = 10.0;
@@ -303,9 +319,40 @@
     return polylineView;
 }
 
+-(void)updateLocation:(CLLocation *)location {
+    
+    if(self.location != NULL) {
+    
+        CLLocationCoordinate2D oldLocation = self.location.coordinate;
+        CLLocationCoordinate2D newLocation = location.coordinate;
+        
+        double raio = [WUPGooglePlacesAPIService distanceBetweenLat1:oldLocation.latitude
+                                                                lon1:oldLocation.longitude
+                                                                lat2:newLocation.latitude
+                                                                lon2:newLocation.longitude];
+        
+        if(raio > 10) {
+            
+            self.location = location;
+            [self updateRouteOnMap];
+        }
+        
+    } else {
+    
+        self.location = location;
+        
+        if(!self.isLoadMap) {
+            
+            self.isLoadMap = true;
+            [self updateRouteOnMap];
+        }
+    }
+}
+
 #pragma mark - CLLocationManagerDelegate methods
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
     self.location = [locations lastObject];
     [self.locationManager stopUpdatingLocation];
     [self updateRouteOnMap];

@@ -22,14 +22,14 @@
     delegate.delegate = self;
 }
 
--(void) setupDatabaseConnection
-{
+-(void) setupDatabaseConnection {
+    
     WUPAppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
 }
 
--(Alarm*) alarmFromNotificationUserInfo:(NSDictionary*) userInfoDict
-{
+-(Alarm*) alarmFromNotificationUserInfo:(NSDictionary*) userInfoDict {
+    
     @try {
         
         NSURL *reconstructedClassURL = [NSURL URLWithString:[userInfoDict objectForKey:[WUPConstants OBJECT_ABSOLUTEURL_LOCALNOTIFICATION]]];
@@ -51,8 +51,6 @@
 
 #pragma mark WUPAppDelegateLocationDelegate
 - (void) willUpdateLocation:(CLLocation*)location {
-
-    NSLog(@"updateLocation %f", location.altitude);
     
     [self updateLocation:location];
 }
