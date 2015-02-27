@@ -3,10 +3,10 @@
 "0Aw-2O-aM2.text" = "Repeat:";
 
 /* Class = "IBUILabel"; text = "Tempo para sair:"; ObjectID = "1bY-g6-jkT"; */
-"1bY-g6-jkT.text" = "Time out:";
+"1bY-g6-jkT.text" = "Time to go:";
 
 /* Class = "IBUINavigationItem"; title = "Tempo para sair"; ObjectID = "1hf-Jy-qmf"; */
-"1hf-Jy-qmf.title" = "Time out";
+"1hf-Jy-qmf.title" = "Time to go";
 
 /* Class = "IBUINavigationItem"; title = "Repetir"; ObjectID = "4VB-yq-NWj"; */
 "4VB-yq-NWj.title" = "Repeat";
@@ -93,7 +93,7 @@
 "RYb-1m-7aG.text" = "15 min";
 
 /* Class = "IBUINavigationItem"; title = "Cadastro"; ObjectID = "Si8-z9-O5n"; */
-"Si8-z9-O5n.title" = "Cadastre";
+"Si8-z9-O5n.title" = "Sign in";
 
 /* Class = "IBUILabel"; text = "21:00"; ObjectID = "VeE-NK-tQn"; */
 "VeE-NK-tQn.text" = "21:00";
@@ -114,7 +114,7 @@
 "ZoD-6w-PVX.title" = "Results";
 
 /* Class = "IBUILabel"; text = "Você ainda não possui alarmes cadastrados."; ObjectID = "c1c-b4-mbj"; */
-"c1c-b4-mbj.text" = "Do not have registered alarms.";
+"c1c-b4-mbj.text" = "You still don't have any alarm.";
 
 /* Class = "IBUINavigationItem"; title = "Som"; ObjectID = "ceo-fC-sha"; */
 "ceo-fC-sha.title" = "Sound";
@@ -132,7 +132,7 @@
 "ex7-Et-ft4.text" = "Time:";
 
 /* Class = "IBUILabel"; text = "deseja chegar no seu destino?"; ObjectID = "fLK-Ob-FZo"; */
-"fLK-Ob-FZo.text" = "want to get to your destination?";
+"fLK-Ob-FZo.text" = "wish to reach your destination?";
 
 /* Class = "IBUILabel"; text = "Que horas você"; ObjectID = "g9I-az-Eem"; */
 "g9I-az-Eem.text" = "What time do you";
@@ -147,7 +147,7 @@
 "hrt-Nu-9ol.text" = "active alarm";
 
 /* Class = "IBUILabel"; text = "Indicar para amigos"; ObjectID = "hx3-Ye-xA9"; */
-"hx3-Ye-xA9.text" = "Indicate to friends";
+"hx3-Ye-xA9.text" = "Suggest to friends";
 
 /* Class = "IBUILabel"; text = "1h30min"; ObjectID = "iJn-RB-FUv"; */
 "iJn-RB-FUv.text" = "1h30min";
@@ -156,7 +156,7 @@
 "k1t-Fr-CIt.title" = "Start";
 
 /* Class = "IBUINavigationItem"; title = "Cadastro"; ObjectID = "klM-iP-IQN"; */
-"klM-iP-IQN.title" = "Register";
+"klM-iP-IQN.title" = "Sign in";
 
 /* Class = "IBUILabel"; text = "casa para o trabalho"; ObjectID = "kvb-7G-UZU"; */
 "kvb-7G-UZU.text" = "home to work";

@@ -258,9 +258,7 @@
 }
 
 -(void) updateTrafficToNextLocationNotification {
-    
-    NSLog(@"updateTrafficToNextLocationNotification %@", self.nextLocationNotification);
-    
+        
     if(self.nextLocationNotification) {
         
         NSDictionary* userInfoDict = self.nextLocationNotification.userInfo;
@@ -274,6 +272,28 @@
                                                   
                                                   alarm.etaTime = [NSNumber numberWithInt:ETATime];
                                                   [self.managedObjectContext save:nil];
+                                                  
+                                                  NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
+                                                  NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
+                                                  
+                                                  // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+                                                  [formatter3 setTimeStyle:NSDateFormatterShortStyle];
+                                                  [formatter3 setDateStyle:NSDateFormatterShortStyle];
+                                                  
+                                                  NSString *detailstext = [formatter3 stringFromDate:newDate];
+                                                  NSDate *othernewdate = [formatter3 dateFromString:detailstext];
+                                                  
+                                                  UILocalNotification *notification = [[UILocalNotification alloc] init];
+                                                  notification.timeZone = [NSTimeZone systemTimeZone];
+                                                  notification.fireDate = othernewdate;
+                                                  notification.alertBody = [NSString stringWithFormat:@"Recalculado -> %d", ETATime];
+                                                  notification.soundName = UILocalNotificationDefaultSoundName;
+                                                  notification.hasAction = YES;
+                                                  notification.alertAction = NSLocalizedString(@"View", @"View notification button");
+                                                  
+                                                  [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+                                                  
+                                                  
                                                   
             [self successOnCalculateTrafficTimeWithAlarm:alarm AndETATime:ETATime];
         
@@ -360,6 +380,29 @@
     //[self.locationManager stopUpdatingLocation];
     
     [self updateTrafficToNextLocationNotification];
+    
+    
+    NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
+    NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
+    
+    // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [formatter3 setTimeStyle:NSDateFormatterShortStyle];
+    [formatter3 setDateStyle:NSDateFormatterShortStyle];
+    
+    NSString *detailstext = [formatter3 stringFromDate:newDate];
+    NSDate *othernewdate = [formatter3 dateFromString:detailstext];
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.timeZone = [NSTimeZone systemTimeZone];
+    notification.fireDate = othernewdate;
+    notification.alertBody = @"Recalculando";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    notification.hasAction = YES;
+    notification.alertAction = NSLocalizedString(@"View", @"View notification button");
+                
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
+    
 }
 
 #pragma mark - CLLocationManagerDelegate methods

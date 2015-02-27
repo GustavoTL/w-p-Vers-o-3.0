@@ -82,10 +82,11 @@
         [tabBar setBackgroundImage:[UIImage imageNamed:@"navbar_route_image"]];
     }
     
+    
+    
     self.isLoadMap = FALSE;
     
     [self cleanIconBadgeNumber];
-    
     [self updateLastLocalNotification];
     
 //    self.locationManager = [[CLLocationManager alloc] init];
@@ -104,6 +105,8 @@
 //    
 //    [self.locationManager startUpdatingLocation];
     
+    NSLog(@"viewWillAppear MAPA %@", self.lastLocalNotification);
+    
     if(self.lastLocalNotification) {
     
         self.containerTravelInfo.hidden = NO;
@@ -117,6 +120,10 @@
     } else {
         
         self.containerTravelInfo.hidden = YES;
+        self.noRouteFoundButton.hidden = NO;
+        self.noRouteFoundLabel.hidden = NO;
+        self.mapView.hidden = YES;
+        self.navBarIniciarButton.enabled = NO;
     }
 }
 
@@ -174,10 +181,11 @@
 
             NSDate *next1;
             NSDate *next2;
+            
             if([obj1 isKindOfClass:[UILocalNotification class]]) {
                 
                 next1 = [(UILocalNotification*)obj1 lastFireDateBeforeDate:date];
-            
+                
             } else {
                 
                 next1 = ((Alarm*)obj1).whenTime;
@@ -203,7 +211,7 @@
 //        }
 //#endif
         
-        self.lastLocalNotification = [sorted lastObject];
+        self.lastLocalNotification = [sorted firstObject];//[sorted lastObject];
 
     } else {
         

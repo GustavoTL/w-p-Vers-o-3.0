@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="74" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hTt-Um-kEw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WUPListAlarmTableTableViewCell" id="hdx-7E-KMB" customClass="WUPListAlarmTableTableViewCell">
@@ -854,6 +854,7 @@
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="IN8-mu-lg7" id="o6c-8I-hu2"/>
+                        <outlet property="barButtonItemSave" destination="svy-N6-BO1" id="uRr-xp-bjA"/>
                         <outlet property="mapView" destination="bmx-4Y-k2r" id="gv8-UR-LQO"/>
                         <outlet property="nameTextField" destination="FZ1-hS-ijX" id="dCe-kO-4vP"/>
                         <segue destination="QkT-3U-SBq" kind="modal" identifier="SubscribeDestinationToSearchEngineResultSegue" id="66g-Xg-Oav"/>
@@ -886,6 +887,11 @@
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="zkK-Kz-z7l">
                                             <connections>
                                                 <action selector="touhUpNavBarCancelButton:" destination="QkT-3U-SBq" id="POt-CU-Jgh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Selecionar" id="pmx-cC-84R">
+                                            <connections>
+                                                <action selector="touhUpNavBarSelectButton:" destination="QkT-3U-SBq" id="Wrd-2e-gCj"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -955,6 +961,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="barButtonSelect" destination="pmx-cC-84R" id="To6-Vt-mDF"/>
                         <outlet property="tableView" destination="HP2-ce-3nU" id="Y0L-xd-PrU"/>
                     </connections>
                 </viewController>

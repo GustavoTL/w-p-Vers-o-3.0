@@ -17,6 +17,8 @@
 @property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonSelect;
+
 @end
 
 @implementation WUPListSearchEngineResultViewController
@@ -36,8 +38,10 @@ long selectedRow;
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 }
 
--(void) setupUI
-{
+-(void) setupUI {
+    
+    self.barButtonSelect.enabled = FALSE;
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
@@ -105,19 +109,28 @@ long selectedRow;
     long index = [indexPath row];
     selectedRow = index;
     [tableView reloadData];
+    
+    self.barButtonSelect.enabled = TRUE;
 }
 
 #pragma mark - Actions methods
 - (IBAction)touhUpNavBarCancelButton:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:^{
-    
+
+    }];
+}
+
+- (IBAction)touhUpNavBarSelectButton:(id)sender {
+
+    [self dismissViewControllerAnimated:YES completion:^{
+        
         if(self.delegate) {
             
             if(selectedRow != -1) {
                 
                 [self.delegate pickedAGooglePlacesAPISearchResult:[self.resultArray objectAtIndex:selectedRow]];
-            
+                
             } else {
                 
                 [self.delegate pickedAGooglePlacesAPISearchResult:nil];
@@ -127,8 +140,8 @@ long selectedRow;
 }
 
 #pragma mark - CLLocationManagerDelegate methods
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
     self.location = [locations lastObject];
     [self.locationManager stopUpdatingLocation];
     self.locationManager = nil;

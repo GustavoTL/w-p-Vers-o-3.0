@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barButtonItemSave;
+
 @property(nonatomic) CLLocationCoordinate2D location;
 @end
 
@@ -35,12 +37,19 @@ BOOL foundAddress = NO;
 }
 
 
--(void) setupUI
-{
-    if(self.selectedDestination){
+-(void) setupUI {
+    
+    if(self.selectedDestination) {
+        
+        self.barButtonItemSave.enabled = TRUE;
+    
         self.nameTextField.text = self.selectedDestination.name;
         self.addressTextField.text = self.selectedDestination.address;
         [self showAddressOnMapView:CLLocationCoordinate2DMake([self.selectedDestination.latitude doubleValue], [self.selectedDestination.longitude doubleValue])];
+    
+    } else {
+    
+        self.barButtonItemSave.enabled = false;
     }
     
     [self.nameTextField setLeftPadding:15.0f];
@@ -101,31 +110,34 @@ BOOL foundAddress = NO;
 
 #pragma mark - UITextFieldDelegate methods
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if(textField == self.nameTextField)
-    {
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if(textField == self.nameTextField) {
+        
         [self.addressTextField becomeFirstResponder];
-    }
-    else if(textField == self.addressTextField)
-    {
-        if(![self.addressTextField.text isEqualToString:@""])
-        {
+    
+    } else if(textField == self.addressTextField) {
+        
+        if(![self.addressTextField.text isEqualToString:@""]) {
+            
             [self performSegueWithIdentifier:@"SubscribeDestinationToSearchEngineResultSegue" sender:self];
             [self.addressTextField resignFirstResponder];
-        }
-        else
-        {
+        
+        } else {
+            
             UIAlertView* alert = [WUPAlertBuilderUtils buildAlertForMissingInformation:@"endereço"];
             [alert show];
         }
-    }else{
+    
+    } else {
+        
         [textField resignFirstResponder];
     }
+    
     return YES;
 }
 
 #pragma mark - UI methods
-
 -(void) showAddressOnMapView:(CLLocationCoordinate2D) coord{
 
      MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coord addressDictionary:nil];
@@ -147,10 +159,12 @@ BOOL foundAddress = NO;
 }
 
 #pragma mark - WUPListSearchEngineResultViewControllerDelegate methods
-
--(void)pickedAGooglePlacesAPISearchResult:(WUPGooglePlacesAPISearchResult *)result
-{
-    if(result){
+-(void)pickedAGooglePlacesAPISearchResult:(WUPGooglePlacesAPISearchResult *)result {
+    
+    if(result) {
+        
+        self.barButtonItemSave.enabled = TRUE;
+        
         self.addressTextField.text = result.formattedAddress;
         [self showAddressOnMapView:result.location];
     }

@@ -43,6 +43,30 @@ typedef NS_ENUM(NSInteger, TransactionType) {
 
 - (IBAction)touchUpNavSave:(id)sender {
     
+    switch (self.TransactionTypeEnum) {
+
+        case Daily:
+            
+            break;
+            
+        case Calendar:
+            
+            if([self.containerViewController.addAlarmCalendarTVC dateCalendarSelected] == NULL) {
+                
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Atenção"
+                                                               message:@"Você deve escolher uma data"
+                                                              delegate:nil
+                                                     cancelButtonTitle:@"ok"
+                                                     otherButtonTitles:nil, nil];
+                
+                [alert show];
+                
+                return;
+            }
+            
+            break;
+    }
+    
     [self dismissViewControllerAnimated:YES completion:^{
        
         switch (self.TransactionTypeEnum) {
@@ -59,7 +83,6 @@ typedef NS_ENUM(NSInteger, TransactionType) {
             default:
                 break;
         }
-    
     }];
 }
 

@@ -98,21 +98,25 @@
     return value;
 }
 
-+(int) NUMBER_PADDING_ALARMS:(double) distance
-{
++(int) NUMBER_PADDING_ALARMS:(double) distance {
+    
+    NSLog(@"NUMBER_PADDING_ALARMS %f", distance);  
+    
     int value;
-    if(distance <= 2.0){
+    if(distance < 2.0){
         value = 2;
-    } else if(distance > 2.0 && distance <= 4.0){
+    } else if(distance >= 2.0 && distance < 4.0){
         value = 4;
-    } else if(distance > 4.0 && distance <= 6.0){
+    } else if(distance >= 4.0 && distance < 6.0){
         value = 6;
-    } else if(distance > 6.0 && distance <= 10.0){
+    } else if(distance >= 6.0 && distance < 10.0){
         value = 12;
     } else {
         value = 20;
     }
-    return value * 20;
+    
+    //return value * 20;
+    return value * 60;
 
 }
 

@@ -132,13 +132,6 @@
     
     if (state == UIApplicationStateActive) {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarme"
-                                                        message:notification.alertBody
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        
         if(master) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarme"
                                                             message:notification.alertBody
@@ -180,77 +173,79 @@
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
-    NSArray* arrayNotifications = [application scheduledLocalNotifications];
+    completionHandler(UIBackgroundFetchResultNewData);
     
-    for(int i = 0; i < [arrayNotifications count]; i++){
-        UILocalNotification *local = [arrayNotifications objectAtIndex:i];
-        
-        NSDictionary* userInfo = local.userInfo;
-        
-        NSString* master = [userInfo objectForKey:[WUPConstants OBJECT_MASTER_LOCALNOTIFICATION]];
-        
-        NSLog(@"master: %@", master);
-        
-        if(master){
-            NSLog(@"%s fireDate:%@ soundName:%@ repeatInterval:%lu",__PRETTY_FUNCTION__,local.fireDate, local.soundName, (long)local.repeatInterval);
-        }
-    }
-    
-    
-    NSURL *URL = [NSURL URLWithString:@"http://route.cit.api.here.com/routing/7.2/calculateroute.json?app_id=GE8gkD7FPvvaTXP0cXWM&app_code=NCGRlH4IuN5_GXJt_ccLAg&mode=fastest;car;traffic:enabled&waypoint0=geo!-23.607810,-46.665650&waypoint1=geo!-23.602459,-46.661167"];
-    
-    NSLog(@"URL -> %@", [URL path]);
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    op.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON DELEGATE: %@", responseObject);
-        
-        @try {
-            NSDictionary* responseJSONObj = [responseObject objectForKey:@"response"];
-            NSArray* routeArray = [responseJSONObj objectForKey:@"route"];
-            NSDictionary* summaryJSONObj = [[routeArray firstObject] objectForKey:@"summary"];
-            //We add a padding value to ensure people will get there even earlier than expected
-            
-            int distance = [[summaryJSONObj objectForKey:@"trafficTime"] intValue];
-            int trafficTime = [[summaryJSONObj objectForKey:@"trafficTime"] intValue] + [WUPConstants NUMBER_PADDING_ALARMS:distance];
-            
-            NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
-            NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
-            
-            // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-            [formatter3 setTimeStyle:NSDateFormatterShortStyle];
-            [formatter3 setDateStyle:NSDateFormatterShortStyle];
-            
-            NSString *detailstext = [formatter3 stringFromDate:newDate];
-            NSDate *othernewdate = [formatter3 dateFromString:detailstext];
-            
-            NSString *message = [@"15 minutes until " stringByAppendingString:[NSString stringWithFormat:@"%d", trafficTime]];
-            
-            UILocalNotification *notification = [[UILocalNotification alloc] init];
-            notification.timeZone = [NSTimeZone systemTimeZone];
-            notification.fireDate = othernewdate;
-            notification.alertBody = message;
-            notification.soundName = UILocalNotificationDefaultSoundName;
-            notification.hasAction = YES;
-            notification.alertAction = NSLocalizedString(@"View", @"View notification button");
-            
-            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-            
-        } @catch (NSException *exception) {
-            NSLog(@"NSException: %@", exception.description);
-        }
-        
-        completionHandler(UIBackgroundFetchResultNewData);
-    
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        completionHandler(UIBackgroundFetchResultFailed);
-    }];
-    
-    [[NSOperationQueue mainQueue] addOperation:op];
+//    NSArray* arrayNotifications = [application scheduledLocalNotifications];
+//    
+//    for(int i = 0; i < [arrayNotifications count]; i++){
+//        UILocalNotification *local = [arrayNotifications objectAtIndex:i];
+//        
+//        NSDictionary* userInfo = local.userInfo;
+//        
+//        NSString* master = [userInfo objectForKey:[WUPConstants OBJECT_MASTER_LOCALNOTIFICATION]];
+//        
+//        NSLog(@"master: %@", master);
+//        
+//        if(master){
+//            NSLog(@"%s fireDate:%@ soundName:%@ repeatInterval:%lu",__PRETTY_FUNCTION__,local.fireDate, local.soundName, (long)local.repeatInterval);
+//        }
+//    }
+//    
+//    
+//    NSURL *URL = [NSURL URLWithString:@"http://route.cit.api.here.com/routing/7.2/calculateroute.json?app_id=GE8gkD7FPvvaTXP0cXWM&app_code=NCGRlH4IuN5_GXJt_ccLAg&mode=fastest;car;traffic:enabled&waypoint0=geo!-23.607810,-46.665650&waypoint1=geo!-23.602459,-46.661167"];
+//    
+//    NSLog(@"URL -> %@", [URL path]);
+//    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+//    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+//    op.responseSerializer = [AFJSONResponseSerializer serializer];
+//    
+//    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"JSON DELEGATE: %@", responseObject);
+//        
+//        @try {
+//            NSDictionary* responseJSONObj = [responseObject objectForKey:@"response"];
+//            NSArray* routeArray = [responseJSONObj objectForKey:@"route"];
+//            NSDictionary* summaryJSONObj = [[routeArray firstObject] objectForKey:@"summary"];
+//            //We add a padding value to ensure people will get there even earlier than expected
+//            
+//            int distance = [[summaryJSONObj objectForKey:@"trafficTime"] intValue];
+//            int trafficTime = [[summaryJSONObj objectForKey:@"trafficTime"] intValue] + [WUPConstants NUMBER_PADDING_ALARMS:distance];
+//            
+//            NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
+//            NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
+//            
+//            // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+//            [formatter3 setTimeStyle:NSDateFormatterShortStyle];
+//            [formatter3 setDateStyle:NSDateFormatterShortStyle];
+//            
+//            NSString *detailstext = [formatter3 stringFromDate:newDate];
+//            NSDate *othernewdate = [formatter3 dateFromString:detailstext];
+//            
+//            NSString *message = [@"15 minutes until " stringByAppendingString:[NSString stringWithFormat:@"%d", trafficTime]];
+//            
+//            UILocalNotification *notification = [[UILocalNotification alloc] init];
+//            notification.timeZone = [NSTimeZone systemTimeZone];
+//            notification.fireDate = othernewdate;
+//            notification.alertBody = message;
+//            notification.soundName = UILocalNotificationDefaultSoundName;
+//            notification.hasAction = YES;
+//            notification.alertAction = NSLocalizedString(@"View", @"View notification button");
+//            
+//            [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+//            
+//        } @catch (NSException *exception) {
+//            NSLog(@"NSException: %@", exception.description);
+//        }
+//        
+//        completionHandler(UIBackgroundFetchResultNewData);
+//    
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Error: %@", error);
+//        completionHandler(UIBackgroundFetchResultFailed);
+//    }];
+//    
+//    [[NSOperationQueue mainQueue] addOperation:op];
 }
 
 -(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler {

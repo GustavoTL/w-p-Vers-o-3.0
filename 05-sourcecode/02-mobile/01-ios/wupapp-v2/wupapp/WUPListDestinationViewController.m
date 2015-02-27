@@ -21,8 +21,8 @@ long selectedRow;
 
 #pragma mark - UIViewController lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     [self setupDatabaseConnection];
@@ -58,10 +58,11 @@ long selectedRow;
 -(void) loadDataFromDatabase {
     
     self.destinationsArray = [[Destination loadAll:self.managedObjectContext] mutableCopy];
+
     //Searching for alreadySelectedDesination index on array
     selectedRow = [self.destinationsArray indexOfObject:self.alreadySelectedDesination];
-    [self.tableView reloadData];
     
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate methods
@@ -82,21 +83,21 @@ long selectedRow;
     //Adding SWTableViewCell stuff
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     
-    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:0.718 green:0.718 blue:0.796 alpha:1.0] title:@"Editar"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:0.718 green:0.718 blue:0.796 alpha:1.0]
+                                                title:@"Editar"];
     
-    [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1 green:0.125 blue:0.125 alpha:1.0]
+    [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:1 green:0.125 blue:0.125 alpha:1.0]
                                                 title:@"Excluir"];
     
     cell.delegate = self;
     cell.rightUtilityButtons = rightUtilityButtons;
     
-    if(index == selectedRow)
-    {
+    if(index == selectedRow) {
+        
         cell.checkMarkerImage.hidden = NO;
-    }
-    else
-    {
+        
+    } else {
+        
         cell.checkMarkerImage.hidden = YES;
     }
 
@@ -104,8 +105,8 @@ long selectedRow;
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     WUPListDestinationTableViewCell* cell = (WUPListDestinationTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
     self.alreadySelectedDesination = cell.destination;
     
@@ -116,14 +117,20 @@ long selectedRow;
 #pragma mark - Actions methods
 
 - (IBAction)touchUpNavBarCancelButton:(id)sender {
+    
     [self dismissViewControllerAnimated:YES completion:^{
-        if(self.delegate){
-            [self.delegate pickedADestination:[self.destinationsArray objectAtIndex:selectedRow]];
+
+        if(NSNotFound != selectedRow) {
+        
+            if(self.delegate) {
+                [self.delegate pickedADestination:[self.destinationsArray objectAtIndex:selectedRow]];
+            }
         }
     }];
 }
 
 - (IBAction)touchUpNavBarAddButton:(id)sender {
+    
     [self performSegueWithIdentifier:@"ListDestinationToSubscribeDestinationSegue" sender:sender];
 }
 

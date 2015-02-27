@@ -15,7 +15,7 @@
 
 -(void) calculateRouteAndTravelTimeUsing:(CLLocationCoordinate2D) myLocation AndDestination:(CLLocationCoordinate2D) destination success:(void (^)(int ETATime,int distance, NSArray *root))success
                               failure:(void (^)())failure {
-    
+
     NSString* urlLocation = [NSString stringWithFormat:@"http://route.cit.api.here.com/routing/7.2/calculateroute.json?app_id=%@&app_code=%@&mode=fastest;car;traffic:enabled&waypoint0=geo!%f,%f&waypoint1=geo!%f,%f",NOKIA_APP_ID,NOKIA_APP_CODE,myLocation.latitude,myLocation.longitude,destination.latitude,destination.longitude];
     
     NSURL *URL = [NSURL URLWithString:urlLocation];
@@ -28,6 +28,7 @@
         
         
         @try {
+            
             NSDictionary* responseJSONObj = [responseObject objectForKey:@"response"];
             NSArray* routeArray = [responseJSONObj objectForKey:@"route"];
             
@@ -62,7 +63,7 @@
 -(void) calculateRouteTravelTimeUsing:(CLLocationCoordinate2D) myLocation AndDestination:(CLLocationCoordinate2D) destination success:(void (^)(int ETATime,int distance))success
                                         failure:(void (^)())failure {
     
-    NSString* urlLocation = [NSString stringWithFormat:@"http://route.cit.api.here.com/routing/7.2/calculateroute.json?app_id=%@&app_code=%@&mode=fastest;car;traffic:enabled&waypoint0=geo!%f,%f&waypoint1=geo!%f,%f",NOKIA_APP_ID,NOKIA_APP_CODE,myLocation.latitude,myLocation.longitude,destination.latitude,destination.longitude];
+    NSString* urlLocation = [NSString stringWithFormat:@"http://route.cit.api.here.com/routing/7.2/calculateroute.json?app_id=%@&app_code=%@&mode=fastest;car;traffic:disabled&waypoint0=geo!%f,%f&waypoint1=geo!%f,%f",NOKIA_APP_ID,NOKIA_APP_CODE,myLocation.latitude,myLocation.longitude,destination.latitude,destination.longitude];
     
     NSLog(@"urlLocation %@", urlLocation);
     

@@ -478,10 +478,10 @@
 		426870731969A36F007A0DD7 /* route */ = {
 			isa = PBXGroup;
 			children = (
-				4239D35E1969E62100C9E40E /* uiactivity */,
-				4239D35D1969E61700C9E40E /* maproute */,
 				426870741969A38B007A0DD7 /* WUPRouteMapViewController.h */,
 				426870751969A38B007A0DD7 /* WUPRouteMapViewController.m */,
+				4239D35E1969E62100C9E40E /* uiactivity */,
+				4239D35D1969E61700C9E40E /* maproute */,
 			);
 			name = route;
 			sourceTree = "<group>";
@@ -890,7 +890,7 @@
 				ORGANIZATIONNAME = "Paulo Miguel Almeida";
 				TargetAttributes = {
 					426BA8901961077A00065BC6 = {
-						DevelopmentTeam = LG4AZ5BY77;
+						DevelopmentTeam = D44FGJEBRV;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1181,7 +1181,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "4f1ab14a-8ca8-4d4f-92a7-99309b1dc46b";
+				PROVISIONING_PROFILE = "dbc4d148-e327-4aad-965a-e95fe39073a7";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1202,8 +1202,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adriano Mazucato (NHQG6BBR8A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adriano Mazucato (NHQG6BBR8A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Eduardo Loducca (D44FGJEBRV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Eduardo Loducca (D44FGJEBRV)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1214,7 +1214,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PROVISIONING_PROFILE = "4f1ab14a-8ca8-4d4f-92a7-99309b1dc46b";
+				PROVISIONING_PROFILE = "1a39fdde-f7c0-4853-b3e1-7d6eca7d8abf";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1227,8 +1227,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Adriano Mazucato (NHQG6BBR8A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adriano Mazucato (NHQG6BBR8A)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
 				INFOPLIST_FILE = "wUpApp/wUpApp-Info.plist";
@@ -1254,7 +1254,7 @@
 					"-licucore",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "dbc4d148-e327-4aad-965a-e95fe39073a7";
 				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -1268,8 +1268,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Eduardo Loducca (D44FGJEBRV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Eduardo Loducca (D44FGJEBRV)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
 				INFOPLIST_FILE = "wUpApp/wUpApp-Info.plist";
@@ -1295,7 +1295,7 @@
 					"-licucore",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1a39fdde-f7c0-4853-b3e1-7d6eca7d8abf";
 				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
