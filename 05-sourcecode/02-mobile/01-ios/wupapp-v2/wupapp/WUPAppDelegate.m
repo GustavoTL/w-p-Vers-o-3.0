@@ -8,11 +8,13 @@
 
 #import "WUPAppDelegate.h"
 #import "WUPHomeViewController.h"
+#import "WUPAlarmeManager.h"
+#import "WUPGooglePlacesAPIService.h"
 
 @interface WUPAppDelegate () <CLLocationManagerDelegate>
 
 @property (strong,nonatomic) CLLocationManager *locationManager;
-
+@property (strong,nonatomic) WUPAlarmeManager *alarmManager;
 @end
 
 @implementation WUPAppDelegate
@@ -39,6 +41,8 @@
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelError];
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-55004640-1"];
     
+    self.alarmManager = [WUPAlarmeManager sharedInstance];
+    [self.alarmManager nextLocalNotification];
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -320,6 +324,25 @@
 #pragma mark - CLLocationManagerDelegate methods
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
+    CLLocation *location = [locations lastObject];
+    
+    if(self.location != NULL) {
+        
+        CLLocationCoordinate2D oldLocation = self.location.coordinate;
+        CLLocationCoordinate2D newLocation = location.coordinate;
+        
+        double raio = [WUPGooglePlacesAPIService distanceBetweenLat1:oldLocation.latitude
+                                                                lon1:oldLocation.longitude
+                                                                lat2:newLocation.latitude
+                                                                lon2:newLocation.longitude];
+        
+        if(raio >= 1000) {
+            
+            WUPAlarmeManager *alarmManager = [WUPAlarmeManager sharedInstance];
+            [alarmManager updateTrafficToNextLocationNotification];
+        }
+    }
+    
     self.location = [locations lastObject];
     
     if(self.delegate != NULL) {
@@ -339,7 +362,7 @@
         NSDictionary* userInfo = local.userInfo;
         
         if([[userInfo objectForKey:[WUPConstants OBJECT_ABSOLUTEURL_LOCALNOTIFICATION]] isEqualToString:objectID.URIRepresentation.absoluteString] &&
-           [[userInfo objectForKey:[WUPConstants OBJECT_LASTPATH_LOCALNOTIFICATION]] isEqualToString:objectID.URIRepresentation.lastPathComponent]){
+           [[userInfo objectForKey:[WUPConstants OBJECT_LASTPATH_LOCALNOTIFICATION]] isEqualToString:objectID.URIRepresentation.lastPathComponent]) {
             
             NSString* master = [userInfo objectForKey:[WUPConstants OBJECT_MASTER_LOCALNOTIFICATION]];
             NSString* timeToLeave = [userInfo objectForKey:[WUPConstants OBJECT_TIMETOLEAVE_LOCALNOTIFICATION]];

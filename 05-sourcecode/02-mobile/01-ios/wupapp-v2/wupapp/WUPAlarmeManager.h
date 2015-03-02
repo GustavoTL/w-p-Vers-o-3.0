@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import "Alarm.h"
+#import "Destination.h"
 
 @interface WUPAlarmeManager : NSObject
+
+@property (nonatomic, strong) UILocalNotification *nextLocationNotification;
+@property (nonatomic, strong) CLLocation *location;
+
+
++ (WUPAlarmeManager *)sharedInstance;
+- (UILocalNotification*) nextLocalNotification;
+- (void) updateTrafficToNextLocationNotification;
 
 @end
