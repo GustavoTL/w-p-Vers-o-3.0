@@ -329,31 +329,35 @@
 
 -(void)updateLocation:(CLLocation *)location {
     
-    if(self.location != NULL) {
-    
-        CLLocationCoordinate2D oldLocation = self.location.coordinate;
-        CLLocationCoordinate2D newLocation = location.coordinate;
-        
-        double raio = [WUPGooglePlacesAPIService distanceBetweenLat1:oldLocation.latitude
-                                                                lon1:oldLocation.longitude
-                                                                lat2:newLocation.latitude
-                                                                lon2:newLocation.longitude];
-        
-        if(raio > 10) {
+    if(self.lastLocalNotification ) {
+     
+        if(self.location != NULL) {
+            
+            CLLocationCoordinate2D oldLocation = self.location.coordinate;
+            CLLocationCoordinate2D newLocation = location.coordinate;
+            
+            double raio = [WUPGooglePlacesAPIService distanceBetweenLat1:oldLocation.latitude
+                                                                    lon1:oldLocation.longitude
+                                                                    lat2:newLocation.latitude
+                                                                    lon2:newLocation.longitude];
+            
+            if(raio > 10) {
+                
+                self.location = location;
+                [self updateRouteOnMap];
+            }
+            
+        } else {
             
             self.location = location;
-            [self updateRouteOnMap];
-        }
-        
-    } else {
-    
-        self.location = location;
-        
-        if(!self.isLoadMap) {
             
-            self.isLoadMap = true;
-            [self updateRouteOnMap];
+            if(!self.isLoadMap) {
+                
+                self.isLoadMap = true;
+                [self updateRouteOnMap];
+            }
         }
+        
     }
 }
 

@@ -113,6 +113,7 @@
 		6F1542D81A7FEFF300F71223 /* NSDate+DSLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1542C11A7FEFF300F71223 /* NSDate+DSLCalendarView.m */; };
 		6FCAF2A71A7A667200D35219 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FCAF2A91A7A667200D35219 /* Localizable.strings */; };
 		6FDBA0171A8A491700043804 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FDBA0161A8A491700043804 /* Alarm.m */; };
+		83CC02A21AA131FA001AC952 /* WUPAlarmeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CC02A11AA131FA001AC952 /* WUPAlarmeManager.m */; };
 		A63342851963152E0067ACFA /* WUPAddDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63342841963152E0067ACFA /* WUPAddDestinationViewController.m */; };
 		A647C2EC196219CB000013FF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A647C2EB196219CB000013FF /* AVFoundation.framework */; };
 		A647C2F219621AC9000013FF /* WUPSong.m in Sources */ = {isa = PBXBuildFile; fileRef = A647C2F119621AC9000013FF /* WUPSong.m */; };
@@ -319,6 +320,8 @@
 		6FCAF2B11A7ABE3F00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6FDBA0151A8A491700043804 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm.h; path = wupapp/Alarm.h; sourceTree = SOURCE_ROOT; };
 		6FDBA0161A8A491700043804 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm.m; path = wupapp/Alarm.m; sourceTree = SOURCE_ROOT; };
+		83CC02A01AA131FA001AC952 /* WUPAlarmeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUPAlarmeManager.h; path = wupapp/WUPAlarmeManager.h; sourceTree = SOURCE_ROOT; };
+		83CC02A11AA131FA001AC952 /* WUPAlarmeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUPAlarmeManager.m; path = wupapp/WUPAlarmeManager.m; sourceTree = SOURCE_ROOT; };
 		A63342831963152E0067ACFA /* WUPAddDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPAddDestinationViewController.h; sourceTree = "<group>"; };
 		A63342841963152E0067ACFA /* WUPAddDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WUPAddDestinationViewController.m; sourceTree = "<group>"; };
 		A647C2EB196219CB000013FF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -669,6 +672,8 @@
 				429719F11968651F0009E500 /* WUPDateUtils.m */,
 				4239D35A1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.h */,
 				4239D35B1969E02E00C9E40E /* UIView+LoadingWithActivityIndicator.m */,
+				83CC02A01AA131FA001AC952 /* WUPAlarmeManager.h */,
+				83CC02A11AA131FA001AC952 /* WUPAlarmeManager.m */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -890,7 +895,7 @@
 				ORGANIZATIONNAME = "Paulo Miguel Almeida";
 				TargetAttributes = {
 					426BA8901961077A00065BC6 = {
-						DevelopmentTeam = D44FGJEBRV;
+						DevelopmentTeam = LG4AZ5BY77;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1054,6 +1059,7 @@
 				426BA8A51961077A00065BC6 /* WUPAppDelegate.m in Sources */,
 				A6CD527F1961C80E008DC2CC /* WUPListDestinationViewController.m in Sources */,
 				A6CD52791961C4D9008DC2CC /* WUPChoseSongViewController.m in Sources */,
+				83CC02A21AA131FA001AC952 /* WUPAlarmeManager.m in Sources */,
 				4239D3681969ED3A00C9E40E /* WUPUIGoogleMapsActivity.m in Sources */,
 				6F15429B1A7FE01D00F71223 /* WUPEmptySegue.m in Sources */,
 				428E156C196389A3004619F6 /* Destination+Database.m in Sources */,
@@ -1214,7 +1220,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PROVISIONING_PROFILE = "1a39fdde-f7c0-4853-b3e1-7d6eca7d8abf";
+				PROVISIONING_PROFILE = "dbc4d148-e327-4aad-965a-e95fe39073a7";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1227,8 +1233,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Adriano Mazucato (NHQG6BBR8A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adriano Mazucato (NHQG6BBR8A)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
 				INFOPLIST_FILE = "wUpApp/wUpApp-Info.plist";
@@ -1254,7 +1260,7 @@
 					"-licucore",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dbc4d148-e327-4aad-965a-e95fe39073a7";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -1268,8 +1274,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Eduardo Loducca (D44FGJEBRV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Eduardo Loducca (D44FGJEBRV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
 				INFOPLIST_FILE = "wUpApp/wUpApp-Info.plist";
@@ -1295,7 +1301,7 @@
 					"-licucore",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1a39fdde-f7c0-4853-b3e1-7d6eca7d8abf";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
