@@ -11,3 +11,22 @@
 "dia" = "Day:";
 "alert_sair" = "Get ready to go on:% d minutes";
 "alert_hora_sair" = "[%@] - It's time to leave";
+
+"domingo" = "sunday";
+"segunda_feira" = "monday";
+"terça_feira" = "tuesday";
+"quarta_feira" = "wednesday";
+"quinta_feira" = "thursday";
+"sexta_feira" = "friday";
+
+"indicar_wup_para_amigos" = "Share through";
+
+"editar" = "Edit";
+"excluir" = "Delete";
+"adicionar" = "Add Alarm";
+"alarme" = "Alarm";
+"nunca" = "Never";
+"padrao" = "Default";
+"salvando" = "Saving";
+"todo" = "Every";
+"toda" = "Every";

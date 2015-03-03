@@ -8,6 +8,7 @@
 
 #import "WUPHomeViewController.h"
 #import "WUPGooglePlacesAPIService.h"
+#import "WUPAlarmeManager.h"
 
 @interface WUPHomeViewController ()
 
@@ -31,7 +32,7 @@
 @property (strong, nonatomic) NSDateFormatter* dateFormatterNowLongFormatClock;
 @property (strong, nonatomic) NSDateFormatter* dateFormatterNowWeekdayFormatClock;
 
-@property (strong,nonatomic) CLLocationManager *locationManager;
+//@property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
 
 @end
@@ -55,15 +56,17 @@
 
 -(void) setupUI
 {
+    NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+    
     self.dateFormatterNowClock = [[NSDateFormatter alloc] init];
     [self.dateFormatterNowClock setDateFormat:@"HH:mm"]; //24hr time format
     
     self.dateFormatterNowLongFormatClock = [[NSDateFormatter alloc] init];
-    [self.dateFormatterNowLongFormatClock setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"]];
+    [self.dateFormatterNowLongFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:language]];//[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"]
     [self.dateFormatterNowLongFormatClock setDateFormat:@"dd MMM yyyy"];
     
     self.dateFormatterNowWeekdayFormatClock = [[NSDateFormatter alloc] init];
-    [self.dateFormatterNowWeekdayFormatClock setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"]];
+    [self.dateFormatterNowWeekdayFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:language]];
     [self.dateFormatterNowWeekdayFormatClock setDateFormat:@"EEEE"];
     
     //Applying Fonts
@@ -376,31 +379,27 @@
     }
     
     self.location = location;
+        
     
-    //[self.locationManager stopUpdatingLocation];
-    
-    [self updateTrafficToNextLocationNotification];
-    
-    
-    NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
-    NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
-    
-    // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-    [formatter3 setTimeStyle:NSDateFormatterShortStyle];
-    [formatter3 setDateStyle:NSDateFormatterShortStyle];
-    
-    NSString *detailstext = [formatter3 stringFromDate:newDate];
-    NSDate *othernewdate = [formatter3 dateFromString:detailstext];
-    
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.timeZone = [NSTimeZone systemTimeZone];
-    notification.fireDate = othernewdate;
-    notification.alertBody = @"Recalculando";
-    notification.soundName = UILocalNotificationDefaultSoundName;
-    notification.hasAction = YES;
-    notification.alertAction = NSLocalizedString(@"View", @"View notification button");
-                
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+//    NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
+//    NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
+//    
+//    // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+//    [formatter3 setTimeStyle:NSDateFormatterShortStyle];
+//    [formatter3 setDateStyle:NSDateFormatterShortStyle];
+//    
+//    NSString *detailstext = [formatter3 stringFromDate:newDate];
+//    NSDate *othernewdate = [formatter3 dateFromString:detailstext];
+//    
+//    UILocalNotification *notification = [[UILocalNotification alloc] init];
+//    notification.timeZone = [NSTimeZone systemTimeZone];
+//    notification.fireDate = othernewdate;
+//    notification.alertBody = @"Recalculando";
+//    notification.soundName = UILocalNotificationDefaultSoundName;
+//    notification.hasAction = YES;
+//    notification.alertAction = NSLocalizedString(@"View", @"View notification button");
+//                
+//    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     
     
 }

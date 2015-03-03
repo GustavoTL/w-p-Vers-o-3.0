@@ -15,10 +15,10 @@
 "5D7-vh-5kR.title" = "Save";
 
 /* Class = "IBUILabel"; text = "para você sair"; ObjectID = "80R-aq-3TB"; */
-"80R-aq-3TB.text" = "for you to leave";
+"80R-aq-3TB.text" = "to leave";
 
 /* Class = "IBUILabel"; text = "Ao acordar, quanto tempo"; ObjectID = "86l-Ii-aWH"; */
-"86l-Ii-aWH.text" = "Upon awakening, how long";
+"86l-Ii-aWH.text" = "How long do you need to leave?";
 
 /* Class = "IBUILabel"; text = "Todo Domingo"; ObjectID = "8he-Ab-srQ"; */
 "8he-Ab-srQ.text" = "Every Sunday";
@@ -54,7 +54,7 @@
 "FmB-Ra-oea.text" = "LODUCCA:";
 
 /* Class = "IBUILabel"; text = "Avaliar na App Store"; ObjectID = "GxT-p4-Cdm"; */
-"GxT-p4-Cdm.text" = "Evaluate the App Store";
+"GxT-p4-Cdm.text" = "Give your opinion";
 
 /* Class = "IBUILabel"; text = "Radiate"; ObjectID = "HLi-UA-YLr"; */
 "HLi-UA-YLr.text" = "Radiate";
@@ -69,7 +69,7 @@
 "IN8-mu-lg7.placeholder" = "Ex: Street, city, state";
 
 /* Class = "IBUILabel"; text = "Instruções"; ObjectID = "KK7-Rf-g3I"; */
-"KK7-Rf-g3I.text" = "Directions";
+"KK7-Rf-g3I.text" = "Instructions";
 
 /* Class = "IBUIBarButtonItem"; title = "Salvar"; ObjectID = "KP1-ex-2Se"; */
 "KP1-ex-2Se.title" = "Save";
@@ -156,7 +156,7 @@
 "k1t-Fr-CIt.title" = "Start";
 
 /* Class = "IBUINavigationItem"; title = "Cadastro"; ObjectID = "klM-iP-IQN"; */
-"klM-iP-IQN.title" = "Sign in";
+"klM-iP-IQN.title" = "Destinations";
 
 /* Class = "IBUILabel"; text = "casa para o trabalho"; ObjectID = "kvb-7G-UZU"; */
 "kvb-7G-UZU.text" = "home to work";

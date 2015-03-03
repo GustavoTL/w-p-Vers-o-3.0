@@ -8,6 +8,7 @@
 
 #import "WUPRouteMapViewController.h"
 #import "WUPGooglePlacesAPIService.h"
+#import "WUPAlarmeManager.h"
 
 @interface WUPRouteMapViewController ()
 
@@ -30,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptiveSecondLineLabel;
 
 @property (strong,nonatomic) NSObject *lastLocalNotification;
-@property (strong,nonatomic) CLLocationManager *locationManager;
+//@property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
 
 @property (nonatomic, assign) BOOL isLoadMap;
@@ -87,7 +88,7 @@
     self.isLoadMap = FALSE;
     
     [self cleanIconBadgeNumber];
-    [self updateLastLocalNotification];
+    //[self updateLastLocalNotification];
     
 //    self.locationManager = [[CLLocationManager alloc] init];
 //    self.locationManager.delegate = self;
@@ -105,12 +106,17 @@
 //    
 //    [self.locationManager startUpdatingLocation];
     
-    NSLog(@"viewWillAppear MAPA %@", self.lastLocalNotification);
+    WUPAlarmeManager *alarmManager = [WUPAlarmeManager sharedInstance];
     
+    self.lastLocalNotification = [alarmManager nextLocalNotification];
+        
     if(self.lastLocalNotification) {
     
         self.containerTravelInfo.hidden = NO;
         [self.containerTravelInfo startLoadingAnimation];
+        
+        
+        self.location = alarmManager.location;
         
         if(self.location != NULL) {
         
@@ -365,9 +371,9 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
-    self.location = [locations lastObject];
-    [self.locationManager stopUpdatingLocation];
-    [self updateRouteOnMap];
+    //self.location = [locations lastObject];
+    //[self.locationManager stopUpdatingLocation];
+    //[self updateRouteOnMap];
 }
 
 -(Alarm*) parseLocalNotification:(UILocalNotification*) localNotification {

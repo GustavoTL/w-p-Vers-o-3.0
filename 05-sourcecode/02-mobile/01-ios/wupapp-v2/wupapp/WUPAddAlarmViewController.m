@@ -55,7 +55,7 @@
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 
     if(self.selectedAlarm){
-        self.navigationBarTittle.title = @"Editar";
+        self.navigationBarTittle.title = NSLocalizedString(@"editar", @"nome do navigation");
         self.selectedSong = [[WUPSong alloc] initWithName:self.selectedAlarm.soundName
                                               AndFileName:self.selectedAlarm.soundFilename
                                              AndExtension:self.selectedAlarm.soundExtension];
@@ -79,12 +79,12 @@
         
     } else {
         
-        self.navigationBarTittle.title = @"Adicionar";
+        self.navigationBarTittle.title = NSLocalizedString(@"adicionar", @"View notification button");
         self.selectedSong = [WUPConstants DEFAULT_SONG];
         self.selectedRepeatDays =[WUPConstants DEFAULT_REPEATDAYS];
         self.selectedDestination =  nil;
         self.selectedTimeToLeave = 60*15;
-        self.selectedLabel = @"Alarme";
+        self.selectedLabel = NSLocalizedString(@"alarme", @"label inicial do alarme");
         self.dateSelected = NULL;
     }
     
@@ -175,7 +175,7 @@
     
     } else {
         
-        selectedDaysLabelContent = @"Nunca";
+        selectedDaysLabelContent = NSLocalizedString(@"nunca", nil);
     }
     
     self.alarmRepeatsForContentLabel.text = selectedDaysLabelContent;
@@ -362,7 +362,7 @@
     
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeIndeterminate;
-        hud.labelText = @"Salvando";
+        hud.labelText = NSLocalizedString(@"salvando", nil);
         
         BOOL editing = NO;
         

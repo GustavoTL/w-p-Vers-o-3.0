@@ -313,7 +313,6 @@
 		6FCAF2A81A7A667200D35219 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6FCAF2AA1A7A669F00D35219 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6FCAF2AB1A7A66A200D35219 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		6FCAF2AD1A7AB75A00D35219 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6FCAF2AE1A7ABE3E00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
 		6FCAF2AF1A7ABE3E00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6FCAF2B01A7ABE3E00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1122,7 +1121,6 @@
 			children = (
 				426BA8A71961077A00065BC6 /* Base */,
 				6FCAF2A41A7A664800D35219 /* pt-BR */,
-				6FCAF2AD1A7AB75A00D35219 /* en */,
 				6FCAF2AE1A7ABE3E00D35219 /* pt */,
 			);
 			name = Main.storyboard;
@@ -1220,7 +1218,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PROVISIONING_PROFILE = "dbc4d148-e327-4aad-965a-e95fe39073a7";
+				PROVISIONING_PROFILE = "f75ab0e7-feb8-4be9-927e-f91387d7fae6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1260,7 +1258,7 @@
 					"-licucore",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f75ab0e7-feb8-4be9-927e-f91387d7fae6";
 				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -1274,8 +1272,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Eduardo Loducca (D44FGJEBRV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Eduardo Loducca (D44FGJEBRV)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wUpApp/wUpApp-Prefix.pch";
 				INFOPLIST_FILE = "wUpApp/wUpApp-Info.plist";
@@ -1301,7 +1299,7 @@
 					"-licucore",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f75ab0e7-feb8-4be9-927e-f91387d7fae6";
 				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};

@@ -99,11 +99,9 @@
 }
 
 +(int) NUMBER_PADDING_ALARMS:(double) distance {
-    
-    NSLog(@"NUMBER_PADDING_ALARMS %f", distance);  
-    
+        
     int value;
-    if(distance < 2.0){
+    if(distance < 2.0) {
         value = 2;
     } else if(distance >= 2.0 && distance < 4.0){
         value = 4;

@@ -54,9 +54,13 @@
         
         [self.locationManager respondsToSelector:requestSelector]) {
         
-        ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
+        [self requestAlwaysAuthorization];
         
-        if(IS_OS_8_OR_LATER) {
+        //((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
+        
+        if(IS_OS_7_OR_LATER) {
+            
+            [self.locationManager requestWhenInUseAuthorization];
             [self.locationManager requestAlwaysAuthorization];
         }
         
@@ -64,7 +68,9 @@
         
     } else {
         
-        if(IS_OS_8_OR_LATER) {
+        if(IS_OS_7_OR_LATER) {
+            
+            [self.locationManager requestWhenInUseAuthorization];
             [self.locationManager requestAlwaysAuthorization];
         }
         
@@ -175,9 +181,43 @@
     //[[UIApplication sharedApplication]cancelAllLocalNotifications];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        // Send the user to the Settings for this app
+        NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:settingsURL];
+    }
+}
+
+- (void)requestAlwaysAuthorization {
+    
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    
+    // If the status is denied or only granted for when in use, display an alert
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
+        NSString *title;
+        title = (status == kCLAuthorizationStatusDenied) ? @"Location services are off" : @"Background location is not enabled";
+        NSString *message = @"To use background location you must turn on 'Always' in the Location Services Settings";
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:@"Settings", nil];
+        [alertView show];
+    }
+    // The user has not enabled any location services. Request background authorization.
+    else if (status == kCLAuthorizationStatusNotDetermined) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    
+    [self.locationManager startUpdatingLocation];
+}
+
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
-    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startUpdatingLocation];
     
     completionHandler(UIBackgroundFetchResultNewData);
     
@@ -328,9 +368,14 @@
     
     CLLocation *location = [locations lastObject];
     
+    if(self.alarmManager.location == NULL || (self.alarmManager.location.coordinate.latitude == 0 || self.alarmManager.location.coordinate.longitude == 0)) {
+    
+        self.alarmManager.location = location;
+    }
+    
     if(self.location != NULL) {
         
-        CLLocationCoordinate2D oldLocation = self.location.coordinate;
+        CLLocationCoordinate2D oldLocation = self.alarmManager.location.coordinate;
         CLLocationCoordinate2D newLocation = location.coordinate;
         
         double raio = [WUPGooglePlacesAPIService distanceBetweenLat1:oldLocation.latitude
@@ -340,17 +385,16 @@
         
         if(raio >= 1000) {
             
-            WUPAlarmeManager *alarmManager = [WUPAlarmeManager sharedInstance];
-            alarmManager.location = self.location;
-            [alarmManager updateTrafficToNextLocationNotification];
+            self.alarmManager.location = self.location;
+            [self.alarmManager updateTrafficToNextLocationNotification];
         }
     }
     
-    self.location = [locations lastObject];
+    self.location = location;
     
     if(self.delegate != NULL) {
     
-        [self.delegate willUpdateLocation:[locations lastObject]];
+        [self.delegate willUpdateLocation:location];
     }
 }
 

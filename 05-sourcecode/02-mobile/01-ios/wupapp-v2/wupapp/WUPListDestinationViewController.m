@@ -84,10 +84,10 @@ long selectedRow;
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     
     [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:0.718 green:0.718 blue:0.796 alpha:1.0]
-                                                title:@"Editar"];
+                                                title:NSLocalizedString(@"editar", @"View notification button")];
     
     [rightUtilityButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:1 green:0.125 blue:0.125 alpha:1.0]
-                                                title:@"Excluir"];
+                                                title:NSLocalizedString(@"excluir", @"View notification button")];
     
     cell.delegate = self;
     cell.rightUtilityButtons = rightUtilityButtons;

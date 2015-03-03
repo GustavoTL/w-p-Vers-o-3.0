@@ -29,13 +29,14 @@
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Choose Weekday Screen"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
-    
-    NSLog(@"viewDidLoad %@", self.alreadySelectedDaysOfWeek);
 }
 
 -(void) setupUI{
+    
+    NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"]];
+    [dateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:language]];
     self.arrayDaysOfWeek = [dateFormatter weekdaySymbols];
     self.arraySelectedDaysOfWeek = [[NSMutableArray alloc] initWithCapacity:7];
 }
@@ -71,9 +72,9 @@
     NSString* day = [[self.arrayDaysOfWeek objectAtIndex:index] capitalizedString];
     NSString* each = @"";
     if([day hasSuffix:@"a"]){
-        each = @"Toda";
+        each = NSLocalizedString(@"toda", nil);
     }else{
-        each = @"Todo";
+        each = NSLocalizedString(@"todo", nil);
     }
     cell.dayOfWeeekLabel.text = [NSString stringWithFormat:@"%@ %@",each,day];
     

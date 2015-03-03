@@ -11,3 +11,22 @@
 "dia" = "Dia:";
 "alert_sair" = "Se prepare para sair em: %d minutos";
 "alert_hora_sair" = "[%@] - É hora de sair";
+
+"domingo" = "domingo";
+"segunda_feira" = "segunda-feira";
+"terça_feira" = "terça-feira";
+"quarta_feira" = "quarta-feira";
+"quinta_feira" = "quinta-feira";
+"sexta_feira" = "sexta-feira";
+
+"indicar_wup_para_amigos" = "Indicar o wÜp para amigos";
+
+"editar" = "Editar";
+"excluir" = "Excluir";
+"adicionar" = "Adicionar";
+"alarme" = "Alarme";
+"nunca" = "Nunca";
+"padrao" = "Padrão";
+"salvando" = "Salvando";
+"todo" = "Todo";
+"toda" = "Toda";
