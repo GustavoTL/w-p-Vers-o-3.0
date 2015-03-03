@@ -32,7 +32,7 @@
 //    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     
-    NSTimeInterval interval = 60 * 60;
+    NSTimeInterval interval = 60 * 10;
     [application setMinimumBackgroundFetchInterval:interval];
     
     // Initialize Google Analytics tracking
@@ -176,6 +176,8 @@
 }
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    [self.locationManager requestAlwaysAuthorization];
     
     completionHandler(UIBackgroundFetchResultNewData);
     
@@ -339,6 +341,7 @@
         if(raio >= 1000) {
             
             WUPAlarmeManager *alarmManager = [WUPAlarmeManager sharedInstance];
+            alarmManager.location = self.location;
             [alarmManager updateTrafficToNextLocationNotification];
         }
     }
