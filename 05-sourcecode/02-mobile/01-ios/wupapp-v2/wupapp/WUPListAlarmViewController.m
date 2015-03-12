@@ -7,6 +7,7 @@
 //
 
 #import "WUPListAlarmViewController.h"
+#import "WUPAppDelegate.h"
 
 @interface WUPListAlarmViewController ()
 
@@ -15,7 +16,7 @@
 
 
 
-@property (strong,nonatomic) CLLocationManager *locationManager;
+//@property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
 
 @end
@@ -60,7 +61,7 @@ Alarm* selectedAlarm;
     if ([tabBar respondsToSelector:@selector(setBackgroundImage:)])
     {
         // set it just for this instance
-        [tabBar setBackgroundImage:[UIImage imageNamed:@"navbar_alarm_image"]];
+        [tabBar setBackgroundImage:[UIImage imageNamed:NSLocalizedString(@"tabbar_alarm_image_name", "nome da imagem alarme tabbar")]];//@"navbar_alarm_image"
     }
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
@@ -68,22 +69,31 @@ Alarm* selectedAlarm;
     [self loadDataFromDatabase];
     //clean it
     selectedAlarm = nil;
+    
+    
+    WUPAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.location = appDelegate.location;
+    
+    
     //Start looking for user's location
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    SEL requestSelector = NSSelectorFromString(@"requestWhenInUseAuthorization");
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
-        [self.locationManager respondsToSelector:requestSelector]) {
-        ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
-        [self.locationManager startUpdatingLocation];
-    } else {
-        [self.locationManager startUpdatingLocation];
-    }
     
-    [self.locationManager startUpdatingLocation];
+    
+//    self.locationManager = [[CLLocationManager alloc] init];
+//    self.locationManager.delegate = self;
+//    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    
+//    SEL requestSelector = NSSelectorFromString(@"requestWhenInUseAuthorization");
+//    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
+//        [self.locationManager respondsToSelector:requestSelector]) {
+//        ((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
+//        [self.locationManager startUpdatingLocation];
+//    } else {
+//        [self.locationManager startUpdatingLocation];
+//    }
+//    
+//    [self.locationManager startUpdatingLocation];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -135,9 +145,31 @@ Alarm* selectedAlarm;
     WUPListAlarmTableTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     cell.alarm = alarm;
     cell.whenAlarmLabel.text = [dateFormatter stringFromDate:alarm.whenTime];
-    if([alarm.repeatsFor isEqualToString:@""]){
-        cell.destinationAndRepeatIntervalLabel.text = [NSString stringWithFormat:@"%@, %@",alarm.destination.name,@"Nunca"];
-    }else{
+    
+    if(alarm.dateSelected) {
+        
+        NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+        
+        NSDateFormatter *dateFormatterNowLongFormatClock = [[NSDateFormatter alloc] init];
+        [dateFormatterNowLongFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:language]];
+        
+        if([language isEqualToString:@"pt"]) {
+            
+            [dateFormatterNowLongFormatClock setDateFormat:@"dd MMM yyyy"];
+            
+        } else {
+            
+            [dateFormatterNowLongFormatClock setDateFormat:@"MMM dd, yyyy"];
+        }
+        
+        cell.destinationAndRepeatIntervalLabel.text = [NSString stringWithFormat:@"%@, %@", alarm.destination.name, [dateFormatterNowLongFormatClock stringFromDate:alarm.dateSelected]];
+        
+    } else if([alarm.repeatsFor isEqualToString:@""]) {
+        
+        cell.destinationAndRepeatIntervalLabel.text = [NSString stringWithFormat:@"%@, %@",alarm.destination.name, NSLocalizedString(@"nunca", NULL)];
+    
+    } else {
+        
         cell.destinationAndRepeatIntervalLabel.text = [NSString stringWithFormat:@"%@, %@",alarm.destination.name,[alarm.repeatsFor abreviateWeekdays]];
     }
     
@@ -227,7 +259,7 @@ Alarm* selectedAlarm;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = [alarm.actived boolValue] ? @"Calculando Trânsito" : @"Salvando";
+    hud.labelText = [alarm.actived boolValue] ? NSLocalizedString(@"calculando_transito", NULL) : NSLocalizedString(@"salvando", NULL);
     
     if([alarm.actived boolValue]){
         WUPNokiaTrafficConditionsService* trafficService = [[WUPNokiaTrafficConditionsService alloc]init];
@@ -245,8 +277,9 @@ Alarm* selectedAlarm;
         } failure:^{
             [self failureOnCalculateTrafficTimeWithAlarm:alarm];
         }];
-    }else
-    {
+    
+    }else {
+        
         //Only removing these alarm from local notifications
         [self commonOnCalculateTrafficTimeWithDate:nil AndAlarm:alarm];
     }
@@ -302,10 +335,15 @@ Alarm* selectedAlarm;
     }
 }
 
+-(void)updateLocation:(CLLocation *)location {
+
+    self.location = location;
+}
+
 #pragma mark - CLLocationManagerDelegate methods
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
     self.location = [locations lastObject];
 }
 

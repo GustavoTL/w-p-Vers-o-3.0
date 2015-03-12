@@ -7,6 +7,7 @@
 //
 
 #import "WUPListSearchEngineResultViewController.h"
+#import "WUPAppDelegate.h"
 
 @interface WUPListSearchEngineResultViewController ()
 
@@ -30,12 +31,26 @@ long selectedRow;
 {
     [super viewDidLoad];
     
-    [self setupUI];
+    //[self setupUI];
+    
+    NSLog(@"WUPListSearchEngineResultViewController");
     
     //Google Analytics SendScreen
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"Search Engine Result Screen"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    
+    selectedRow = -1;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    
+    WUPAppDelegate *appDelegate = (WUPAppDelegate*)[[UIApplication sharedApplication] delegate];
+    self.location = appDelegate.location;
+
+    [self requestPlacesAPI];
 }
 
 -(void) setupUI {
@@ -180,10 +195,13 @@ long selectedRow;
 
 #pragma mark - GooglePlacesAPI methods
 
--(void) requestPlacesAPI{
+-(void) requestPlacesAPI {
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Buscando";
+    
+    NSLog(@"WUPListSearchEngineResultViewController %@", self.location);
     
     WUPGooglePlacesAPIService* service = [[WUPGooglePlacesAPIService alloc] init];
     

@@ -49,7 +49,7 @@
     if ([tabBar respondsToSelector:@selector(setBackgroundImage:)])
     {
         // set it just for this instance
-        [tabBar setBackgroundImage:[UIImage imageNamed:@"navbar_about_image"]];
+        [tabBar setBackgroundImage:[UIImage imageNamed:NSLocalizedString(@"tabbar_about_image_name", "nome da imagem sobre tabbar")]];//@"navbar_about_image"
     }
 }
 
@@ -60,7 +60,11 @@
 }
 
 - (IBAction)touchUpListRecommendToFriendsView:(id)sender {
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"indicar_wup_para_amigos", @"texto nome") delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"SMS", @"Email",@"WhatsApp", nil];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"indicar_wup_para_amigos", @"texto nome")
+                                                            delegate:self cancelButtonTitle:@"Cancel"
+                                              destructiveButtonTitle:nil
+                                                   otherButtonTitles:@"SMS", @"Email",@"WhatsApp", nil];
+    
     popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [popupQuery showInView:self.view];
 }

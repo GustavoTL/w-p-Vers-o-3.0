@@ -319,6 +319,8 @@
 		6FCAF2B11A7ABE3F00D35219 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6FDBA0151A8A491700043804 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm.h; path = wupapp/Alarm.h; sourceTree = SOURCE_ROOT; };
 		6FDBA0161A8A491700043804 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm.m; path = wupapp/Alarm.m; sourceTree = SOURCE_ROOT; };
+		6FE2D2671AA7457700446930 /* home.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = home.gpx; path = ../../../../../../../home.gpx; sourceTree = "<group>"; };
+		6FE2D2681AA7463100446930 /* Dcanm.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Dcanm.gpx; sourceTree = "<group>"; };
 		83CC02A01AA131FA001AC952 /* WUPAlarmeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WUPAlarmeManager.h; path = wupapp/WUPAlarmeManager.h; sourceTree = SOURCE_ROOT; };
 		83CC02A11AA131FA001AC952 /* WUPAlarmeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WUPAlarmeManager.m; path = wupapp/WUPAlarmeManager.m; sourceTree = SOURCE_ROOT; };
 		A63342831963152E0067ACFA /* WUPAddDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WUPAddDestinationViewController.h; sourceTree = "<group>"; };
@@ -491,6 +493,8 @@
 		426BA8881961077A00065BC6 = {
 			isa = PBXGroup;
 			children = (
+				6FE2D2681AA7463100446930 /* Dcanm.gpx */,
+				6FE2D2671AA7457700446930 /* home.gpx */,
 				6F1542A21A7FEFF300F71223 /* DSLCalendarView */,
 				0EBD0F5E1A6FDFB800ACAAAD /* GoogleAnalytics-iOS-SDK */,
 				426BA89A1961077A00065BC6 /* wUpApp */,
@@ -1185,7 +1189,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "dbc4d148-e327-4aad-965a-e95fe39073a7";
+				PROVISIONING_PROFILE = "def29b9e-6975-4de0-aaea-d63afae8606e";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1258,7 +1262,7 @@
 					"-licucore",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f75ab0e7-feb8-4be9-927e-f91387d7fae6";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "wUpApp/wUpApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;

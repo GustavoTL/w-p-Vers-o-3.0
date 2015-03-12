@@ -38,5 +38,8 @@
 
 "nunca" = "Never";
 
+"notice_ready_to_leave" = "Get ready to leave in: %@ minutes";
+"notice_time_to_leave" = "It's time to leave";
+
 "calculando_transito" = "Calculating Traffic";
 "salvando" = "Saving";

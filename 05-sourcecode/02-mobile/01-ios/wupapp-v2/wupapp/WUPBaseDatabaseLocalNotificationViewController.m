@@ -179,9 +179,11 @@
 
 -(void) insertNewWeeklyScheduledLocalNotificationWithDate:(NSDate*) date AndRepeatInterval:(NSString*)repeatInteval AndSound:(NSString*) soundName AndLabel:(NSString*) label AndTimeToLeave:(NSTimeInterval)timeToLeave AndObjectID:(NSManagedObjectID*) objectID {
 
+    NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+    
     NSLocale *ptLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"];
     NSDateFormatter* dateformatter = [[NSDateFormatter alloc] init];
-    [dateformatter setLocale:ptLocale];
+    [dateformatter setLocale:[NSLocale localeWithLocaleIdentifier:language]];
     [dateformatter setDateFormat:@"EEEE"];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];

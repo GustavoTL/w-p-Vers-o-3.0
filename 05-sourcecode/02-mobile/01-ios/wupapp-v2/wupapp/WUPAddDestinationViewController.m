@@ -68,15 +68,23 @@ BOOL foundAddress = NO;
 
 #pragma mark - Actions methods
 - (IBAction)touchUpNavBarSaveButton:(id)sender {
+    
     if(![self.nameTextField.text isEqualToString:@""] && ![self.addressTextField.text isEqualToString:@""]){
 
-        if(foundAddress){
+        if(foundAddress) {
+            
             Destination* destination;
-            if(self.selectedDestination){
+            
+            if(self.selectedDestination) {
+            
                 destination = self.selectedDestination;
-            }else{
+            
+            } else {
+            
                 destination = [Destination insertNewObjectInContext:self.managedObjectContext];
+            
             }
+            
             destination.name = self.nameTextField.text;
             destination.address = self.addressTextField.text;
             destination.alarm = nil;
@@ -85,19 +93,25 @@ BOOL foundAddress = NO;
 
             NSError* error;
             [self.managedObjectContext save:&error];
-            if(!error){
+            if(!error) {
+                
                 NSLog(@"Saved successfully");
-            }else{
+            
+            } else {
+                
                 NSLog(@"Couldn't save");
             }
             
             [self dismissViewControllerAnimated:YES completion:nil];
-        }else{
+        
+        } else {
+            
             UIAlertView *view = [WUPAlertBuilderUtils buildAlertForAddressNotFound];
             [view show];
         }
         
-    }else{
+    } else {
+        
         UIAlertView *view = [WUPAlertBuilderUtils buildAlertForMissingInformation];
         [view show];
     }
@@ -138,12 +152,11 @@ BOOL foundAddress = NO;
 }
 
 #pragma mark - UI methods
--(void) showAddressOnMapView:(CLLocationCoordinate2D) coord{
+-(void) showAddressOnMapView:(CLLocationCoordinate2D) coord {
 
-     MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coord addressDictionary:nil];
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coord addressDictionary:nil];
     
-    
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coord, 4.5*1609.34,4.5*1609.34);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coord, 4.5 * 1609.34, 4.5 * 1609.34);
 
     [self.mapView setRegion:viewRegion animated:YES];
     [self.mapView regionThatFits:viewRegion];
@@ -154,8 +167,6 @@ BOOL foundAddress = NO;
     self.location = CLLocationCoordinate2DMake(placemark.coordinate.latitude, placemark.coordinate.longitude);
      
     foundAddress = YES;
-    
-
 }
 
 #pragma mark - WUPListSearchEngineResultViewControllerDelegate methods

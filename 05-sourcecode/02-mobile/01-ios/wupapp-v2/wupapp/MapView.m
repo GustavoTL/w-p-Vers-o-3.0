@@ -124,7 +124,8 @@
 	
 	if(self.routes) {
 		[mapView removeAnnotations:[mapView annotations]];
-		[self.routes release];
+        [mapView removeOverlays:mapView.overlays];
+		//[self.routes release];
 	}
 	
 	PlaceMark* from = [[[PlaceMark alloc] initWithPlace:f] autorelease];

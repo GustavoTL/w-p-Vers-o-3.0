@@ -119,30 +119,29 @@
 }
 
 //Util
-
 +(int) WEEKDAYNUMBER_FORWEEKDAY:(NSString*) weekday
-{
-    if([weekday isEqualToString:@"domingo"])
+{    
+    if([[weekday lowercaseString] isEqualToString:NSLocalizedString(@"domingo", "nome da imagem route tabbar")])//@"domingo"
     {
         return 1;
     }
-    else if([weekday isEqualToString:@"segunda-feira"])
+    else if([[weekday lowercaseString] isEqualToString:NSLocalizedString(@"segunda_feira", "nome da imagem route tabbar")])//@"segunda-feira"
     {
         return 2;
     }
-    else if([weekday isEqualToString:@"terça-feira"])
+    else if([[weekday lowercaseString] isEqualToString:NSLocalizedString(@"terça_feira", "nome da imagem route tabbar")])//@"terça-feira"
     {
         return 3;
     }
-    else if([weekday isEqualToString:@"quarta-feira"])
+    else if([[weekday lowercaseString] isEqualToString:NSLocalizedString(@"quarta_feira", "nome da imagem route tabbar")])//@"quarta-feira"
     {
         return 4;
     }
-    else if([weekday isEqualToString:@"quinta-feira"])
+    else if([[weekday lowercaseString] isEqualToString:NSLocalizedString(@"quinta_feira", "nome da imagem route tabbar")])//@"quinta-feira"
     {
         return 5;
     }
-    else if([weekday isEqualToString:@"sexta-feira"])
+    else if([[weekday lowercaseString] isEqualToString:NSLocalizedString(@"sexta_feira", "nome da imagem route tabbar")])//@"sexta-feira"
     {
         return 6;
     }

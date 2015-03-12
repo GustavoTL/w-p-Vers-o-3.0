@@ -437,7 +437,7 @@
                                                 <rect key="frame" x="0.0" y="543" width="320" height="48"/>
                                                 <subviews>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time to leave:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bY-g6-jkT">
-                                                        <rect key="frame" x="18" y="14" width="132" height="21"/>
+                                                        <rect key="frame" x="18" y="14" width="125" height="21"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -806,7 +806,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-U6-AzJ" userLabel="View - Container Fields">
                                 <rect key="frame" x="0.0" y="64" width="320" height="116"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex: Trabalho, Academia ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZ1-hS-ijX">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Destination Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZ1-hS-ijX">
                                         <rect key="frame" x="37" y="20" width="273" height="30"/>
                                         <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -815,7 +815,7 @@
                                             <outlet property="delegate" destination="jcs-tF-l0C" id="an5-lw-JlK"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ex: Rua, cidade, estado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IN8-mu-lg7">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Adress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IN8-mu-lg7">
                                         <rect key="frame" x="37" y="66" width="273" height="30"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -994,7 +994,7 @@
                                                 <action selector="touchUpNavBarCancelButton:" destination="K29-jG-ucz" id="uGE-hB-fgW"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Salve" id="tfF-r0-AF0">
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="tfF-r0-AF0">
                                             <connections>
                                                 <action selector="touchUpNavBarOkButton:" destination="K29-jG-ucz" id="siL-HZ-ISJ"/>
                                             </connections>
@@ -1063,7 +1063,7 @@
             </objects>
             <point key="canvasLocation" x="2855" y="-924"/>
         </scene>
-        <!--Rota-->
+        <!--Route-->
         <scene sceneID="iTz-Lk-Daw">
             <objects>
                 <viewController id="aFR-57-P6Q" customClass="WUPRouteMapViewController" sceneMemberID="viewController">
@@ -1079,7 +1079,7 @@
                                 <rect key="frame" x="0.0" y="201" width="320" height="267"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você ainda não possui alarmes cadastrados." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="c1c-b4-mbj">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You do not have registered/activated alarms" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="c1c-b4-mbj">
                                 <rect key="frame" x="0.0" y="229" width="320" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1089,7 +1089,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wy5-LJ-VUG">
                                 <rect key="frame" x="59" y="296" width="202" height="41"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.64313725489999995" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Adicionar Alarme">
+                                <state key="normal" title="Add alarm">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1179,7 +1179,7 @@
                             <constraint firstItem="4mt-nV-csT" firstAttribute="top" secondItem="jat-AI-WU5" secondAttribute="bottom" constant="137" id="x0B-0M-s3D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Rota" id="gfi-qL-0BV">
+                    <navigationItem key="navigationItem" title="Route" id="gfi-qL-0BV">
                         <barButtonItem key="rightBarButtonItem" title="Start" id="k1t-Fr-CIt">
                             <connections>
                                 <action selector="touchUpNavBarIniciarButton:" destination="aFR-57-P6Q" id="2zI-VS-asN"/>
@@ -1386,13 +1386,13 @@
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="home_clock" translatesAutoresizingMaskIntoConstraints="NO" id="HTP-45-o6S">
                                         <rect key="frame" x="151" y="30" width="19" height="19"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upon awakening, how long" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86l-Ii-aWH">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How long you need to leave?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86l-Ii-aWH">
                                         <rect key="frame" x="20" y="57" width="280" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="it takes you to go out?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrN-ed-jpf">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrN-ed-jpf">
                                         <rect key="frame" x="25" y="75" width="270" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

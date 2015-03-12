@@ -88,6 +88,9 @@
         self.dateSelected = NULL;
     }
     
+    NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+    
+    [self.dataPicker setLocale:[NSLocale localeWithLocaleIdentifier:language]];
     
     [self setupUI];
 }
@@ -185,6 +188,10 @@
     
     self.alarmRepeatsForLabel.text = NSLocalizedString(@"dia", nil);
     
+    NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+    
+    [self.dataPicker setLocale:[NSLocale localeWithLocaleIdentifier:language]];
+    
     NSDateFormatter *localFormatter = [[NSDateFormatter alloc] init];
     [localFormatter setDateFormat:@"yyyy/MM/dd/ HH:mm:ss a"];
     [localFormatter setTimeZone:[NSTimeZone defaultTimeZone]];
@@ -203,7 +210,14 @@
     
     NSDate *date = [cal dateFromComponents:components];
 
-    [localFormatter setDateFormat:@"dd/MM/yyyy"];
+    if([language isEqualToString:@"pt"]) {
+    
+        [localFormatter setDateFormat:@"dd/MM/yyyy"];
+    
+    } else {
+    
+        [localFormatter setDateFormat:@"MM/dd/yyyy"];
+    }
     
     self.alarmRepeatsForContentLabel.text = [localFormatter stringFromDate:date];
 
@@ -280,6 +294,7 @@
 
 -(void) pickedCalendarDay:(NSDate*) selectedDate {
 
+    
     self.dateSelected = selectedDate;
     self.selectedRepeatDays = [NSArray array];
     [self updateSelectDayLabel];
@@ -318,7 +333,7 @@
 //    [self updateRepeateDaysLabel];
 //}
 
--(void)pickedADestination:(Destination *)destination{
+-(void)pickedADestination:(Destination *)destination { 
     
     if(destination){
         

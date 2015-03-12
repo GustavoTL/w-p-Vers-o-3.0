@@ -34,7 +34,10 @@
 //@property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
 
+@property(strong, nonatomic) MapView *map;
+
 @property (nonatomic, assign) BOOL isLoadMap;
+@property (nonatomic, assign) BOOL isLoadRoute;
 
 @end
 
@@ -55,6 +58,11 @@
 }
 
 -(void) setupUI {
+    
+    self.map = [[MapView alloc] initWithFrame:
+                CGRectMake(0, 0, self.mapView.frame.size.width, self.mapView.frame.size.height)];
+    
+    [self.mapView addSubview:self.map];
     
     self.descriptiveFirstLineLabel.font = [UIFont fontWithName:kProximaNovaFontNameRegular size:16.0f];
     self.descriptiveSecondLineLabel.font = [UIFont fontWithName:kProximaNovaFontNameRegular size:16.0f];
@@ -80,10 +88,8 @@
     if ([tabBar respondsToSelector:@selector(setBackgroundImage:)]) {
         
         // set it just for this instance
-        [tabBar setBackgroundImage:[UIImage imageNamed:@"navbar_route_image"]];
+        [tabBar setBackgroundImage:[UIImage imageNamed:NSLocalizedString(@"tabbar_route_image_name", "nome da imagem route tabbar")]];//@"navbar_route_image"
     }
-    
-    
     
     self.isLoadMap = FALSE;
     
@@ -229,17 +235,19 @@
     
     if(self.lastLocalNotification) {
         
+        self.isLoadRoute = false;
+        
         self.noRouteFoundLabel.hidden = YES;
         self.noRouteFoundButton.hidden = YES;
         self.mapView.hidden = NO;
         self.navBarIniciarButton.enabled = YES;
         
-        [self.mapView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//        [self.mapView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         
-        MapView* mapView = [[MapView alloc] initWithFrame:
-                            CGRectMake(0, 0, self.mapView.frame.size.width, self.mapView.frame.size.height)] ;
+//        MapView* mapView = [[MapView alloc] initWithFrame:
+//                            CGRectMake(0, 0, self.mapView.frame.size.width, self.mapView.frame.size.height)];
         
-        [self.mapView addSubview:mapView];
+//        [self.mapView addSubview:mapView];
         
         //Getting Alarm from LocalNotification
         Alarm  *alarm ;
@@ -264,7 +272,7 @@
         office.latitude = [alarm.destination.latitude doubleValue];
         office.longitude = [alarm.destination.longitude doubleValue];
         
-        [mapView showRouteFrom:home to:office];
+        //[self.map showRouteFrom:home to:office];
         
         //Updating Info View
         WUPNokiaTrafficConditionsService* trafficService = [[WUPNokiaTrafficConditionsService alloc]init];
@@ -294,13 +302,18 @@
             self.destinationNameLabel.text = [NSString stringWithFormat:@"%@:",alarm.destination.name];
             self.destinationAddressLabel.text = [alarm.destination.address capitalizedString];
 
-            mapView.routes = route;
-            [mapView drawRoute];
+            self.map.routes = route;
+                                                     
+                                                     [self.map showRouteFrom:home to:office];
+            [self.map drawRoute];
             //[mapView updateRouteView];
-            [mapView centerMap];
+            [self.map centerMap];
+                                                     
+                                                     self.isLoadRoute = true;
             
         } failure:^{
             
+            self.isLoadRoute = true;
             [self.containerTravelInfo stopLoadingAnimation];
         
         }];
@@ -347,10 +360,14 @@
                                                                     lat2:newLocation.latitude
                                                                     lon2:newLocation.longitude];
             
-            if(raio > 10) {
+            if(raio > 0.1) {
                 
                 self.location = location;
-                [self updateRouteOnMap];
+                
+                if(self.isLoadRoute) {
+                
+                    [self updateRouteOnMap];
+                }
             }
             
         } else {
@@ -360,10 +377,13 @@
             if(!self.isLoadMap) {
                 
                 self.isLoadMap = true;
-                [self updateRouteOnMap];
+                
+                if(self.isLoadRoute) {
+                    
+                    [self updateRouteOnMap];
+                }
             }
         }
-        
     }
 }
 

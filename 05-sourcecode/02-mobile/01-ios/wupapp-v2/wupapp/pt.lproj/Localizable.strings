@@ -24,7 +24,7 @@
 "editar" = "Editar";
 "excluir" = "Excluir";
 "adicionar" = "Adicionar";
-"alarme" = "Alarme";
+"alarme" = "Alarm";
 "nunca" = "Nunca";
 "padrao" = "Padrão";
 "salvando" = "Salvando";
@@ -35,6 +35,8 @@
 "tabbar_alarm_image_name" = "navbar_alarm_image";
 "tabbar_about_image_name" = "navbar_about_image";
 "tabbar_route_image_name" = "navbar_route_image";
+
+"nunca" = "Nunca";
 
 "calculando_transito" = "Calculando Trânsito";
 "salvando" = "Salvando";

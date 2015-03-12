@@ -93,6 +93,8 @@ static WUPAlarmeManager *sharedAlarmManager;
                                                   alarm.etaTime = [NSNumber numberWithInt:ETATime];
                                                   [[self managerContext] save:nil];
                                                   
+                                                  NSLog(@"ETATime -> %d", ETATime);
+                                                  
 //                                                  NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
 //                                                  NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
 //                                                  
@@ -116,7 +118,7 @@ static WUPAlarmeManager *sharedAlarmManager;
                                                   [self successOnCalculateTrafficTimeWithAlarm:alarm AndETATime:ETATime];
                                                   
                                               } failure:^{
-                                                  //[self failureOnCalculateTrafficTimeWithAlarm:alarm];
+                                                  [self failureOnCalculateTrafficTimeWithAlarm:alarm];
                                               }];
     }
 }
@@ -133,11 +135,16 @@ static WUPAlarmeManager *sharedAlarmManager;
     [self commonOnCalculateTrafficTimeWithDate:date AndAlarm:alarm];
 }
 
+-(void) failureOnCalculateTrafficTimeWithAlarm:(Alarm*) alarm
+{
+    [self commonOnCalculateTrafficTimeWithDate:alarm.whenTime AndAlarm:alarm];
+}
+
 -(void) commonOnCalculateTrafficTimeWithDate:(NSDate*) date AndAlarm:(Alarm*) alarm {
     //    NSLog(@"%s date: %@",__PRETTY_FUNCTION__,date);
     
     // Only try to replace alarm if this alarm isn't set for never repeating
-    if(![alarm.repeatsFor isEqualToString:@""]){
+    //if(![alarm.repeatsFor isEqualToString:@""]){
         
         [self removeScheduledLocalNotificationsWithId:alarm.objectID];
         
@@ -148,7 +155,7 @@ static WUPAlarmeManager *sharedAlarmManager;
                                                        AndLabel:alarm.label
                                                  AndTimeToLeave:[alarm.timeToLeave intValue]
                                                     AndObjectID:alarm.objectID];
-    }
+    //}
 }
 
 #pragma mark - Local Notifications handling

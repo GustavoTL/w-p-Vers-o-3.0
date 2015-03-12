@@ -32,6 +32,9 @@
 @property (strong, nonatomic) NSDateFormatter* dateFormatterNowLongFormatClock;
 @property (strong, nonatomic) NSDateFormatter* dateFormatterNowWeekdayFormatClock;
 
+
+@property (strong, nonatomic) NSString *language;
+
 //@property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
 
@@ -56,17 +59,25 @@
 
 -(void) setupUI
 {
-    NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+    self.language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
     
     self.dateFormatterNowClock = [[NSDateFormatter alloc] init];
     [self.dateFormatterNowClock setDateFormat:@"HH:mm"]; //24hr time format
     
     self.dateFormatterNowLongFormatClock = [[NSDateFormatter alloc] init];
-    [self.dateFormatterNowLongFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:language]];//[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"]
-    [self.dateFormatterNowLongFormatClock setDateFormat:@"dd MMM yyyy"];
+    [self.dateFormatterNowLongFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:self.language]];//[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"]
+    
+    if([self.language isEqualToString:@"pt"]) {
+    
+        [self.dateFormatterNowLongFormatClock setDateFormat:@"dd MMM yyyy"];
+    
+    } else {
+    
+        [self.dateFormatterNowLongFormatClock setDateFormat:@"MMM dd, yyyy"];
+    }
     
     self.dateFormatterNowWeekdayFormatClock = [[NSDateFormatter alloc] init];
-    [self.dateFormatterNowWeekdayFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:language]];
+    [self.dateFormatterNowWeekdayFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:self.language]];
     [self.dateFormatterNowWeekdayFormatClock setDateFormat:@"EEEE"];
     
     //Applying Fonts
@@ -75,7 +86,7 @@
     self.whereToGoLabel.font = [UIFont fontWithName:kProximaNovaFontNameLight size:20.0f];
     self.timeToGoDescriptionLabel.font = [UIFont fontWithName:kProximaNovaFontNameRegular size:10.0f];
     self.timeToGoLabel.font = [UIFont fontWithName:kProximaNovaFontNameBold size:20.0f];
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -87,17 +98,19 @@
     if ([tabBar respondsToSelector:@selector(setBackgroundImage:)]) {
         
         // set it just for this instance
-        [tabBar setBackgroundImage:[UIImage imageNamed:@"navbar_home_image"]];
+        [tabBar setBackgroundImage:[UIImage imageNamed:NSLocalizedString(@"tabbar_home_image_name", "nome da imagem home tabbar")]];//navbar_home_image
     }
     
     [self cleanIconBadgeNumber];
     
-    [self listScheduledMasterLocalNotifications];
+    //[self listScheduledMasterLocalNotifications];
 
     [self updateNextLocalNotification];
     [self updateNowClock];
     [self updateTimeToGoUI];
+    
     [self getCurentAlarm];
+    
     self.timerNowClock = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateNowClock) userInfo:nil repeats:YES];
     self.timerTimeToGoClock = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimeToGoUI) userInfo:nil repeats:YES];
     
@@ -163,7 +176,16 @@
     
     NSDate* date = [NSDate date];
     self.nowLabel.text = [self.dateFormatterNowClock stringFromDate:date];
-    self.dateLongLabel.text = [NSString stringWithFormat:@"%@ - %@",[self.dateFormatterNowLongFormatClock stringFromDate:date],[[self.dateFormatterNowWeekdayFormatClock stringFromDate:date] capitalizedString]];
+    
+    if([self.language isEqualToString:@"pt"]) {
+        
+        self.dateLongLabel.text = [NSString stringWithFormat:@"%@ - %@",[self.dateFormatterNowLongFormatClock stringFromDate:date],[[self.dateFormatterNowWeekdayFormatClock stringFromDate:date] capitalizedString]];
+        
+    } else {
+    
+        self.dateLongLabel.text = [NSString stringWithFormat:@"%@ - %@",[[self.dateFormatterNowWeekdayFormatClock stringFromDate:date] capitalizedString], [self.dateFormatterNowLongFormatClock stringFromDate:date]];
+
+    }
 }
 
 -(void) updateTimeToGoUI {
@@ -261,7 +283,7 @@
 }
 
 -(void) updateTrafficToNextLocationNotification {
-        
+    
     if(self.nextLocationNotification) {
         
         NSDictionary* userInfoDict = self.nextLocationNotification.userInfo;
@@ -275,28 +297,6 @@
                                                   
                                                   alarm.etaTime = [NSNumber numberWithInt:ETATime];
                                                   [self.managedObjectContext save:nil];
-                                                  
-                                                  NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
-                                                  NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
-                                                  
-                                                  // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-                                                  [formatter3 setTimeStyle:NSDateFormatterShortStyle];
-                                                  [formatter3 setDateStyle:NSDateFormatterShortStyle];
-                                                  
-                                                  NSString *detailstext = [formatter3 stringFromDate:newDate];
-                                                  NSDate *othernewdate = [formatter3 dateFromString:detailstext];
-                                                  
-                                                  UILocalNotification *notification = [[UILocalNotification alloc] init];
-                                                  notification.timeZone = [NSTimeZone systemTimeZone];
-                                                  notification.fireDate = othernewdate;
-                                                  notification.alertBody = [NSString stringWithFormat:@"Recalculado -> %d", ETATime];
-                                                  notification.soundName = UILocalNotificationDefaultSoundName;
-                                                  notification.hasAction = YES;
-                                                  notification.alertAction = NSLocalizedString(@"View", @"View notification button");
-                                                  
-                                                  [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-                                                  
-                                                  
                                                   
             [self successOnCalculateTrafficTimeWithAlarm:alarm AndETATime:ETATime];
         
@@ -346,7 +346,7 @@
 //    NSLog(@"%s date: %@",__PRETTY_FUNCTION__,date);
     
     // Only try to replace alarm if this alarm isn't set for never repeating
-    if(![alarm.repeatsFor isEqualToString:@""]){
+    //if(![alarm.repeatsFor isEqualToString:@""]){
     
         [self removeScheduledLocalNotificationsWithId:alarm.objectID]; 
 
@@ -357,7 +357,7 @@
                                                        AndLabel:alarm.label
                                                  AndTimeToLeave:[alarm.timeToLeave intValue]
                                                     AndObjectID:alarm.objectID];
-    }
+    //}
 }
 
 -(void)updateLocation:(CLLocation *)location {
@@ -372,36 +372,15 @@
                                                                 lat2:newLocation.latitude
                                                                 lon2:newLocation.longitude];
         
-        if(raio < 1000) {
+        if(raio < 1) {
             
             return;
         }
     }
     
     self.location = location;
-        
     
-//    NSDate *newDate = [[NSDate date] dateByAddingTimeInterval:1];//-60*15
-//    NSDateFormatter *formatter3 = [[NSDateFormatter alloc] init];
-//    
-//    // [formatter3 setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-//    [formatter3 setTimeStyle:NSDateFormatterShortStyle];
-//    [formatter3 setDateStyle:NSDateFormatterShortStyle];
-//    
-//    NSString *detailstext = [formatter3 stringFromDate:newDate];
-//    NSDate *othernewdate = [formatter3 dateFromString:detailstext];
-//    
-//    UILocalNotification *notification = [[UILocalNotification alloc] init];
-//    notification.timeZone = [NSTimeZone systemTimeZone];
-//    notification.fireDate = othernewdate;
-//    notification.alertBody = @"Recalculando";
-//    notification.soundName = UILocalNotificationDefaultSoundName;
-//    notification.hasAction = YES;
-//    notification.alertAction = NSLocalizedString(@"View", @"View notification button");
-//                
-//    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    
-    
+    //[self updateTrafficToNextLocationNotification];
 }
 
 #pragma mark - CLLocationManagerDelegate methods

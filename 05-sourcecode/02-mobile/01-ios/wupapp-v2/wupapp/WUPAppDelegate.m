@@ -46,37 +46,40 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    //self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.distanceFilter = 5;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    SEL requestSelector = NSSelectorFromString(@"requestAlwaysAuthorization");
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
-        
-        [self.locationManager respondsToSelector:requestSelector]) {
-        
-        [self requestAlwaysAuthorization];
-        
-        //((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
-        
-        if(IS_OS_7_OR_LATER) {
-            
-            [self.locationManager requestWhenInUseAuthorization];
-            [self.locationManager requestAlwaysAuthorization];
-        }
-        
-        [self.locationManager startUpdatingLocation];
-        
-    } else {
-        
-        if(IS_OS_7_OR_LATER) {
-            
-            [self.locationManager requestWhenInUseAuthorization];
-            [self.locationManager requestAlwaysAuthorization];
-        }
-        
-        [self.locationManager startUpdatingLocation];
-        
-    }
+    [self requestAlwaysAuthorization];
+    
+//    SEL requestSelector = NSSelectorFromString(@"requestAlwaysAuthorization");
+//    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined &&
+//        
+//        [self.locationManager respondsToSelector:requestSelector]) {
+//        
+//        [self requestAlwaysAuthorization];
+//        
+//        //((void (*)(id, SEL))[self.locationManager methodForSelector:requestSelector])(self.locationManager, requestSelector);
+//        
+//        if(IS_OS_7_OR_LATER) {
+//            
+//            [self.locationManager requestWhenInUseAuthorization];
+//            [self.locationManager requestAlwaysAuthorization];
+//        }
+//        
+//        [self.locationManager startUpdatingLocation];
+//        
+//    } else {
+//        
+//        if(IS_OS_7_OR_LATER) {
+//            
+//            [self.locationManager requestWhenInUseAuthorization];
+//            [self.locationManager requestAlwaysAuthorization];
+//        }
+//        
+//        [self.locationManager startUpdatingLocation];
+//        
+//    }
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
     // The following line must only run under iOS 8. This runtime check prevents
@@ -104,8 +107,7 @@
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -123,6 +125,7 @@
     
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
+    [self requestAlwaysAuthorization];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -209,15 +212,21 @@
     }
     // The user has not enabled any location services. Request background authorization.
     else if (status == kCLAuthorizationStatusNotDetermined) {
-        [self.locationManager requestAlwaysAuthorization];
+        
+        if(IS_OS_8_OR_LATER) {
+            
+            [self.locationManager requestAlwaysAuthorization];
+        
+        } else {
+        
+            [self.locationManager requestWhenInUseAuthorization];
+        }
     }
     
     [self.locationManager startUpdatingLocation];
 }
 
 -(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    
-    [self.locationManager startUpdatingLocation];
     
     completionHandler(UIBackgroundFetchResultNewData);
     
@@ -371,6 +380,7 @@
     if(self.alarmManager.location == NULL || (self.alarmManager.location.coordinate.latitude == 0 || self.alarmManager.location.coordinate.longitude == 0)) {
     
         self.alarmManager.location = location;
+        //[self.alarmManager updateTrafficToNextLocationNotification];
     }
     
     if(self.location != NULL) {
@@ -383,18 +393,25 @@
                                                                 lat2:newLocation.latitude
                                                                 lon2:newLocation.longitude];
         
-        if(raio >= 1000) {
+        NSLog(@"raio -> %f", raio);
+        
+        if(raio >= 1) {
             
-            self.alarmManager.location = self.location;
+            self.alarmManager.location = location;
             [self.alarmManager updateTrafficToNextLocationNotification];
         }
     }
     
     self.location = location;
     
-    if(self.delegate != NULL) {
+    UIApplicationState state = [[UIApplication sharedApplication]applicationState];
     
-        [self.delegate willUpdateLocation:location];
+    if(state == UIApplicationStateActive) {
+     
+        if(self.delegate != NULL) {
+            
+            [self.delegate willUpdateLocation:location];
+        }
     }
 }
 
