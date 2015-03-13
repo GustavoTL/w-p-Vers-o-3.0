@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E171FE71AB25F6E00082DDF /* wup_ingles.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 0E171FE61AB25F6E00082DDF /* wup_ingles.m4v */; };
 		0EBD0F531A6FDEA500ACAAAD /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EBD0F521A6FDEA500ACAAAD /* libGoogleAnalyticsServices.a */; };
 		0EC243241A6FDC3D00CA6936 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EC243231A6FDC3D00CA6936 /* AdSupport.framework */; };
 		0EC243251A6FDCD300CA6936 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4243524019CF3A42005F2C8A /* SystemConfiguration.framework */; };
@@ -138,6 +139,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E171FE61AB25F6E00082DDF /* wup_ingles.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = wup_ingles.m4v; sourceTree = "<group>"; };
 		0EBD0F521A6FDEA500ACAAAD /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalyticsServices.a; path = "GoogleAnalytics-iOS-SDK/libGoogleAnalyticsServices.a"; sourceTree = "<group>"; };
 		0EBD0F541A6FDF7500ACAAAD /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		0EBD0F551A6FDF7500ACAAAD /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
@@ -629,6 +631,7 @@
 				42CD13FB1962466000DA06A3 /* v_i_p_ringtone.mp3 */,
 				42CD13FC1962466000DA06A3 /* wolf.mp3 */,
 				A650111A19AD339C000DF70C /* wup_final.m4v */,
+				0E171FE61AB25F6E00082DDF /* wup_ingles.m4v */,
 			);
 			name = audio;
 			sourceTree = "<group>";
@@ -948,6 +951,7 @@
 				42CD14061962466000DA06A3 /* iphone_sms_message.mp3 in Resources */,
 				42CD13FD1962466000DA06A3 /* 3d_bird_tone.mp3 in Resources */,
 				42CD14051962466000DA06A3 /* iphone_5s.mp3 in Resources */,
+				0E171FE71AB25F6E00082DDF /* wup_ingles.m4v in Resources */,
 				42CD14031962466000DA06A3 /* htc_butterfly_2013.mp3 in Resources */,
 				6F1542CA1A7FEFF300F71223 /* DSLCalendar-nextMonth.png in Resources */,
 				42CD140C1962466000DA06A3 /* wolf.mp3 in Resources */,

@@ -18,6 +18,8 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
+@property (strong, nonatomic) NSString *language;
+
 - (void) updateLocation:(CLLocation*)location;
 
 -(void) setupDatabaseConnection;

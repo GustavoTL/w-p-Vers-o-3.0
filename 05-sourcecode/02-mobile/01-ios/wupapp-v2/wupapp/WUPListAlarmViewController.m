@@ -140,7 +140,16 @@ Alarm* selectedAlarm;
     Alarm *alarm = [self.alarmsArray objectAtIndex:index];
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
+    [dateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:self.language]];
+        
+    if([self.language isEqualToString:@"pt"]) {
+    
+        [dateFormatter setDateFormat:@"HH:mm"];
+        
+    } else {
+    
+        [dateFormatter setDateFormat:@"hh:mm a"];
+    }
     
     WUPListAlarmTableTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     cell.alarm = alarm;
@@ -148,12 +157,10 @@ Alarm* selectedAlarm;
     
     if(alarm.dateSelected) {
         
-        NSString *language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
-        
         NSDateFormatter *dateFormatterNowLongFormatClock = [[NSDateFormatter alloc] init];
-        [dateFormatterNowLongFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:language]];
+        [dateFormatterNowLongFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:self.language]];
         
-        if([language isEqualToString:@"pt"]) {
+        if([self.language isEqualToString:@"pt"]) {
             
             [dateFormatterNowLongFormatClock setDateFormat:@"dd MMM yyyy"];
             

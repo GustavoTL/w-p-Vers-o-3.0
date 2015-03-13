@@ -14,6 +14,11 @@
 
 @implementation WUPBaseDatabaseViewController
 
+- (void)viewDidLoad {
+
+    self.language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
+}
+
 -(void)viewWillAppear:(BOOL)animated {
 
     [super viewDidAppear:animated];

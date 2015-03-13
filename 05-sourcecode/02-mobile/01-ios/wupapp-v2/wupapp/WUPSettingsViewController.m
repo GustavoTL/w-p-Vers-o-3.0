@@ -74,7 +74,7 @@
 
 -(IBAction)playMovie:(id)sender
 {
-    NSURL * url = [[NSBundle mainBundle] URLForResource:@"wup_final" withExtension:@"m4v"];
+    NSURL * url = [[NSBundle mainBundle] URLForResource:NSLocalizedString(@"nome_video", nil) withExtension:@"m4v"];
     _moviePlayer =  [[MPMoviePlayerController alloc]
                      initWithContentURL:url];
     

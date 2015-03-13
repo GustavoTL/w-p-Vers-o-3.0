@@ -33,8 +33,6 @@
 @property (strong, nonatomic) NSDateFormatter* dateFormatterNowWeekdayFormatClock;
 
 
-@property (strong, nonatomic) NSString *language;
-
 //@property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
 
@@ -59,21 +57,25 @@
 
 -(void) setupUI
 {
-    self.language = [[[NSBundle mainBundle] preferredLocalizations] objectAtIndex:0];
-    
     self.dateFormatterNowClock = [[NSDateFormatter alloc] init];
-    [self.dateFormatterNowClock setDateFormat:@"HH:mm"]; //24hr time format
+    [self.dateFormatterNowClock setLocale:[NSLocale localeWithLocaleIdentifier:self.language]];
     
     self.dateFormatterNowLongFormatClock = [[NSDateFormatter alloc] init];
     [self.dateFormatterNowLongFormatClock setLocale:[NSLocale localeWithLocaleIdentifier:self.language]];//[NSLocale alloc] initWithLocaleIdentifier:@"pt_BR"]
     
     if([self.language isEqualToString:@"pt"]) {
     
+        [self.dateFormatterNowClock setDateFormat:@"HH:mm"]; //24hr time format
         [self.dateFormatterNowLongFormatClock setDateFormat:@"dd MMM yyyy"];
+        
+            self.nowLabel.font = [UIFont fontWithName:kPlutoFontNameThin size:80.0f];
     
     } else {
     
+        [self.dateFormatterNowClock setDateFormat:@"hh:mm a"];
         [self.dateFormatterNowLongFormatClock setDateFormat:@"MMM dd, yyyy"];
+        
+            self.nowLabel.font = [UIFont fontWithName:kPlutoFontNameThin size:55.0f];
     }
     
     self.dateFormatterNowWeekdayFormatClock = [[NSDateFormatter alloc] init];
@@ -81,7 +83,6 @@
     [self.dateFormatterNowWeekdayFormatClock setDateFormat:@"EEEE"];
     
     //Applying Fonts
-    self.nowLabel.font = [UIFont fontWithName:kPlutoFontNameThin size:80.0f];
     self.dateLongLabel.font = [UIFont fontWithName:kProximaNovaFontNameRegular size:15.0f];
     self.whereToGoLabel.font = [UIFont fontWithName:kProximaNovaFontNameLight size:20.0f];
     self.timeToGoDescriptionLabel.font = [UIFont fontWithName:kProximaNovaFontNameRegular size:10.0f];
@@ -308,7 +309,7 @@
 
 -(void)playMovie {
     
-    NSURL * url = [[NSBundle mainBundle] URLForResource:@"wup_final" withExtension:@"m4v"];
+    NSURL * url = [[NSBundle mainBundle] URLForResource:NSLocalizedString(@"nome_video", nil) withExtension:@"m4v"];
     _moviePlayer =  [[MPMoviePlayerController alloc]
                      initWithContentURL:url];
     
