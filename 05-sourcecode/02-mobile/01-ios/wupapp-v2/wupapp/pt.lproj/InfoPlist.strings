@@ -1,2 +1,5 @@
 /* Localized versions of Info.plist keys */
 
+NSLocationUsageDescription = "O wÜp precisa disso para calcular o trânsito.";
+NSLocationAlwaysUsageDescription = "O wÜp precisa disso para calcular o trânsito.";
+NSLocationWhenInUseUsageDescription = "O wÜp precisa disso para calcular o trânsito.";
