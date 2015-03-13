@@ -94,7 +94,7 @@
     self.isLoadMap = FALSE;
     
     [self cleanIconBadgeNumber];
-    //[self updateLastLocalNotification];
+    [self updateLastLocalNotification];
     
 //    self.locationManager = [[CLLocationManager alloc] init];
 //    self.locationManager.delegate = self;
@@ -114,7 +114,7 @@
     
     WUPAlarmeManager *alarmManager = [WUPAlarmeManager sharedInstance];
     
-    self.lastLocalNotification = [alarmManager nextLocalNotification];
+    //self.lastLocalNotification = [alarmManager nextLocalNotification];
         
     if(self.lastLocalNotification) {
     

@@ -166,7 +166,7 @@
         UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
         WUPHomeViewController *home = [tab.viewControllers objectAtIndex:0];
         
-        [home updateTrafficToNextLocationNotification];
+        //[home updateTrafficToNextLocationNotification];
         
         if(timeToLeave){
         
