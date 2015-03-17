@@ -27,6 +27,7 @@
 
 @property (nonatomic, strong) CLLocation *location;
 @property (nonatomic, strong) Alarm * mCurentAlarm;
+@property (strong,nonatomic)  NSObject *lastLocalNotification;
 
 @property (nonatomic, strong) id <WUPAppDelegateLocationDelegate> delegate;
 

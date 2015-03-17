@@ -10,6 +10,7 @@
 #import "WUPHomeViewController.h"
 #import "WUPAlarmeManager.h"
 #import "WUPGooglePlacesAPIService.h"
+#import "WUPRouteMapViewController.h"
 
 @interface WUPAppDelegate () <CLLocationManagerDelegate>
 
@@ -153,18 +154,24 @@
                                                   otherButtonTitles:nil];
             [alert show];
         
-        } else if(timeToLeave){
+        } else if(timeToLeave) {
+            
+            self.lastLocalNotification = notification;
+            
             UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
+            
             [tab setSelectedIndex:2];
         }
    
     } else if(state == UIApplicationStateInactive){
+//        
+//        NSLog(@"master %@", master);
+//        NSLog(@"timeToLeave %@", timeToLeave);
+       
+        //UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
+        //WUPRouteMapViewController *route = [tab.viewControllers objectAtIndex:2];
         
-        NSLog(@"master %@", master);
-        NSLog(@"timeToLeave %@", timeToLeave);
-        
-        UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
-        WUPHomeViewController *home = [tab.viewControllers objectAtIndex:0];
+        self.lastLocalNotification = notification;
         
         //[home updateTrafficToNextLocationNotification];
         
@@ -172,7 +179,7 @@
         
             UITabBarController* tab = (UITabBarController*)self.window.rootViewController;
             [tab setSelectedIndex:2];
-        
+            
         } else {
         
             [self recoverCurrentNotification:self.mCurentAlarm.objectID];

@@ -30,7 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *descriptiveFirstLineLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptiveSecondLineLabel;
 
-@property (strong,nonatomic) NSObject *lastLocalNotification;
+
 //@property (strong,nonatomic) CLLocationManager *locationManager;
 @property(strong,nonatomic) CLLocation* location;
 
@@ -94,7 +94,19 @@
     self.isLoadMap = FALSE;
     
     [self cleanIconBadgeNumber];
-    [self updateLastLocalNotification];
+    
+    WUPAppDelegate *delegate = (WUPAppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    self.lastLocalNotification = delegate.lastLocalNotification;
+    
+    NSLog(@"self.isShowRouteAlarm %@", self.lastLocalNotification);
+    
+    if(!self.lastLocalNotification) {
+    
+        [self updateLastLocalNotification];
+    }
+    
+    delegate.lastLocalNotification = NULL;
     
 //    self.locationManager = [[CLLocationManager alloc] init];
 //    self.locationManager.delegate = self;
@@ -179,8 +191,34 @@
 
 
 #pragma mark - UI methods
+- (void) updateLastLocalNotification {
+    
+    NSDate* date = [NSDate date];
+    //    NSLog(@"%s dateUTC: %@",__PRETTY_FUNCTION__,[WUPDateUtils convertDateInUTCString:date]);
+    
+    //Checking LocalNotifications
+    NSArray* arrayNotifications = [self scheduledTimeToLeaveLocalNotifications];
+    
+    if([arrayNotifications count]) {
+        
+        NSArray *sorted = [arrayNotifications sortedArrayUsingComparator:^NSComparisonResult(UILocalNotification *obj1, UILocalNotification *obj2) {
+            NSDate *next1 = [obj1 nextFireDateAfterDate:date];
+            NSDate *next2 = [obj2 nextFireDateAfterDate:date];
+            //            NSLog(@"%s next1: %@ next2: %@",__PRETTY_FUNCTION__,next1,next2);
+            return [next1 compare:next2];
+        }];
+        
+        self.lastLocalNotification = [sorted firstObject];
+        
+        //        NSLog(@"%s self.nextLocationNotification.nextFireDate:%@",__PRETTY_FUNCTION__,[self.nextLocationNotification nextFireDateAfterDate:date]);
+        
+    } else {
+        
+        self.lastLocalNotification = nil;
+    }
+}
 
--(void) updateLastLocalNotification {
+-(void) updateLastLocalNotificationb {
     
     NSDate* date = [NSDate date];
     //Checking LocalNotifications

@@ -121,10 +121,10 @@
     NSDate* originalDate = date;
     
     int totlaNotification = [WUPConstants NUMBER_REPEAT_ALARMS];
-    
-    if(timeToLeave == 0) {
         
-        totlaNotification = 1;
+    if(timeToLeave <= 180) {
+        
+        totlaNotification = 2;
     }
     
     for(int i = 0; i < totlaNotification; i++) {
@@ -141,7 +141,7 @@
         
         dateToFire = date;
         
-        if(i == 0 && timeToLeave > 0) {
+        if(i == 0) {
             
             [userInfo setObject:[WUPConstants OBJECT_MASTER_LOCALNOTIFICATION] forKey:[WUPConstants OBJECT_MASTER_LOCALNOTIFICATION]];
         

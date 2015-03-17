@@ -14,6 +14,7 @@
 //Categories
 #import "UILocalNotification+LastFireDate.h"
 #import "UIView+LoadingWithActivityIndicator.h"
+#import "UILocalNotification+NextFireDate.h"
 
 //Map Routings
 #import "MapView.h"
@@ -33,5 +34,7 @@
 #import "WUPUIGoogleMapsActivity.h"
 
 @interface WUPRouteMapViewController : WUPBaseDatabaseLocalNotificationViewController<MKMapViewDelegate,CLLocationManagerDelegate>
+
+@property (strong,nonatomic) NSObject *lastLocalNotification;
 
 @end
